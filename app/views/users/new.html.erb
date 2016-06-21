@@ -1,14 +1,19 @@
 <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users', :html => {:class => 'large-6 large-offset-3', 'data-bar' => 'baz'} do |f| %>
+<form class="large-6 large-offset-3" data-bar="baz" action="/users" accept-charset="UTF-8" method="post">
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+	<input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-<% end %>
+  Name: <input type="text" name="user[name]" id="user_name">
+  Email: <input type="text" name="user[email]" id="user_email">
+  Password: <input type="password" name="user[password]" id="user_password">
+  Password Confirmation: <input type="password" name="user[password_confirmation]" id="user_password_confirmation">
+
+  Summoner Name: <input type="text" name="summoner_name" id="summoner_name">
+
+  <input type="submit" name="commit" value="Submit">
+
+</form>
 
 <%= form_tag '/login', :class => 'large-6 large-offset-3' do %>
 
