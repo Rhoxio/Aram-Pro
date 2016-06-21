@@ -1,0 +1,22 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .form-class{
+// 	background-color: red;
+// }
+
+$outer-space: #2B3E42;
+$med-grey: #747E80;
+$sirocco: #D5E1DD;
+$merino: #F7F3E8;
+$flamingo-red:  #F2583E;
+$lt-blue: #77BED2;
+
+form{
+	margin-top: 20px;
+	margin-bottom: 15px;
+
+	padding: 20px;
+	background-color: $merino;
+}

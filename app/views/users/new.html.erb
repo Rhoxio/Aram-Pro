@@ -1,0 +1,19 @@
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users', :html => {:class => 'large-6 large-offset-3', 'data-bar' => 'baz'} do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+<%= form_tag '/login', :class => 'large-6 large-offset-3' do %>
+
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>

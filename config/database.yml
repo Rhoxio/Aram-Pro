@@ -1,0 +1,25 @@
+# Using Postgresql
+default: &default
+   adapter: postgresql
+   encoding: unicode
+  
+development:
+   adapter: postgresql
+   encoding: unicode
+   database: library_development
+   username: kevinmaze
+   password: 
+
+test:
+   adapter: postgresql
+   encoding: unicode
+   database: library_test
+   username: kevinmaze
+   password: 
+ 
+production:
+   adapter: postgresql
+   encoding: unicode
+   database: library_production
+   username: kevinmaze
+   password: 
