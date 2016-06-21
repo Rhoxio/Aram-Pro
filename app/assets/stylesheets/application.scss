@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+$outer-space: #2B3E42;
+$med-grey: #747E80;
+$sirocco: #D5E1DD;
+$merino: #F7F3E8;
+$flamingo-red:  #F2583E;
+$lt-blue: #77BED2;
+
+header{
+	background-color: $flamingo-red;
+	height: 90px;
+	width: 100%;
+	padding: 0 3% 0 3%;
+
+	h1{
+		text-align: center;
+		font-family: "Fjalla One";
+		font-size: 3.5rem;
+	}
+
+
+	.right{
+		float: right;
+	}
+
+	.header-item{
+		text-align: center;
+		color: $merino;
+		font-family: "Fjalla One";
+		padding-top: 25px;
+
+		a{
+			color: $merino;
+			font-family: "Fjalla One";
+
+			&:hover{
+				color: $lt-blue;
+			}
+		}		
+	}
+
+	.log-in{
+		text-align: center;
+	}
+
+	.create-account{
+		text-align: center;
+	}	
+
+	.log-out{
+		text-align: center;
+	}	
+}
+
+
+body{
+	background-color: $sirocco;
+}
+
+.signup-container{
+
+	h1{
+		text-align: center;
+		font-family: "Fjalla One";
+	}
+
+	.signup-form{
+		margin-top: 20px;
+		margin-bottom: 15px;
+
+		padding: 20px;
+		background-color: $outer-space;
+
+		label{
+			color: $flamingo-red;
+		}
+	}
+	
+}
+

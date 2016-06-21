@@ -1,24 +1,27 @@
-<h1>Signup!</h1>
+<div class='signup-container'>
+	<h1 class='large-6 large-offset-3'>Sign Up</h1>
 
-<form class="large-6 large-offset-3" data-bar="baz" action="/users" accept-charset="UTF-8" method="post">
+	<form class="large-6 large-offset-3 signup-form" data-bar="baz" action="/users" accept-charset="UTF-8" method="post">
 
-	<input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  Name: <input type="text" name="user[name]" id="user_name">
-  Email: <input type="text" name="user[email]" id="user_email">
-  Password: <input type="password" name="user[password]" id="user_password">
-  Password Confirmation: <input type="password" name="user[password_confirmation]" id="user_password_confirmation">
+	  <label for='user_name'>Name: <input type="text" name="user[name]" id="user_name"></label>
+	  <label for='user_email'>Email: <input type="text" name="user[email]" id="user_email"></label>
+	  <label for='user_password'>Password: <input type="password" name="user[password]" id="user_password"></label>
+	  <label for='user_password_confirmation'>Password Confirmation: <input type="password" name="user[password_confirmation]" id="user_password_confirmation"></label>
 
-  Summoner Name: <input type="text" name="summoner_name" id="summoner_name">
+	  <label for='summoner_name'>Summoner Name: <input type="text" name="summoner_name" id="summoner_name"></label>
 
-  <input type="submit" name="commit" value="Submit">
+	  <input type="submit" name="commit" value="Submit">
 
-</form>
+	</form>
 
-<%= form_tag '/login', :class => 'large-6 large-offset-3' do %>
+	<%= form_tag '/login', :class => 'large-6 large-offset-3' do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+	  Email: <%= text_field_tag :email %>
+	  Password: <%= password_field_tag :password %>
+	  <%= submit_tag "Submit" %>
 
-<% end %>
+	<% end %>
+	
+</div>

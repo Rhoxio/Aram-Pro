@@ -1,9 +1,13 @@
-<h1>Login</h1>
+<div class='signup-container'>
 
-<%= form_tag '/login' do %>
+	<h1 class='large-6 large-offset-3'>Log In</h1>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+	<%= form_tag '/login', :class => 'large-6 large-offset-3' do %>
 
-<% end %>
+	  Email: <%= text_field_tag :email %>
+	  Password: <%= password_field_tag :password %>
+	  <%= submit_tag "Submit" %>
+
+	<% end %>
+	
+</div>

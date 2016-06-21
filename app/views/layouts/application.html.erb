@@ -5,8 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+<header>
+
+	<h1 class='large-8 large-offset-2 columns'> Aram Pro </h1>
+
+	<% if !current_user %>
+		<div class='header-item create-account right large-1'>
+			<a href='/'>Create Account</a>
+		</div>
+	<% else %>
+		<div class='header-item log-out right large-1'>
+			<a href='/logout'>Log Out</a>
+		</div>
+	<% end %>
+
+	<div class='header-item log-in right large-1'>
+		<a href='/login'>Log In</a>
+	</div>
+
+</header>
 
 <%= yield %>
 
