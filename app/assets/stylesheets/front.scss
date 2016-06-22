@@ -1,0 +1,67 @@
+// Place all the styles related to the front controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.centerfold-top{
+	background: url('abyss_large.png');
+	background-size: cover;
+	height: 575px;
+
+  h1{
+    text-align: center;
+    font-family: "Jockey One";
+    font-size: 5.0rem;
+    color: white;
+    padding-top: 200px;
+    margin-bottom: 0;
+  }
+
+  h3{
+    text-align: center;
+    color: white;
+    font-family: "Fjalla One";
+  }
+
+  input{
+    height: 35px;
+    font-size: 1.2rem;
+    font-family: "Fjalla One";
+    text-indent: 5px;
+    position: relative;
+    right: 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-button{
+    height: 35px;
+    padding: 0.62rem 1.1rem;
+    background-color: #478ab7;
+    position: relative;
+    right: 15px;
+
+    i{
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.register-button{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  
+  padding: 1.2rem 3.0rem;
+  font-size: 1.3rem;
+  font-family: "Fjalla One";
+  background-color: #478ab7;
+  color: white;
+  border-radius: 2px;
+
+  &:hover{
+    border: 1px solid white;
+    color: white;
+  }
+}

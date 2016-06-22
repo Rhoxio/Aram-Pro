@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
 gem 'figaro'
 gem 'httparty'
+gem 'foundation-icons-sass-rails'
 
 gem 'hirb'
 

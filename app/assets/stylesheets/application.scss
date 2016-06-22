@@ -24,8 +24,9 @@ $flamingo-red:  #F2583E;
 $lt-blue: #77BED2;
 
 header{
-	background-color: $flamingo-red;
-	height: 90px;
+	background: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	height: 70px;
 	width: 100%;
 	padding: 0 3% 0 3%;
 
@@ -71,7 +72,7 @@ header{
 
 
 body{
-	background-color: $sirocco;
+	background-color: white;
 }
 
 .signup-container{
