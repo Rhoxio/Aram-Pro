@@ -24,7 +24,7 @@ $flamingo-red:  #F2583E;
 $lt-blue: #77BED2;
 
 header{
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.3);
 	position: absolute;
 	height: 70px;
 	width: 100%;
@@ -73,26 +73,35 @@ header{
 
 body{
 	background-color: white;
+
 }
 
-.signup-container{
+footer{
+	width: 100%;
+	background-color: #478ab7;
+	height: 75px;
+	position: relative;
+	bottom: 0;
+	padding: 0 5% 0 5%;
+	font-family: "Fjalla One";
 
-	h1{
-		text-align: center;
-		font-family: "Fjalla One";
+	p{
+		font-size: 0.8rem;
+		color: white;
+		line-height: 15px;
+		margin: 5px 0 5px 0;
 	}
 
-	.signup-form{
-		margin-top: 20px;
-		margin-bottom: 15px;
-
-		padding: 20px;
-		background-color: $outer-space;
-
-		label{
-			color: $flamingo-red;
-		}
-	}
-	
 }
+
+
+
+
+
+
+
+
+
+
+
 

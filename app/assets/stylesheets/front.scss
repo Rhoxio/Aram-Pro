@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .centerfold-top{
+  background-attachment: fixed;
+  background-position: fixed;
 	background: url('abyss_large.png');
 	background-size: cover;
 	height: 575px;
@@ -20,6 +22,7 @@
     text-align: center;
     color: white;
     font-family: "Fjalla One";
+    font-size: 2.0rem;
   }
 
   input{
@@ -64,4 +67,51 @@
     border: 1px solid white;
     color: white;
   }
+}
+
+.centerfold-bottom{
+  min-height: 600px;
+  
+  h1{
+    text-align: center;
+    font-family: "Jockey One";
+    font-size: 3.0rem;
+    color: black;
+    padding-top: 50px;
+    margin-bottom: 0;
+  }
+
+  h3{
+    text-align: center;
+    color: black;
+    font-family: "Fjalla One";
+    font-size: 1.6rem;
+  } 
+
+  .proposition-container{
+    height: 400px;
+    // background-color: red;
+    margin-left: 6%;
+
+    p{
+      text-align: center;
+    }
+
+    &:last-child{
+      float: left;
+    }
+  }
+
+  .icon-large{
+    width: 100px;
+    text-align: center;
+    font-size: 7.0rem;
+    margin-left: 36%;
+  } 
+
+
+}
+
+.testomony-orbit{
+
 }

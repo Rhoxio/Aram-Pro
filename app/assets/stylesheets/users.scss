@@ -13,3 +13,24 @@ $merino: #F7F3E8;
 $flamingo-red:  #F2583E;
 $lt-blue: #77BED2;
 
+.signup-container{
+
+	h1{
+		text-align: center;
+		font-family: "Fjalla One";
+	}
+
+	.signup-form{
+		margin-top: 20px;
+		margin-bottom: 15px;
+
+		padding: 20px;
+		background-color: $outer-space;
+
+		label{
+			color: $flamingo-red;
+		}
+	}
+	
+}
+
