@@ -3,7 +3,10 @@
 	<h3 class='large-6 large-offset-3'>Bring Order to the Abyss</h3>
 
 	<form action="/summoner" accept-charset="UTF-8" method="post">
-		<input class='large-4 large-offset-4' placeholder='Summoner Name'/>
+		<input class='large-4 large-offset-4' name='summoner_name' placeholder='Summoner Name'/>
+
+		<input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
 		<button type="submit" class="search-button" name="search_submit" value="Search">
   		<i class="fi-magnifying-glass"></i>
 		</button>

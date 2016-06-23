@@ -31,6 +31,7 @@ gem 'foundation-rails'
 gem 'figaro'
 gem 'httparty'
 gem 'foundation-icons-sass-rails'
+gem 'rack-throttle'
 
 gem 'hirb'
 
