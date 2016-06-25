@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
     else
     	p 'no summoner to find'
-    	user.summoner = Summoner.new()
     end
 
     if user.save

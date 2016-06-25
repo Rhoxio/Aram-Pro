@@ -21,7 +21,9 @@ class SummonersController < ApplicationController
 			@summoner.level = new_summoner.values[0]['summonerLevel']
 
 			if @summoner.save
-				redirect_to '/signup'
+				session[:summoner_id] = @summoner.summoner_id
+				# @user = {name: @summoner.name}
+				redirect_to '/dashboard'
 			else
 				redirect_to '/'
 			end			
@@ -29,7 +31,7 @@ class SummonersController < ApplicationController
 		else
 
 			redirect_to '/'
-			
+
 		end
 
 

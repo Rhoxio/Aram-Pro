@@ -1,0 +1,11 @@
+class CreateMatches < ActiveRecord::Migration
+  def change
+    create_table :matches do |t|
+
+    	t.string :match_id, uniqueness: true
+    	t.string :platform_id
+
+      t.timestamps null: false
+    end
+  end
+end
