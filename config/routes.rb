@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post '/summoner' => 'summoners#get'
 
   get '/matches' => 'match#get'
-  get '/match/current' => 'match#current_match'
+  post '/match/current' => 'match#current_match'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
