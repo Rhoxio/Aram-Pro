@@ -23,9 +23,6 @@ class MatchController < ApplicationController
 				spell_1 = participant['spell1Id']
 				spell_2 = participant['spell2Id']
 
-				base_champion = Championbase.where(champion_id: participant['championId'])
-				p base_champion
-
 				p new_match.champions.build(champion_id: participant['championId'], 
 																	summoner_id: participant['summonerId'], 
 																	masteries: participant['masteries'], 

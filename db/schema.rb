@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160625140335) do
     t.string   "blurb"
     t.string   "image"
     t.string   "riot_tags",                             array: true
+    t.integer  "rating",      default: 0
     t.string   "other_tags",  default: [],              array: true
     t.text     "stats"
     t.datetime "created_at",               null: false
