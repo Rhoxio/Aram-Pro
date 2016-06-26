@@ -3,3 +3,5 @@ Hello, <%= current_user.name %>.
 
 <a id='current-match' href='#current-match' class='current-match'>Get Current Match Data</a>
 <a href='/logout'>Log Out</a>
+
+<%= react_component('Champion', summoner_id: @user.summoner_id) %>

@@ -2,7 +2,8 @@ class CreateChampions < ActiveRecord::Migration
   def change
     create_table :champions do |t|
 
-    	t.string :champion_id
+    	t.string :champion_identifier
+      t.string :championbase_id
 
     	t.string :runes, array: true
     	t.string :masteries, array: true

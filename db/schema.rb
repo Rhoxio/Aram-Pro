@@ -19,27 +19,28 @@ ActiveRecord::Schema.define(version: 20160625140335) do
   create_table "championbases", force: :cascade do |t|
     t.string   "name"
     t.string   "title"
-    t.string   "champion_id"
+    t.string   "champion_identifier"
     t.string   "blurb"
     t.string   "image"
-    t.string   "riot_tags",                             array: true
-    t.integer  "rating",      default: 0
-    t.string   "other_tags",  default: [],              array: true
+    t.string   "riot_tags",                                     array: true
+    t.integer  "rating",              default: 0
+    t.string   "other_tags",          default: [],              array: true
     t.text     "stats"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "champions", force: :cascade do |t|
-    t.string   "champion_id"
-    t.string   "runes",                        array: true
-    t.string   "masteries",                    array: true
-    t.string   "summoner_spells",              array: true
+    t.string   "champion_identifier"
+    t.string   "championbase_id"
+    t.string   "runes",                            array: true
+    t.string   "masteries",                        array: true
+    t.string   "summoner_spells",                  array: true
     t.string   "summoner_id"
     t.string   "team"
     t.integer  "match_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "champions", ["match_id"], name: "index_champions_on_match_id", using: :btree

@@ -4,7 +4,7 @@ class CreateChampionbases < ActiveRecord::Migration
 
     	t.string :name
     	t.string :title
-    	t.string :champion_id
+    	t.string :champion_identifier
 
     	t.string :blurb
     	t.string :image

@@ -23,24 +23,45 @@ class MatchController < ApplicationController
 				spell_2 = participant['spell2Id']
 
 				new_match.champions.build(
-					champion_id: participant['championId'], 
+					champion_identifier: participant['championId'], 
 					summoner_id: participant['summonerId'], 
 					masteries: participant['masteries'], 
 					runes: participant['runes'],
-					summoner_spells: [spell_1, spell_2], 
-					team: participant['teamId']
+					summoner_spells: [spell_1, spell_2],
+					team: participant['teamId'],
+					championbase: Championbase.find_by(champion_identifier: participant['championId'])
 				)
 			end
 
 			if new_match.save
 				p 'Match was saved!'
+
+				match = Match.find_by(match_id: new_match.match_id)
+				p match
+				# p match.champions
+
+				# Champion.process_full(match.champions)
+
+			  respond_to do |format|
+			    format.json{render :json => match, :include =>[:champions] }
+			  end	
+
 			else
 				p 'Match was not saved.'
+
+				match = Match.find_by(match_id: new_match.match_id)
+				p new_match.champions
+				# p match
+				# p match.champions
+
+				# Champion.process_full(match.champions)
+
+			  respond_to do |format|
+			    format.json{render :json => match, :include =>[:champions] }
+			  end			
 			end
 
-		  respond_to do |format|
-		    format.json{render :json => response }
-		  end
+
 
 		else
 		  respond_to do |format|

@@ -20,4 +20,19 @@ class ApplicationController < ActionController::Base
   end
   helper_method :logged_in?
 
+  # class Champion
+  #   def self.process_full(champion_list)
+  #     champion_bases = Championbase.all()
+
+  #     champion_list.each do |champion|
+  #       p champion
+  #       champion_base = champion_bases.find {|c| c.champion_id == champion.champion_id}
+  #       champion.name = champion_base.name
+  #       champion.
+  #     end
+
+  #     champion_list
+  #   end
+  # end
+
 end

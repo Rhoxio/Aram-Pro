@@ -26,7 +26,7 @@ champions["data"].each do |name, attributes|
 	champion = Championbase.new()
 	champion.name = attributes["name"]
 	champion.title = attributes["title"]
-	champion.champion_id = attributes["key"]
+	champion.champion_identifier = attributes["key"]
 	champion.blurb = attributes["blurb"]
 
 	champion.image = attributes["image"]["full"]
