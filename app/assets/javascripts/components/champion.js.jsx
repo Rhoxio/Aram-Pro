@@ -39,10 +39,5 @@ var Champion = React.createClass({
       </div>
     );
   }
-
-  // setInterval(function(){
-  //   ReactDOM.render(
-  //     <Champion />
-  //   )
-  // })
+  
 });

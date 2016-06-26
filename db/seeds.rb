@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# Have to populate the local database with champion info for easy access.
+# Have to populate the local database with champion bases...
 request = "http://ddragon.leagueoflegends.com/cdn/6.12.1/data/en_US/champion.json"
 response = HTTParty.get(request)
 champions = response.parsed_response
@@ -37,25 +37,25 @@ champions["data"].each do |name, attributes|
 
 	if champ_tiers["god"].include?(champion.name)
 		champion.other_tags << 'god'
-		champion.rating = 100
+		champion.rating = 55
 	elsif champ_tiers["very_strong"].include?(champion.name)
 		champion.other_tags << 'very_strong'
-		champion.rating = 90
+		champion.rating = 51
 	elsif champ_tiers["strong"].include?(champion.name)
 		champion.other_tags << 'strong'
-		champion.rating = 80
+		champion.rating = 48
 	elsif champ_tiers["average"].include?(champion.name)
 		champion.other_tags << 'average'
-		champion.rating = 70
+		champion.rating = 46
 	elsif champ_tiers["below_average"].include?(champion.name)
 		champion.other_tags << 'below_average'
-		champion.rating = 60
+		champion.rating = 43
 	elsif champ_tiers["weak"].include?(champion.name)
 		champion.other_tags << 'weak'
-		champion.rating = 50
+		champion.rating = 40
 	elsif champ_tiers["very_weak"].include?(champion.name)
 		champion.other_tags << 'very_weak'
-		champion.rating = 35
+		champion.rating = 37
 	else
 		champion.other_tags << 'not_ranked'
 	end		

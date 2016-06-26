@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160625140335) do
     t.string   "runes",                            array: true
     t.string   "masteries",                        array: true
     t.string   "summoner_spells",                  array: true
-    t.string   "summoner_id"
+    t.string   "summoner_identifier"
     t.string   "team"
     t.integer  "match_id"
     t.datetime "created_at",          null: false

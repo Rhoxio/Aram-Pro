@@ -9,7 +9,7 @@ class CreateChampions < ActiveRecord::Migration
     	t.string :masteries, array: true
     	t.string :summoner_spells, array: true
 
-    	t.string :summoner_id
+    	t.string :summoner_identifier
     	t.string :team
 
     	t.belongs_to :match, index: true
