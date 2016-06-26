@@ -14,10 +14,10 @@ champions = response.parsed_response
 
 champ_tiers = {
 	"god" => ["Varus", "Sona", "Lux", "Teemo", "Jayce"],
-	"very_strong" => ["Annie", "Alistar", "Amumu", "Ashe", "Aurelion Sol", "Azir", "Brand", "Caitlyn", "Darius", "Ekko", "Ezreal", "Fiddlesticks", "Fizz", "Galio", "Heimerdinger", "Janna", "Karma", "Kayle", "Kennen", "LeBlanc", "Malphite", "Morgana", "Nidalee", "Rumble", "Sion", "Soraka", "Swain", "Vel’koz", "Vladimir", "Volibear", "Ziggs", "Miss Fortune", "Nautilus"],
-	"strong" => ["Anivia", "Blitzcrank", "Cho’Gath", "Dr. Mundo", "Draven", "Ahri", "Garen", "Gragas", "Irelia", "Jax", "Jhin", "Katarina", "Kog’Maw", "Lissandra", "Malzahar", "Maokai", "Master Yi", "Sivir", "Shaco", "Tahm Kench", "Talon", "Thresh", "Veigar", "Viktor", "Wukong", "Xerath", "Yasuo", "Zyra", "Zilean"],
-	"average" => ["Akali", "Bard", "Braum", "Cassiopeia", "Elise", "Fiora", "Gangplank", "Gnar", "Graves", "Illaoi", "Jinx", "Kalista", "Kha’zix", "Kindred", "Lucian", "Lulu", "Olaf", "Orianna", "Rammus", "Rek’Sai", "Renekton", "Rengar", "Riven", "Ryze", "Sejuani", "Syndra", "Tristana", "Xin Xhao", "Zac", "Zed", "Nami"],
-	"below_average" => ["Corki", "Diana", "Hecarim", "Jarvan IV", "Karthus", "Kassadin", "Lee Sin", "Leona", "Nocturne", "Pantheon", "Poppy", "Quinn", "Shen", "Shyvana", "Singed", "Skarner", "Taliyah", "Vayne", "Vi", "Warwick", "Yorick", "Mordekaiser", "Nasus"],
+	"very_strong" => ["Annie", "Alistar", "Amumu", "Ashe", "Aurelion Sol", "Azir", "Brand", "Caitlyn", "Darius",  "Ezreal", "Fiddlesticks",  "Galio", "Heimerdinger", "Janna", "Karma", "Kayle", "Kennen", "LeBlanc", "Malphite", "Morgana", "Nidalee", "Rumble", "Sion", "Soraka", "Swain", "Vel’koz", "Vladimir", "Volibear", "Ziggs", "Miss Fortune", "Nautilus"],
+	"strong" => ["Anivia", "Blitzcrank", "Cho’Gath", "Ekko", "Dr. Mundo", "Draven", "Ahri", "Fizz", "Garen", "Gragas", "Irelia", "Jax", "Jhin", "Katarina", "Kog’Maw", "Lissandra", "Malzahar", "Maokai", "Master Yi", "Sivir", "Shaco", "Tahm Kench", "Talon", "Thresh", "Veigar", "Viktor", "Wukong", "Xerath", "Yasuo", "Zyra", "Zilean"],
+	"average" => ["Akali", "Braum", "Cassiopeia", "Elise", "Fiora", "Gangplank", "Gnar", "Graves", "Illaoi", "Jinx", "Kalista", "Kha’zix", "Kindred", "Lucian", "Lulu", "Olaf", "Orianna", "Rammus", "Rek’Sai", "Renekton", "Rengar", "Riven", "Ryze", "Sejuani", "Syndra", "Tristana", "Xin Xhao", "Zac", "Zed", "Nami"],
+	"below_average" => ["Corki", "Bard", "Diana", "Hecarim", "Jarvan IV", "Karthus", "Kassadin", "Lee Sin", "Leona", "Nocturne", "Pantheon", "Poppy", "Quinn", "Shen", "Shyvana", "Singed", "Skarner", "Taliyah", "Vayne", "Vi", "Warwick", "Yorick", "Mordekaiser", "Nasus"],
 	"weak" => ["Evelynn", "Nunu"],
 	"very_weak" => ['Aatrox']	
 }

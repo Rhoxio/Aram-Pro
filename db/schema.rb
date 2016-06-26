@@ -33,11 +33,13 @@ ActiveRecord::Schema.define(version: 20160625140335) do
   create_table "champions", force: :cascade do |t|
     t.string   "champion_identifier"
     t.string   "championbase_id"
+    t.string   "name"
     t.string   "runes",                            array: true
     t.string   "masteries",                        array: true
     t.string   "summoner_spells",                  array: true
     t.string   "summoner_identifier"
     t.string   "team"
+    t.string   "image"
     t.integer  "match_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false

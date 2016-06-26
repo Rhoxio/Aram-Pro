@@ -22,6 +22,8 @@ class MatchController < ApplicationController
 				spell_1 = participant['spell1Id']
 				spell_2 = participant['spell2Id']
 
+				base = Championbase.find_by(champion_identifier: participant['championId'])
+
 				new_match.champions.build(
 					champion_identifier: participant['championId'],
 					summoner_identifier: participant['summonerId'], 
@@ -29,7 +31,9 @@ class MatchController < ApplicationController
 					runes: participant['runes'],
 					summoner_spells: [spell_1, spell_2],
 					team: participant['teamId'],
-					championbase: Championbase.find_by(champion_identifier: participant['championId'])
+					name: base.name,
+					image: "http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/#{base.image}",
+					championbase: base
 				)
 			end
 
@@ -45,7 +49,7 @@ class MatchController < ApplicationController
 			else
 				p 'Match was not saved.'
 
-				match = Match.find_by(match_id: new_match.match_id)
+				match = Match.find_by(match_id: new_match.match_id)				
 
 			  respond_to do |format|
 			    format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }

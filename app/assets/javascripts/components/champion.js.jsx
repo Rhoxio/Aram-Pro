@@ -1,43 +1,60 @@
 var Champion = React.createClass({
-  propTypes: {
-    summoner_id: React.PropTypes.string
-  },
-
-  getInitialState: function(){
-    // It seems as if I can also just go a $.get here to grab current match data. Will need to set it in a handleclick
-    // function or something.
-    $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
-      console.log(data)
-    });
-
-    // return { currentChampion: this.props.champions[0], currentIndex: 0 }
-  },
-
-  componentDidMount: function(){
-    // this.rotate = setInterval(this.nextChampion, 10)
-  },
-
-  nextChampion: function(){
-    if(this.state.currentIndex < this.props.champions.length - 1){
-      this.setState({currentChampion: this.props.champions[this.state.currentIndex + 1], currentIndex: this.state.currentIndex + 1})
-    }
-  },
-
-  resetChampions: function(){
-    this.setState({currentChampion: this.props.champions[0], currentIndex: 0})
-  },
-
   render: function() {
-    var champs = []
-    for (var i = 0; i < this.props.champions.length; i++){
-      champs.push(<div>Text: {this.props.champions[i].name}</div>)
-    }
-
     return (
-      <div>
-        {champs}    
+      <div className="champion">
+        <img src={this.props.image}/>
+        <h2 className="championName">
+          {this.props.name}
+        </h2>
       </div>
     );
   }
-  
+});
+
+var ChampionList = React.createClass({
+  propTypes: {
+    summoner_id: React.PropTypes.number
+  },
+
+  getInitialState: function(){
+    return{champions: [], match: []}
+  },
+
+  componentDidMount: function(){
+    // It seems as if I can also just go a $.get here to grab current match data. Will need to set it in a handleclick
+    // function or something.
+    $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
+      // console.log(data)
+      this.setState({champions: data.champions}, function(){
+        // console.log(this.state.champions)
+      })
+    }.bind(this));
+  },
+
+  getCurrentGame: function(){
+    $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
+      // console.log(data)
+
+      this.setState({champions: data.champions}, function(){
+        // console.log(this.state.champions)
+      })
+    }.bind(this));
+
+  },  
+
+  render: function() {
+    var championNodes = this.state.champions.map(function(champion) {
+
+      return (
+        <Champion image={champion.image} name={champion.name} key={champion.id}>
+        </Champion>
+      );
+    });
+    return (
+      <div className="championList">
+        {championNodes}
+      </div>
+    );
+  }
+
 });
