@@ -12,6 +12,18 @@ class MatchController < ApplicationController
 
 		else
 
+			if !current_user
+				error = {error: "User not logged in."}
+			elsif !params[:id]
+				error = {error: "Param not spcified"}
+			else
+				error = {error: "Error occured."}
+			end
+
+			respond_to do |format|
+		    format.json{render :json => error }
+		  end	
+		  
 		end
 	end
 

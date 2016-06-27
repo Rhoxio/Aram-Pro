@@ -177,8 +177,6 @@ var ChampionList = React.createClass({
   },
 
   getMatch: function(match){
-    console.log("It sent it.")
-
     $.get("/match/"+match, function(data){
       this.setState({champions: data.champions}, function(){})
     }.bind(this))
