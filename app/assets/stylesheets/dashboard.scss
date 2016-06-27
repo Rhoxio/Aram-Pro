@@ -1,3 +1,197 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$tag-yellow-start: #ecd944;
+$tag-yellow-end: #c7b632;
+
+$tag-orange-start: #D95B43;
+$tag-orange-end: #923928;
+
+$tag-green-start: #5ca854;
+$tag-green-end: #3f6e3a;
+
+$tag-red-start: #dd5761;
+$tag-red-end: #7b1019;
+
+$tag-purple-start: #d919be;
+$tag-purple-end: #710d63;
+
+$tag-teal-start: #6597d5;
+$tag-teal-end: #556272;
+
+$tag-lt-green-start: #c8f463;
+$tag-lt-green-end: #a8cb57;
+
+$white-text-shadow: #6f757c;
+
+.dashboard-body{
+	min-height: 1500px;
+	padding: 70px 20px 0 20px;
+
+	.top-team{
+		// background-color: red;
+	}
+
+	.bottom-team{
+		// background: blue;
+	}	
+}
+
+
+.tag{
+  padding: 5px 5px;
+  text-align: center;
+  min-width: 80px !important;
+  max-width: 95px !important;
+  float: left !important;
+
+  margin-right: 5px;
+  margin-top: 5px;
+
+  font-size: 0.8rem;
+
+
+}
+
+.other-tag{
+  padding: 5px 5px;
+  text-align: center;
+  min-width: 80px !important;
+  max-width: 95px !important;
+  float: left !important;
+  font-size: 0.6rem;
+  
+  margin-right: 5px;
+  margin-top: 5px;  
+}
+
+.tag-yellow{
+
+	color: white;
+
+  text-shadow: -1px 1px #515253;
+  background: $tag-teal-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-yellow-start, $tag-yellow-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-yellow-start, $tag-yellow-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-yellow-start, $tag-yellow-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-yellow-start, $tag-yellow-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+
+}
+
+.tag-orange{
+
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-teal-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-orange-start, $tag-orange-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-orange-start, $tag-orange-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-orange-start, $tag-orange-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-orange-start, $tag-orange-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+
+}
+
+.tag-red{
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-red-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-red-start, $tag-red-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-red-start, $tag-red-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-red-start, $tag-red-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-red-start, $tag-red-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+}
+
+.tag-purple{
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-purple-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-purple-start, $tag-purple-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-purple-start, $tag-purple-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-purple-start, $tag-purple-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-purple-start, $tag-purple-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+}
+
+.tag-teal{
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-teal-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-teal-start, $tag-teal-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-teal-start, $tag-teal-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-teal-start, $tag-teal-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-teal-start, $tag-teal-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+}
+
+.tag-blue{
+	color: #fff;
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-teal-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-teal-start, $tag-teal-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-teal-start, $tag-teal-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-teal-start, $tag-teal-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-teal-start, $tag-teal-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+}
+
+
+.tag-green{
+
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-green-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-green-start, $tag-green-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-green-start, $tag-green-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-green-start, $tag-green-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-green-start, $tag-green-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+
+}
+
+.tag-lt-green{
+
+	color: white;
+
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-lt-green-start; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* Standard syntax */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+
+}
+
+
+
+
+
+
+
+
+
+

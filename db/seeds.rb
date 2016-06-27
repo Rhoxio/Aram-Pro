@@ -18,8 +18,7 @@ champ_tiers = {
 	"strong" => ["Anivia", "Blitzcrank", "Cho'Gath", "Ekko", "Dr. Mundo", "Draven", "Ahri", "Fizz", "Garen", "Gragas", "Irelia", "Jax", "Jhin", "Katarina", "Kog'Maw", "Lissandra", "Malzahar", "Maokai", "Master Yi", "Sivir", "Shaco", "Tahm Kench", "Talon", "Thresh", "Veigar", "Viktor", "Wukong", "Xerath", "Yasuo", "Zyra", "Zilean"],
 	"average" => ["Akali", "Braum", "Cassiopeia", "Elise", "Fiora", "Gangplank", "Gnar", "Graves", "Illaoi", "Jinx", "Kalista", "Kha’Zix", "Kindred", "Lucian", "Lulu", "Olaf", "Orianna", "Rammus", "Rek’Sai", "Renekton", "Rengar", "Riven", "Ryze", "Sejuani", "Syndra", "Tristana", "Xin Xhao", "Zac", "Zed", "Nami"],
 	"below_average" => ["Corki", "Bard", "Diana", "Hecarim", "Jarvan IV", "Karthus", "Kassadin", "Lee Sin", "Leona", "Nocturne", "Pantheon", "Poppy", "Quinn", "Shen", "Shyvana", "Singed", "Skarner", "Taliyah", "Vayne", "Vi", "Warwick", "Yorick", "Mordekaiser", "Nasus"],
-	"weak" => ["EvelyKn", "Nunu"],
-	"very_weak" => ['Aatrox']	
+	"weak" => ["EvelyKn", "Nunu", "Aatrox"]
 }
 
 # Some champs with apostrophes are not populating correctly.
@@ -43,8 +42,9 @@ champ_tags = {
 	"good_scaling"=>['Akali', "Anivia", "Cassiopeia", "Irelia", "Jax", "Kayle", "Master Yi", "Ryze", "Olaf", "Swain", "Trundle", "Udyr", "Veigar", "Vladimir", "Xin Zhao"],
 	"early_power"=>["Blitzcrank", "Draven", "Jayce", "Jhin", "Karma", "Miss Fortune", "Nidalee", "Pantheon", "Riven", "Shaco", "Twisted Fate", "Varus", "Volibear"],
 	"terrain_generation"=>["Anivia", "Azir", "Trundle", "Jarvan IV", "Taliyah"],
-	"stealth"=>["EvelyKn", "Kha’Zix", "Rengar", "Shaco", "Teemo", "Twitch", "Vayve", "Wukong"]
+	"stealth"=>["EvelyKn", "Kha’Zix", "Rengar", "Shaco", "Teemo", "Twitch", "Vayve", "Wukong"],
 
+	"strong_level_6"=> ["Amumu", "Annie", "Anivia", "Brand", "Darius", "Ezreal", "Fiddlesticks", "Fizz", "Jax", "Karthus", "Katarina", "LeBlanc", "Lissandra", "Lux", "Malphite", "Malzahar", "Miss Fortune", "Mordekaiser", "Morgana", "Orianna", "Sejuani","Riven", "Sion", "Sona", "Swain", "Talon", "Taric", "Tryndamere", "Vel’Koz", "Vi", "Vladimir", "Warwick", "Yasuo", "Zed", "Zilean", "Zyra"]
 }
 
 champions["data"].each do |name, attributes|
@@ -79,13 +79,11 @@ champions["data"].each do |name, attributes|
 	elsif champ_tiers["weak"].include?(champion.name)
 		champion.other_tags << 'weak'
 		champion.rating = 40
-	elsif champ_tiers["very_weak"].include?(champion.name)
-		champion.other_tags << 'very_weak'
-		champion.rating = 37
 	else
 		champion.other_tags << 'not_ranked'
 	end
 
+	puts '-------------'
 	# Assign mulitple tags per champ
 	champ_tags.each do |tag, champions|
 		if champ_tags[tag].include?(champion.name)

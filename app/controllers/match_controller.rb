@@ -56,14 +56,24 @@ class MatchController < ApplicationController
 			  end			
 			end
 
-
-
 		else
 		  respond_to do |format|
 		    format.json{render :json => {error: 'No summoner id.'} }
 		  end		
 		end
 
+	end
+
+	def processed_match
+		if params[:match_id]
+		  # respond_to do |format|
+		  #   format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }
+		  # end		
+		else
+			# respond_to do |format|
+		 #    format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }
+		 #  end		
+		end
 	end
 
 end

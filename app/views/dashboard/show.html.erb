@@ -1,9 +1,11 @@
-<h1> This is the dashboard page </h1>
-Hello, <%= current_user.name %>.
+<div class='dashboard-body large-12'>
+	<h1> This is the dashboard page </h1>
+	Hello, <%= current_user.name %>.
 
-<a id='current-match' href='#current-match' class='current-match'>Get Current Match Data</a>
-<a href='/logout'>Log Out</a>
+	<a id='current-match' href='#current-match' class='current-match'>Get Current Match Data</a>
+	<a href='/logout'>Log Out</a>
 
-<%= react_component('ChampionList', summoner_id: @user.summoner_id) %>
+	<%= react_component('ChampionList', summoner_id: @user.summoner_id) %>
 
-<div id="content"></div>
+	<div id="content"></div>
+</div>
