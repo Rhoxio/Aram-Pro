@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   post '/summoner' => 'summoners#get'
 
-  get '/matches' => 'match#get'
-  get '/match/processed/:match_id' => 'match#processed_match'
+  get '/match/:id' => 'match#get_one'
+  
   post '/match/current' => 'match#current_match'
 
 

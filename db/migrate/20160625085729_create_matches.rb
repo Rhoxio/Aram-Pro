@@ -4,6 +4,7 @@ class CreateMatches < ActiveRecord::Migration
 
     	t.string :match_id, uniqueness: true
     	t.string :platform_id
+    	t.string :user_id
 
       t.timestamps null: false
     end

@@ -5,7 +5,6 @@ class Match < ActiveRecord::Base
 	has_many :champions
 
  	def process_champions
- 		p self.cmapions
  	end
 
 end

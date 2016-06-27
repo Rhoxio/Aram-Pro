@@ -121,67 +121,107 @@ var Champion = React.createClass({
   }
 });
 
+// Match Button
+var MatchButton = React.createClass({
+  handleGet: function(){
+    this.props.getMatch(this.props.match_id)
+  },
+  
+  render: function(){
+    return(
+      <div>
+        <button key={this.props.match_id} data-match={this.props.match_id} onClick={this.handleGet}>{this.props.match_id}</button>
+      </div>
+
+    )
+  }
+})
+
 var ChampionList = React.createClass({
   propTypes: {
-    summoner_id: React.PropTypes.number
+    summoner_id: React.PropTypes.number,
+    matches: React.PropTypes.array
   },
 
   getInitialState: function(){
-    return{champions: [], match: []}
+
+    if(this.props.matches.length > 1){
+      return{champions: [], match: this.props.matches, selected_match: this.props.matches[0]}
+    } else {
+      return{champions: [], match: [], selected_match: undefined}
+    }
   },
 
   componentDidMount: function(){
     // It seems as if I can also just go a $.get here to grab current match data. Will need to set it in a handleclick
     // function or something.
     $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
-      // console.log(data)
-      this.setState({champions: data.champions}, function(){
-        console.log('ChampionList mounted')
-      })
+        if(!data.hasOwnProperty('error')){
+          this.setState({champions: data.champions}, function(){})
+        } else {
+          console.log('No current game.')
+        }
     }.bind(this));
+    console.log(this.props)
   },
 
   getCurrentGame: function(){
     $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
-
-      this.setState({champions: data.champions}, function(){
-
-      })
+        if(!data.hasOwnProperty('error')){
+          this.setState({champions: data.champions}, function(){})
+        } else {
+          console.log('No current game.')
+        }
     }.bind(this));
 
-  }, 
+  },
 
-  // pingProcess: function(){
-  //   $.get( "/match/processed/"+this.props.summoner_id, function( data ) {
-  //   // console.log(data)
+  getMatch: function(match){
+    console.log("It sent it.")
 
-  //     // this.setState({champions: data.champions}, function(){
-  //     //   // console.log(this.state.champions)
-  //     // })
-  //   }.bind(this));
-  // }, 
+    $.get("/match/"+match, function(data){
+      this.setState({champions: data.champions}, function(){})
+    }.bind(this))
+  },
 
   render: function() {
 
-    var topSideChampionNodes = this.state.champions.map(function(champion) {
-      if(champion.team === "200"){
-        return (
-          <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
-          </Champion>
-        );
-      }
-    });
+    if(this.state.champions){
+      var topSideChampionNodes = this.state.champions.map(function(champion) {
+        if(champion.team === "200"){
+          return (
+            <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            </Champion>
+          );
+        }
+      });
 
-    var bottomSideChampionNodes = this.state.champions.map(function(champion) {
-      if(champion.team === "100"){
-        return (
-          <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
-          </Champion>
-        );
-      }
-    });
+      var bottomSideChampionNodes = this.state.champions.map(function(champion) {
+        if(champion.team === "100"){
+          return (
+            <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            </Champion>
+          );
+        }
+      });
+    } else{
+      var topSideChampionNodes = []
+      var bottomSideChampionNodes = []
+    }
+
+    var matchButtons = this.props.matches.map(function(match){
+      return (
+        <MatchButton getMatch={this.getMatch} key={match.match_id} match_id={match.match_id}></MatchButton> 
+      )
+    }.bind(this))
 
     return (
+    <div className="team-container">
+      <button onClick={this.getCurrentGame}>Get Current Game</button>
+      <div className="match-container">
+        {matchButtons}
+      </div>
+
       <div>
         <div className="bottom-team large-6 columns">
           <div>
@@ -194,7 +234,8 @@ var ChampionList = React.createClass({
             {topSideChampionNodes}
           </div>
         </div>
-      </div>      
+      </div> 
+    </div>     
     );
   }
 

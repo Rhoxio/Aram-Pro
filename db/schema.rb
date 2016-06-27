@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160625140335) do
   create_table "matches", force: :cascade do |t|
     t.string   "match_id"
     t.string   "platform_id"
+    t.string   "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
