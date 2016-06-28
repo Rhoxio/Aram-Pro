@@ -2,7 +2,9 @@ var Champion = React.createClass({
 
   render: function() {
 
-    var riotTags = this.props.riot_tags.map(function(tag) {
+    // These tag divs need keys at some point...
+
+    var riotTags = this.props.riot_tags.map(function(tag, i) {
 
       switch(tag) {
         case "Tank":
@@ -25,7 +27,10 @@ var Champion = React.createClass({
             break;
         case "Support":
             return <div className='tag tag-lt-green columns'>Support</div>
-            break;                                                            
+            break;
+        case "Assassin":
+            return <div className='tag tag-red columns'>Assassin</div>
+            break;                                                                        
         default:
             return <div className='tag tag-teal columns'>None</div>
       }     
@@ -105,15 +110,15 @@ var Champion = React.createClass({
     });    
 
     return (
-      <div className="champion">
-        <img src={this.props.image}/>
-        <h2 className="championName">
+      <div className="champion large-12 columns">
+        <img className="large-2 champ-image columns" src={this.props.image}/>
+        <h2 className="champion-name large-8 columns">
           {this.props.name}
         </h2>
-         <div className='riot-tags large-12 columns'>
+         <div className='riot-tags large-8 columns'>
           {riotTags}
          </div>
-         <div className='other-tags large-12 columns'>
+         <div className='other-tags large-8 columns'>
          {otherTags}
          </div>         
       </div>
@@ -130,7 +135,7 @@ var MatchButton = React.createClass({
   render: function(){
     return(
       <div>
-        <button key={this.props.match_id} data-match={this.props.match_id} onClick={this.handleGet}>{this.props.match_id}</button>
+        <button className='large-1 columns match-button' key={this.props.match_id} data-match={this.props.match_id} onClick={this.handleGet}>Match {this.props.index + 1}</button>
       </div>
 
     )
@@ -144,34 +149,31 @@ var ChampionList = React.createClass({
   },
 
   getInitialState: function(){
-
     if(this.props.matches.length > 1){
-      return{champions: [], match: this.props.matches, selected_match: this.props.matches[0]}
+      return{champions: [], match: this.props.matches}
     } else {
-      return{champions: [], match: [], selected_match: undefined}
+      return{champions: [], match: []}
     }
   },
 
   componentDidMount: function(){
-    // It seems as if I can also just go a $.get here to grab current match data. Will need to set it in a handleclick
-    // function or something.
     $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
-        if(!data.hasOwnProperty('error')){
-          this.setState({champions: data.champions}, function(){})
-        } else {
-          console.log('No current game.')
-        }
+      if(!data.hasOwnProperty('error')){
+        this.setState({champions: data.champions}, function(){})
+      } else {
+        console.log('No current game.')
+      }
     }.bind(this));
     console.log(this.props)
   },
 
   getCurrentGame: function(){
     $.post( "/match/current?summoner_id="+this.props.summoner_id, function( data ) {
-        if(!data.hasOwnProperty('error')){
-          this.setState({champions: data.champions}, function(){})
-        } else {
-          console.log('No current game.')
-        }
+      if(!data.hasOwnProperty('error')){
+        this.setState({champions: data.champions}, function(){})
+      } else {
+        console.log('No current game.')
+      }
     }.bind(this));
 
   },
@@ -207,27 +209,27 @@ var ChampionList = React.createClass({
       var bottomSideChampionNodes = []
     }
 
-    var matchButtons = this.props.matches.map(function(match){
+    var matchButtons = this.props.matches.map(function(match, i){
       return (
-        <MatchButton getMatch={this.getMatch} key={match.match_id} match_id={match.match_id}></MatchButton> 
+        <MatchButton getMatch={this.getMatch} key={match.match_id} index={i} match_id={match.match_id}></MatchButton> 
       )
     }.bind(this))
 
     return (
-    <div className="team-container">
+    <div className="team-container large-12 inline-list columns">
       <button onClick={this.getCurrentGame}>Get Current Game</button>
-      <div className="match-container">
+      <div className="match-container large-12 inline-list columns">
         {matchButtons}
       </div>
 
       <div>
-        <div className="bottom-team large-6 columns">
+        <div className="bottom-team team large-6 inline-list columns">
           <div>
             {bottomSideChampionNodes}
           </div>
         </div>
 
-        <div className="top-team large-6 columns">
+        <div className="top-team team large-6 inline-list columns">
           <div>
             {topSideChampionNodes}
           </div>

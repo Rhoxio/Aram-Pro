@@ -29,13 +29,40 @@ $white-text-shadow: #6f757c;
 	min-height: 1500px;
 	padding: 70px 20px 0 20px;
 
-	.top-team{
-		// background-color: red;
+	>.columns{
+		padding: 0;
 	}
 
-	.bottom-team{
-		// background: blue;
-	}	
+	.team{
+		padding: 1.5rem 1.5rem;
+	}
+
+	// .top-team{
+	// 	border: 1px solid red;
+	// }
+
+	// .bottom-team{
+	// 	border: 1px solid blue;
+	// }	
+}
+
+.champion{
+  margin: 10px 0 10px 0;
+  background-color: #e3e3e3;
+  min-height: 140px;
+  padding: 5px 0 5px 0;
+
+  .champ-image{
+  	margin: 5px 5px 5px -5px;
+  }
+
+	>.columns{
+		padding: 0;
+	}
+
+	h2{
+		font-size: 1.2rem;
+	}
 }
 
 
@@ -172,9 +199,9 @@ $white-text-shadow: #6f757c;
 
 .tag-lt-green{
 
-	color: white;
+	color: black;
 
-  text-shadow: -1px 1px $white-text-shadow;
+  text-shadow: -1px 1px #c8c8c8;
   background: $tag-lt-green-start; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient($tag-lt-green-start, $tag-lt-green-end); /* For Opera 11.1 to 12.0 */
@@ -186,10 +213,19 @@ $white-text-shadow: #6f757c;
 
 }
 
+.match-button{
+	padding: 5px 5px;
+	margin-right: 3px;
 
-button{
-	height: 30px;
-	background-color: yellow;
+  text-shadow: -1px 1px $white-text-shadow;
+  background: $tag-teal-start; /* For browsers that do not support gradients */
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 3px;
+}
+
+.other-tags{
+	float: left !important;
 }
 
 
