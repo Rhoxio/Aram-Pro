@@ -23,7 +23,7 @@ class MatchController < ApplicationController
 			respond_to do |format|
 		    format.json{render :json => error }
 		  end	
-		  
+
 		end
 	end
 
@@ -38,47 +38,19 @@ class MatchController < ApplicationController
 			response = HTTParty.get(match_request)
 			parsed_response = response.parsed_response
 
-			# If the response is 202...
+			# If the response is 200...
 			case response.code
 				when 200
-
 					new_match = Match.new()
-					new_match.match_id = parsed_response['gameId']
-					new_match.platform_id = parsed_response['platformId']
-					new_match.user = current_user
-
-					parsed_response['participants'].each do |participant|
-						spell_1 = participant['spell1Id']
-						spell_2 = participant['spell2Id']
-
-						base = Championbase.find_by(champion_identifier: participant['championId'])
-
-						new_match.champions.build(
-							champion_identifier: participant['championId'],
-							summoner_identifier: participant['summonerId'], 
-							masteries: participant['masteries'],
-							runes: participant['runes'],
-							summoner_spells: [spell_1, spell_2],
-							team: participant['teamId'],
-							name: base.name,
-							image: "http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/#{base.image}",
-							championbase: base
-						)
-					end
-
-					if new_match.save
-						p 'Match was saved!'
-
-						match = Match.find_by(match_id: new_match.match_id)
+					if new_match.build_from_current_match(parsed_response, current_user)
 
 					  respond_to do |format|
-					    format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }
+					    format.json{render :json => new_match, :include =>[:champions => {:include => :championbase}] }
 					  end	
 
 					else
-						p 'Match was not saved.'
-
-						match = Match.find_by(match_id: new_match.match_id)				
+						# The match existed already.
+						match = Match.find_by(match_id: new_match.match_id)
 
 					  respond_to do |format|
 					    format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }
@@ -89,11 +61,20 @@ class MatchController < ApplicationController
 				when 404
 					p 'User was not in game.'
 
-					error = {error: 'No current game.'}			
+					error = {error: 'No current game.', status: 404}			
 
 				  respond_to do |format|
 				    format.json{render :json => error }
-				  end	
+				  end
+
+				  # If the rate limit is exceeded...
+				 when 429
+				 	p 'Rate limit exceeded'	
+				 	error = {error: 'Rate limit exceeded.', status: 429}	
+
+				  respond_to do |format|
+				    format.json{render :json => error }
+				  end				 	
 				 end		
 		else
 		  respond_to do |format|
@@ -101,6 +82,53 @@ class MatchController < ApplicationController
 		  end		
 		end
 
+	end
+
+	def recent_matches
+		if params[:summoner_id]
+			matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{params[:summoner_id]}/recent?api_key=#{ENV['RIOT_KEY']}"
+			response = HTTParty.get(matches)
+			recent_matches = RiotAPI.handle_response(response)
+
+			# p recent_matches
+
+			if !recent_matches[:error]
+
+				recent_aram_ids = []
+
+				recent_matches[:response]["games"].each do |game|
+					if game["gameMode"] && game["mapId"] === 12
+						recent_aram_ids.push(game["gameId"])
+					end
+				end
+
+				# p recent_aram_ids
+
+				recent_arams = RiotAPI.get_matches(recent_aram_ids)
+
+				# p recent_arams
+
+				if !recent_arams.is_a?(Hash)
+					respond_to do |format|
+				    format.json{render :json => recent_arams}
+				  end
+				elsif recent_arams.is_a?(Hash)
+					p recent_arams
+					respond_to do |format|
+				    format.json{render :json => recent_arams}
+				  end					
+				end
+
+			 else
+			 	#There was some kind of error. 
+			 	p recent_matches
+			 	respond_to do |format|
+			    format.json{render :json => recent_matches}
+			  end
+			 end	
+
+
+		end
 	end
 
 	def processed_match

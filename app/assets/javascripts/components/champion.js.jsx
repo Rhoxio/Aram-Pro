@@ -119,7 +119,7 @@ var Champion = React.createClass({
           {riotTags}
          </div>
          <div className='other-tags large-8 columns'>
-         {otherTags}
+          {otherTags}
          </div>         
       </div>
     );
@@ -178,6 +178,18 @@ var ChampionList = React.createClass({
 
   },
 
+  getRecentGames: function(){
+    $.post( "/match/recent?summoner_id="+this.props.summoner_id, function( data ) {
+      // if(!data.hasOwnProperty('error')){
+      //   this.setState({champions: data.champions}, function(){})
+      // } else {
+      //   console.log('No current game.')
+      // }
+      console.log(data)
+    }.bind(this));
+
+  },  
+
   getMatch: function(match){
     $.get("/match/"+match, function(data){
       this.setState({champions: data.champions}, function(){})
@@ -218,6 +230,7 @@ var ChampionList = React.createClass({
     return (
     <div className="team-container large-12 inline-list columns">
       <button onClick={this.getCurrentGame}>Get Current Game</button>
+      <button onClick={this.getRecentGames}>Get Recent Games</button>
       <div className="match-container large-12 inline-list columns">
         {matchButtons}
       </div>

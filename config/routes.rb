@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/match/:id' => 'match#get_one'
   
   post '/match/current' => 'match#current_match'
+  post '/match/recent' => 'match#recent_matches'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

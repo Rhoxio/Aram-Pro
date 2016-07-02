@@ -3,12 +3,19 @@ default: &default
    adapter: postgresql
    encoding: unicode
   
+# development:
+#    adapter: postgresql
+#    encoding: unicode
+#    database: library_development_2
+#    username: kevinmaze
+#    password: 
+
 development:
    adapter: postgresql
    encoding: unicode
    database: library_development
    username: kevinmaze
-   password: 
+   password:    
 
 test:
    adapter: postgresql
