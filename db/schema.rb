@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160625140335) do
   add_index "champions", ["match_id"], name: "index_champions_on_match_id", using: :btree
 
   create_table "matches", force: :cascade do |t|
-    t.string   "match_id"
+    t.string   "match_id",    null: false
     t.string   "platform_id"
     t.string   "user_id"
     t.datetime "created_at",  null: false

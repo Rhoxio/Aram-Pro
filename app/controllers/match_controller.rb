@@ -15,7 +15,7 @@ class MatchController < ApplicationController
 			if !current_user
 				error = {error: "User not logged in."}
 			elsif !params[:id]
-				error = {error: "Param not spcified"}
+				error = {error: "Param not specified"}
 			else
 				error = {error: "Error occured."}
 			end
@@ -86,49 +86,23 @@ class MatchController < ApplicationController
 
 	def recent_matches
 		if params[:summoner_id]
-			matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{params[:summoner_id]}/recent?api_key=#{ENV['RIOT_KEY']}"
-			response = HTTParty.get(matches)
-			recent_matches = RiotAPI.handle_response(response)
 
-			# p recent_matches
+				# p recent_aram_data
 
-			if !recent_matches[:error]
+				recent_arams = RiotAPI.get_recent_matches(params[:summoner_id])
 
-				recent_aram_ids = []
-
-				recent_matches[:response]["games"].each do |game|
-					if game["gameMode"] && game["mapId"] === 12
-						recent_aram_ids.push(game["gameId"])
-					end
-				end
-
-				# p recent_aram_ids
-
-				recent_arams = RiotAPI.get_matches(recent_aram_ids)
+				all_matches = Match.build_from_recent_matches(recent_arams, current_user)
 
 				# p recent_arams
-
-				if !recent_arams.is_a?(Hash)
-					respond_to do |format|
-				    format.json{render :json => recent_arams}
-				  end
-				elsif recent_arams.is_a?(Hash)
-					p recent_arams
-					respond_to do |format|
-				    format.json{render :json => recent_arams}
-				  end					
-				end
-
-			 else
-			 	#There was some kind of error. 
-			 	p recent_matches
-			 	respond_to do |format|
-			    format.json{render :json => recent_matches}
+				respond_to do |format|
+			    format.json{render :json => all_matches, :include =>[:champions => {:include => :championbase}]}
 			  end
-			 end	
-
-
-		end
+			else
+			 	#There was some kind of error. 
+			 	respond_to do |format|
+			    format.json{render :json => {error: "No id param provided."}}
+			  end
+			end	
 	end
 
 	def processed_match

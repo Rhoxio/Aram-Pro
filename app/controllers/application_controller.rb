@@ -20,25 +20,51 @@ class ApplicationController < ActionController::Base
 
 
   class RiotAPI
-    def self.get_matches(match_ids, opts = {})
+    def self.get_recent_matches(summoner_id, opts = {})
       include_timeline = opts['timeline'] || false
-      all_matches = []
 
-      match_ids.each do |match|
-        match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
-        response = HTTParty.get(match_url)
-        parsed_response = self.handle_response(response)
+      matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
+      response = HTTParty.get(matches)
+      recent_matches = response.parsed_response
 
-        # Returns the error if one is thrown while making the API calls and breaks the loop.
-        if !parsed_response[:error]
-          all_matches.push(parsed_response[:response])
-        else
-           return parsed_response
+      if response.success?
+
+        recent_aram_data = []
+
+        recent_matches["games"].each do |game|
+          if game["gameMode"] && game["mapId"] === 12
+
+            players = game["fellowPlayers"]
+
+            # Pushing the current player in to the player array with the same formatting as fellowPlayers.
+            players.push({"summonerId" => recent_matches["summonerId"], "teamId" => game['teamId'], "championId"=> game['championId'] })
+
+            recent_aram_data.push({game_id: game["gameId"], players: players })
+
+          end
         end
-      end
 
-      # If the loop above threw no errors...
-      return all_matches
+        all_matches = []
+
+        recent_aram_data.each do |match|
+          match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
+          match_response = HTTParty.get(match_url)
+          parsed_response = match_response.parsed_response
+
+          if match_response.success?
+            all_matches.push({match_data: parsed_response, players: match[:players]})
+          else
+            self.handle_response(response)
+          end
+        end
+
+        # If the loop above threw no errors...
+        return all_matches
+      else 
+        p "Riot responded with a #{response.code}: #{response}"
+        self.handle_response(response)
+      end    
+
 
     end
 
@@ -49,7 +75,13 @@ class ApplicationController < ActionController::Base
       response = HTTParty.get(match_url)
 
       # Since we are making only a single request, the match will come out as an error object or the parsed response. 
-      parsed_response = self.handle_response(response)['response']
+      parsed_response = response.parsed_response
+
+      if response.success?
+        parsed_response
+      else
+        self.handle_response(response)
+      end
 
     end
 
@@ -57,7 +89,7 @@ class ApplicationController < ActionController::Base
       # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
       case response.code
         when 200
-          parsed_response = {response: response.parsed_response}
+          {error: 'Got a 200. Something went really wrong.', status: response.code}
         when 404
           {error: 'Data not found.', status: response.code}
         when 429
@@ -65,8 +97,32 @@ class ApplicationController < ActionController::Base
         when 500..600
           {error: 'Riot API is having an issue.', status: response.code}
       end
-
     end
-  end
 
+    def self.region_converter(region)
+      if region == "br"
+          "br"
+      elsif region == "eune"
+          "eun1"
+      elsif region == "euw"
+          "euw1"
+      elsif region == "jp"
+          "jp1"
+      elsif region == "kr"
+          "kr"
+      elsif region == "lan"
+          "la1"
+      elsif region == "las"
+          "la2"
+      elsif region == "na"
+          "na1"
+      elsif region == "oce"
+          "oc1"
+      elsif region == "ru"
+          "ru"
+      else
+          "tr1"
+      end
+    end   
+  end
 end
