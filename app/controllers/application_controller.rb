@@ -20,6 +20,18 @@ class ApplicationController < ActionController::Base
 
 
   class RiotAPI
+
+    def self.get_current_match(summoner_id)
+      match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
+      response = HTTParty.get(match_request)
+
+      if response.success?
+        parsed_response = response.parsed_response 
+      else
+        self.handle_error_response(response)
+      end     
+    end
+
     def self.get_recent_matches(summoner_id, opts = {})
       include_timeline = opts['timeline'] || false
 

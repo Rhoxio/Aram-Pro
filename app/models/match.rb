@@ -8,10 +8,13 @@ class Match < ActiveRecord::Base
  	end
 
  	def build_from_current_match(match, current_user)
- 		#This is a creative method. It will save a new model and return the result. 
-		self.match_id = match['gameId']
-		self.platform_id = match['platformId']
-		self.user = current_user
+ 		#This is a creative method. It will save a new model and return the result.
+
+ 		match = Match.new()
+
+		match.match_id = match['gameId']
+		match.platform_id = match['platformId']
+		match.user = current_user
 
 		match['participants'].each do |participant|
 			spell_1 = participant['spell1Id']
@@ -19,7 +22,7 @@ class Match < ActiveRecord::Base
 
 			base = Championbase.find_by(champion_identifier: participant['championId'])
 
-			self.champions.build(
+			match.champions.build(
 				champion_identifier: participant['championId'],
 				summoner_identifier: participant['summonerId'], 
 				masteries: participant['masteries'],
@@ -31,12 +34,12 @@ class Match < ActiveRecord::Base
 				championbase: base
 			)
 
-			if self.save
+			if match.save
 				puts "Match was built and saved!"
-				return self
+				return match
 			else
 				puts "Match attempted to be built and already existed."
-				return false
+				return {status: 'No match created.'}
 			end
 		end	
  	end
