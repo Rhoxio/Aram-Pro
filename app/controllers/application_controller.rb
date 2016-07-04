@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
           if match_response.success?
             all_matches.push({match_data: parsed_response, players: match[:players]})
           else
-            self.handle_response(response)
+            self.handle_error_response(response)
           end
         end
 
@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
         return all_matches
       else 
         p "Riot responded with a #{response.code}: #{response}"
-        self.handle_response(response)
+        self.handle_error_response(response)
       end    
 
 
@@ -80,12 +80,12 @@ class ApplicationController < ActionController::Base
       if response.success?
         parsed_response
       else
-        self.handle_response(response)
+        self.handle_error_response(response)
       end
 
     end
 
-    def self.handle_response(response)
+    def self.handle_error_response(response)
       # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
       case response.code
         when 200
