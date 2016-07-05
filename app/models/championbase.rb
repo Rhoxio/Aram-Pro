@@ -1,5 +1,5 @@
 class Championbase < ActiveRecord::Base
-	serialize :stats
+  serialize :stats
 
-	has_many :champions
+  has_many :champions
 end
