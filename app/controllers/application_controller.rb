@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
         recent_aram_data = []
 
         recent_matches["games"].each do |game|
-          if game["gameMode"] && game["mapId"] === 12
+          if game["gameMode"] == "ARAM" && game["mapId"] === 12
 
             players = game["fellowPlayers"]
 
@@ -100,14 +100,18 @@ class ApplicationController < ActionController::Base
     def self.handle_error_response(response)
       # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
       case response.code
-        when 200
-          {error: 'Got a 200. Something went really wrong.', status: response.code}
+        when 400
+          {error: 'Bad request.', status: response.code}          
+        when 401
+          {error: 'Not authorized.', status: response.code}          
         when 404
           {error: 'Data not found.', status: response.code}
         when 429
           {error: 'Rate Limit Reached', status: response.code}
         when 500..600
           {error: 'Riot API is having an issue.', status: response.code}
+        else
+          {error: 'Unspecified HTTP error.', status: response.code}
       end
     end
 
