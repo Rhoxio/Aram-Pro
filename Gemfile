@@ -34,9 +34,10 @@ gem 'httparty'
 gem 'foundation-icons-sass-rails'
 gem 'rack-throttle'
 gem 'react-rails'
+gem 'awesome_print'
 
 
-gem 'hirb'
+# gem 'hirb'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

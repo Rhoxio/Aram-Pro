@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    awesome_print (1.7.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -69,7 +70,6 @@ GEM
       sprockets-es6 (>= 0.9.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    hirb (0.7.3)
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -181,13 +181,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.1.0)
   figaro
   foundation-icons-sass-rails
   foundation-rails
-  hirb
   httparty
   jbuilder (~> 2.0)
   jquery-rails

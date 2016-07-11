@@ -56,6 +56,7 @@ class Match < ActiveRecord::Base
           end
         end
       end
+      # Return the amended match object.
       match
     end
 

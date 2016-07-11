@@ -35,6 +35,13 @@ class ApplicationController < ActionController::Base
     def self.get_recent_matches(summoner_id, opts = {})
       include_timeline = opts['timeline'] || false
 
+      #########################################################################################################################
+      # I honestly could extrapolate this call and the associated data formatting out in to it's own method, but this method  #
+      # really does one thing and one thing only: It generates recent matches in the website's accepted format.               #
+      # The transformation logic and mapping is still all done on the model as this really just gets and prepares the data    #
+      # for processing.                                                                                                       #
+      #########################################################################################################################
+
       matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
       response = HTTParty.get(matches)
       recent_matches = response.parsed_response
@@ -47,10 +54,8 @@ class ApplicationController < ActionController::Base
           if game["gameMode"] == "ARAM" && game["mapId"] === 12
 
             players = game["fellowPlayers"]
-
             # Pushing the current player in to the player array with the same formatting as fellowPlayers.
             players.push({"summonerId" => recent_matches["summonerId"], "teamId" => game['teamId'], "championId"=> game['championId'] })
-
             recent_aram_data.push({game_id: game["gameId"], players: players })
 
           end
@@ -66,7 +71,7 @@ class ApplicationController < ActionController::Base
           if match_response.success?
             all_matches.push({match_data: parsed_response, players: match[:players]})
           else
-            self.handle_error_response(response)
+            return self.handle_error_response(response)
           end
         end
 

@@ -1,13 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# #
+# # Examples:
+# #
+# #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+# #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# Have to populate the local database with champion bases...
+# # Have to populate the local database with champion bases...
 request = "http://ddragon.leagueoflegends.com/cdn/6.12.1/data/en_US/champion.json"
 response = HTTParty.get(request)
 champions = response.parsed_response
@@ -88,7 +88,7 @@ champions["data"].each do |name, attributes|
   champ_tags.each do |tag, champions|
     if champ_tags[tag].include?(champion.name)
       champion.other_tags.push(tag)
-      p "Assigned #{tag} to #{champion.name}!"
+      # p "Assigned #{tag} to #{champion.name}!"
     end
   end
   
@@ -96,9 +96,13 @@ champions["data"].each do |name, attributes|
   if champion.save
     p "#{champion.name} saved!"
   else
-    p "Something went wrong..."
+    p "Champion already existed"
   end
 end
+
+
+
+Item.seed_item_list
 
 
 

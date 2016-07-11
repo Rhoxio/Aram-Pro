@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625140335) do
+ActiveRecord::Schema.define(version: 20160711181946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(version: 20160625140335) do
   end
 
   add_index "champions", ["match_id"], name: "index_champions_on_match_id", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.string   "item_identifier"
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.string   "short_description"
+    t.string   "group"
+    t.string   "tags",                                           array: true
+    t.boolean  "aram_item",         default: false
+    t.integer  "build_depth"
+    t.text     "gold"
+    t.text     "stats"
+    t.text     "effect"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "matches", force: :cascade do |t|
     t.string   "match_id",    null: false

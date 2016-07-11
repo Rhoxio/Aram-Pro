@@ -59,26 +59,27 @@ class MatchController < ApplicationController
   def recent_matches
     if params[:summoner_id]
 
-        recent_arams = RiotAPI.get_recent_matches(params[:summoner_id])
+      recent_arams = RiotAPI.get_recent_matches(params[:summoner_id])
 
-        if recent_arams.is_a?(Array)
-          all_matches = Match.build_from_recent_matches(recent_arams, current_user)
+      if recent_arams.is_a?(Array)
+        all_matches = Match.build_from_recent_matches(recent_arams, current_user)
 
-          respond_to do |format|
-            format.json{render :json => all_matches, :include =>[:champions => {:include => :championbase}]}
-          end
-        else
-          # recent_arams holds the HTTP error hash to be passed to the front.
-          respond_to do |format|
-            format.json{render :json => recent_arams}
-          end
+        respond_to do |format|
+          format.json{render :json => all_matches, :include =>[:champions => {:include => :championbase}]}
         end
       else
-        #There was some kind of error. 
+        # recent_arams holds the HTTP error hash to be passed to the front.
         respond_to do |format|
-          format.json{render :json => {error: "No id param provided."}}
+          format.json{render :json => recent_arams}
         end
-      end 
+      end
+      
+    else
+      #There was some kind of error. 
+      respond_to do |format|
+        format.json{render :json => {error: "No id param provided."}}
+      end
+    end 
   end
 
 end
