@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711181946) do
+ActiveRecord::Schema.define(version: 20160711204327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "builds", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "champion_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "builds", ["champion_id"], name: "index_builds_on_champion_id", using: :btree
+  add_index "builds", ["item_id"], name: "index_builds_on_item_id", using: :btree
 
   create_table "championbases", force: :cascade do |t|
     t.string   "name"

@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
-  has_many :champions
+  has_many :builds
+  has_many :champions, through: :builds
   validates :item_identifier, uniqueness: true
 
   serialize :gold
