@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   has_many :builds
   has_many :champions, through: :builds
+
   validates :item_identifier, uniqueness: true
 
   serialize :gold
@@ -38,7 +39,7 @@ class Item < ActiveRecord::Base
       item.effect = data['effect']
 
       if item.save
-        puts "Item was saved!"
+        puts "#{item.name} was saved!"
       else
         puts 'Item was not saved.'
       end

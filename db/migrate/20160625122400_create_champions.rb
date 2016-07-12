@@ -6,9 +6,9 @@ class CreateChampions < ActiveRecord::Migration
       t.string :championbase_id
       t.string :name
 
-      t.string :runes, array: true
       t.string :masteries, array: true
       t.string :summoner_spells, array: true
+      t.string :runes, array: true
 
       t.string :summoner_identifier
       t.string :team

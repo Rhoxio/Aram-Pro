@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711204327) do
+ActiveRecord::Schema.define(version: 20160711213420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 20160711204327) do
     t.string   "champion_identifier"
     t.string   "championbase_id"
     t.string   "name"
-    t.string   "runes",                            array: true
     t.string   "masteries",                        array: true
     t.string   "summoner_spells",                  array: true
+    t.string   "runes",                            array: true
     t.string   "summoner_identifier"
     t.string   "team"
     t.string   "image"
@@ -80,6 +80,19 @@ ActiveRecord::Schema.define(version: 20160711204327) do
     t.string   "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "runes", force: :cascade do |t|
+    t.string   "rune_identifier"
+    t.string   "name"
+    t.string   "description"
+    t.string   "image"
+    t.string   "rune_type"
+    t.integer  "tier"
+    t.text     "stats"
+    t.string   "tags",                         array: true
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "summoners", force: :cascade do |t|

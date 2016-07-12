@@ -22,17 +22,9 @@ class Match < ActiveRecord::Base
 
       base = Championbase.find_by(champion_identifier: participant['championId'])
 
-      match.champions.build(
-        champion_identifier: participant['championId'],
-        summoner_identifier: participant['summonerId'], 
-        masteries: participant['masteries'],
-        runes: participant['runes'],
-        summoner_spells: [spell_1, spell_2],
-        team: participant['teamId'],
-        name: base.name,
-        image: "http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/#{base.image}",
-        championbase: base
-      )
+      match['participants'].each do |participant|
+        new_match.champions << Champion.build_champion(participant)
+      end
 
       if match.save
         puts "Match was built and saved!"
@@ -74,22 +66,7 @@ class Match < ActiveRecord::Base
       new_match.user = current_user
 
       match['participants'].each do |participant|
-        spell_1 = participant['spell1Id']
-        spell_2 = participant['spell2Id']
-
-        base = Championbase.find_by(champion_identifier: participant['championId'])
-
-        new_match.champions.build(
-          champion_identifier: participant['championId'],
-          summoner_identifier: participant['summonerId'], 
-          masteries: participant['masteries'],
-          runes: participant['runes'],
-          summoner_spells: [spell_1, spell_2],
-          team: participant['teamId'],
-          name: base.name,
-          image: "http://ddragon.leagueoflegends.com/cdn/6.12.1/img/champion/#{base.image}",
-          championbase: base
-        )
+        new_match.champions << Champion.build_champion(participant)
       end
 
       # If it saves, push it to the array to be returned.

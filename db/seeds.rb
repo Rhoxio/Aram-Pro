@@ -6,11 +6,12 @@
 # #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 # #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-# # Have to populate the local database with champion bases...
-
+puts "-- Begin Championbase Seed --"
 Championbase.seed_championbase_list
+puts "-- Begin Item Seed --"
 Item.seed_item_list
+puts "-- Begin Rune Seed --"
+Rune.seed_rune_list
 
 
 
