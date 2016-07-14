@@ -1,3 +1,5 @@
+require 'date'
+
 class Match < ActiveRecord::Base
   validates_uniqueness_of :match_id
   belongs_to :user
@@ -15,6 +17,8 @@ class Match < ActiveRecord::Base
     match.match_id = match['gameId']
     match.platform_id = match['platformId']
     match.user = current_user
+    match.match_created_at = DateTime.strptime(match['gameStartTime'].to_s,'%s') 
+    match.completed = false
 
     match['participants'].each do |participant|
       spell_1 = participant['spell1Id']
@@ -37,6 +41,8 @@ class Match < ActiveRecord::Base
   end
 
   def self.build_from_recent_matches(matches, current_user)
+
+    p 'Building matches...'
 
     # Assigning each participant their summoner ID based on the champion they played.
     # This works due to the fact that there will be no duplicate champions in an ARAM game.
@@ -64,6 +70,8 @@ class Match < ActiveRecord::Base
       new_match.match_id = match['matchId']
       new_match.platform_id = match['platformId']
       new_match.user = current_user
+      new_match.match_created_at = DateTime.strptime(match['matchCreation'].to_s,'%s') 
+      new_match.completed = true
 
       match['participants'].each do |participant|
         new_match.champions << Champion.build_champion(participant)
@@ -75,6 +83,8 @@ class Match < ActiveRecord::Base
         all_matches.push(new_match)
       else
         puts "Match attempted to be built and already existed."
+        puts '-- New Match --'
+        ap new_match.champions[0]
       end 
     end
 

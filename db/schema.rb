@@ -44,15 +44,26 @@ ActiveRecord::Schema.define(version: 20160711213420) do
     t.string   "champion_identifier"
     t.string   "championbase_id"
     t.string   "name"
-    t.string   "masteries",                        array: true
-    t.string   "summoner_spells",                  array: true
-    t.string   "runes",                            array: true
     t.string   "summoner_identifier"
     t.string   "team"
+    t.string   "masteries",                              array: true
+    t.string   "summoner_spells",                        array: true
+    t.string   "runes",                                  array: true
     t.string   "image"
+    t.text     "postgame_stats"
+    t.boolean  "won"
+    t.integer  "gold_earned"
+    t.integer  "damage_dealt_to_champions"
+    t.integer  "total_damage_dealt"
+    t.integer  "damage_taken"
+    t.integer  "kills"
+    t.integer  "deaths"
+    t.integer  "assists"
+    t.integer  "level"
+    t.integer  "healing_done"
     t.integer  "match_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "champions", ["match_id"], name: "index_champions_on_match_id", using: :btree
@@ -75,11 +86,13 @@ ActiveRecord::Schema.define(version: 20160711213420) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.string   "match_id",    null: false
+    t.string   "match_id",         null: false
     t.string   "platform_id"
     t.string   "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "match_created_at"
+    t.boolean  "completed"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "runes", force: :cascade do |t|

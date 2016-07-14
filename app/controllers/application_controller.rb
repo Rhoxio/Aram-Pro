@@ -63,15 +63,18 @@ class ApplicationController < ActionController::Base
 
         all_matches = []
 
+        #TODO: If the match does not currently exist on the database...
+
         recent_aram_data.each do |match|
           match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
           match_response = HTTParty.get(match_url)
           parsed_response = match_response.parsed_response
 
+
           if match_response.success?
             all_matches.push({match_data: parsed_response, players: match[:players]})
           else
-            return self.handle_error_response(response)
+            return self.handle_error_response(response, 'Hit the rate limit.')
           end
         end
 
@@ -81,7 +84,6 @@ class ApplicationController < ActionController::Base
         p "Riot responded with a #{response.code}: #{response}"
         self.handle_error_response(response)
       end    
-
 
     end
 
@@ -102,9 +104,11 @@ class ApplicationController < ActionController::Base
 
     end
 
-    def self.handle_error_response(response)
+    def self.handle_error_response(response, msg='Unspecified error.')
       # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
       case response.code
+        when 200
+          {error: msg, status: response.code}  
         when 400
           {error: 'Bad request.', status: response.code}          
         when 401
@@ -116,7 +120,7 @@ class ApplicationController < ActionController::Base
         when 500..600
           {error: 'Riot API is having an issue.', status: response.code}
         else
-          {error: 'Unspecified HTTP error.', status: response.code}
+          {error: msg, status: response.code}
       end
     end
 
