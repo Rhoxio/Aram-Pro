@@ -11,13 +11,15 @@ class UsersController < ApplicationController
       request = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/#{params["summoner_name"]}?api_key=#{ENV['RIOT_KEY']}"
       response = HTTParty.get(request)
 
-      response.parsed_response.each do |key, value|
-        p key
-        p value
+      response.parsed_response.each do |key, attributes|
 
-        # If key is the same as summoner_name.downcase...
-        user.summoner_id = value['id']
-        user.summoner_icon = value['profileIconId']
+        summoner = Summoner.build_summoner(attributes)
+
+        user.summoner_id = attributes['id']
+        user.summoner_icon = attributes['profileIconId']
+
+        user.summoners << summoner
+
       end
 
     else

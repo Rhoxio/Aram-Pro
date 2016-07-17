@@ -42,8 +42,6 @@ class Match < ActiveRecord::Base
 
   def self.build_from_recent_matches(matches, current_user)
 
-    p 'Building matches...'
-
     # Assigning each participant their summoner ID based on the champion they played.
     # This works due to the fact that there will be no duplicate champions in an ARAM game.
     player_sorted_matches = matches.map do |match|
@@ -83,8 +81,6 @@ class Match < ActiveRecord::Base
         all_matches.push(new_match)
       else
         puts "Match attempted to be built and already existed."
-        puts '-- New Match --'
-        ap new_match.champions[0]
       end 
     end
 

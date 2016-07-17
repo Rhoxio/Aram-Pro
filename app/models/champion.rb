@@ -17,10 +17,6 @@ class Champion < ActiveRecord::Base
 
     base = Championbase.find_by(champion_identifier: participant['championId'])
 
-    puts '-- Base/ID --'
-    p base.champion_identifier
-    p champ_id
-
     champion.champion_identifier = participant['championId']
     champion.summoner_identifier = participant['summonerId']
     champion.masteries = participant['masteries']
@@ -48,10 +44,22 @@ class Champion < ActiveRecord::Base
       champion.healing_done = stats['totalHeal']
 
       # Now to assign items to the champion.
-    end
 
-    puts '----- CHAMPION BEFORE IT GET SAVED -----'
-    ap champion
+      item_ids = []
+      inventory_slot = 6
+      while inventory_slot >= 0
+        item_ids.push(stats['item' + inventory_slot.to_s].to_s)
+        inventory_slot -= 1
+      end
+
+      item_ids.each do |item|
+        if item != '0'
+          found_item = Item.find_by(item_identifier: item)
+          champion.items << found_item
+        end
+      end
+
+    end
 
     return champion
   end

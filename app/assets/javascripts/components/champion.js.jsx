@@ -4,6 +4,8 @@ var Champion = React.createClass({
 
     // These tag divs need keys at some point...
 
+    var champion =  this.props.champion
+
     var riotTags = this.props.riot_tags.map(function(tag, i) {
 
       switch(tag) {
@@ -107,10 +109,26 @@ var Champion = React.createClass({
             return <div></div>
       }     
 
-    });    
+    });
+
+    var items = this.props.items.map(function(item){
+      var uniqueIdentifer = champion.id + "-" + item.id
+      console.log(uniqueIdentifer)
+
+      return (
+        <ItemEntry identifier={uniqueIdentifer} item={item}></ItemEntry>
+      )
+    })
+
+    if(champion.team == "200"){
+      // Need to  designate the side they are on before render.
+      var topSide = 'right '
+    } else{
+      var topSide = 'left '
+    }
 
     return (
-      <div className="champion large-12 columns">
+      <div className={topSide+"champion large-12 columns"}>
         <img className="large-2 champ-image columns" src={this.props.image}/>
         <h2 className="champion-name large-8 columns">
           {this.props.name}
@@ -120,11 +138,47 @@ var Champion = React.createClass({
          </div>
          <div className='other-tags large-8 columns'>
           {otherTags}
+         </div>
+
+         <div className='items columns'>
+          {items}
          </div>         
       </div>
     );
   }
 });
+
+// Item
+var ItemEntry = React.createClass({
+
+  handleMouseOver: function(event){
+    var element = $(".tooltip-"+this.props.identifier)
+    console.log(element)
+    $(element).removeClass('hidden')
+    $(element).addClass('show') 
+  },
+
+  handleMouseOut: function(event){
+    var element = $(".tooltip-"+this.props.identifier)
+    console.log(element)
+    $(element).removeClass('show')
+    $(element).addClass('hidden') 
+  },  
+
+  render:function(){
+    return(
+      <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseOut} className='columns item-container'>
+        <a href="#" className='item item-small columns'>
+          <img src={this.props.item.image}/>
+        </a>
+
+        <div className={"tooltip-"+this.props.identifier+" hidden item-tooltip"}>
+          <h5> Opened Tooltip </h5>
+        </div>
+      </div>      
+    )
+  }
+})
 
 // Match Button
 var MatchButton = React.createClass({
@@ -192,6 +246,7 @@ var ChampionList = React.createClass({
 
   getMatch: function(match){
     $.get("/match/"+match, function(data){
+      console.log(data)
       this.setState({champions: data.champions}, function(){})
     }.bind(this))
   },
@@ -202,7 +257,7 @@ var ChampionList = React.createClass({
       var topSideChampionNodes = this.state.champions.map(function(champion) {
         if(champion.team === "200"){
           return (
-            <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            <Champion champion={champion} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
             </Champion>
           );
         }
@@ -211,7 +266,7 @@ var ChampionList = React.createClass({
       var bottomSideChampionNodes = this.state.champions.map(function(champion) {
         if(champion.team === "100"){
           return (
-            <Champion riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            <Champion champion={champion} key={champion.championbase.champion_identifer} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
             </Champion>
           );
         }
@@ -236,13 +291,13 @@ var ChampionList = React.createClass({
       </div>
 
       <div>
-        <div className="bottom-team team large-6 inline-list columns">
+        <div className="bottom-team team large-5 inline-list columns">
           <div>
             {bottomSideChampionNodes}
           </div>
         </div>
 
-        <div className="top-team team large-6 inline-list columns">
+        <div className="top-team team large-5 inline-list columns">
           <div>
             {topSideChampionNodes}
           </div>

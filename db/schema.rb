@@ -112,10 +112,10 @@ ActiveRecord::Schema.define(version: 20160711213420) do
     t.integer  "user_id"
     t.string   "name"
     t.integer  "level"
-    t.string   "summoner_id"
+    t.string   "summoner_identifier"
     t.integer  "icon_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "summoners", ["user_id"], name: "index_summoners_on_user_id", using: :btree

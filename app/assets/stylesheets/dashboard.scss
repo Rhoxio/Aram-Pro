@@ -26,8 +26,9 @@ $tag-lt-green-end: #a8cb57;
 $white-text-shadow: #6f757c;
 
 .dashboard-body{
-	min-height: 1500px;
+	min-height: 1600px;
 	padding: 70px 20px 0 20px;
+  background-color: #374f70;
 
 	>.columns{
 		padding: 0;
@@ -48,8 +49,8 @@ $white-text-shadow: #6f757c;
 
 .champion{
   margin: 10px 0 10px 0;
-  background-color: #e3e3e3;
-  min-height: 140px;
+  background-color: #2B3E42;
+  min-height: 250px;
   padding: 5px 0 5px 0;
 
   .champ-image{
@@ -58,6 +59,7 @@ $white-text-shadow: #6f757c;
 
 	>.columns{
 		padding: 0;
+    float: left !important;
 	}
 
 	h2{

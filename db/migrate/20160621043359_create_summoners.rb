@@ -4,7 +4,7 @@ class CreateSummoners < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.string :name
       t.integer :level
-      t.string :summoner_id
+      t.string :summoner_identifier
       t.integer :icon_id
 
       t.timestamps null: false

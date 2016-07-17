@@ -7,7 +7,7 @@ class MatchController < ApplicationController
       match = Match.find_by(match_id:params[:id])
 
       respond_to do |format|
-        format.json{render :json => match, :include =>[:champions => {:include => :championbase}] }
+        format.json{render :json => match, :include =>[:champions => {:include => [:championbase, :items]}] }
       end 
 
     else
