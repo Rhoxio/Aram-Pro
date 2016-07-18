@@ -38,19 +38,19 @@ $white-text-shadow: #6f757c;
 		padding: 1.5rem 1.5rem;
 	}
 
-	// .top-team{
-	// 	border: 1px solid red;
-	// }
+	.top-team{
+    background-color: rgba(113, 52, 129, 0.34);
+	}
 
-	// .bottom-team{
-	// 	border: 1px solid blue;
-	// }	
+	.bottom-team{
+    background-color: rgba(0, 113, 169, 0.34);
+	}	
 }
 
 .champion{
-  margin: 10px 0 10px 0;
+  margin: 0px 0 4px 0;
   background-color: #2B3E42;
-  min-height: 250px;
+  // min-height: 250px;
   padding: 5px 0 5px 0;
 
   .champ-image{
@@ -65,6 +65,16 @@ $white-text-shadow: #6f757c;
 	h2{
 		font-size: 1.2rem;
 	}
+}
+
+.purple-team{
+  border: 2px solid #713481;
+  box-shadow:  1px 0px 8px black;
+}
+
+.blue-team{
+  border: 2px solid #0071a9;
+  box-shadow:  -1px 0px 8px black;
 }
 
 
@@ -230,6 +240,35 @@ $white-text-shadow: #6f757c;
 	float: left !important;
 }
 
+
+.simple-button{
+  background-color: white;
+  color: blue;
+  margin-right: 5px !important;
+
+  &:hover{
+    color: black;
+  }
+}
+
+.team-container{
+  padding-top: 10px;
+  
+  .mid-separator{
+
+    .matchup{
+
+      .matchup-indicator{
+        height: 200px;
+      }
+
+      .favorable{
+        background-color: green;
+      }
+    }
+    
+}
+}
 
 
 

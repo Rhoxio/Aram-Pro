@@ -6,9 +6,6 @@ class Match < ActiveRecord::Base
 
   has_many :champions
 
-  def process_champions
-  end
-
   def build_from_current_match(match, current_user)
     #This is a creative method. It will save a new model and return the result.
 
@@ -21,23 +18,16 @@ class Match < ActiveRecord::Base
     match.completed = false
 
     match['participants'].each do |participant|
-      spell_1 = participant['spell1Id']
-      spell_2 = participant['spell2Id']
+      match.champions << Champion.build_champion(participant)
+    end
 
-      base = Championbase.find_by(champion_identifier: participant['championId'])
-
-      match['participants'].each do |participant|
-        new_match.champions << Champion.build_champion(participant)
-      end
-
-      if match.save
-        puts "Match was built and saved!"
-        return match
-      else
-        puts "Match attempted to be built and already existed."
-        return {status: 'No match created.'}
-      end
-    end 
+    if match.save
+      puts "Match was built and saved!"
+      return match
+    else
+      puts "Match attempted to be built and already existed."
+      return {status: 'No match created.'}
+    end     
   end
 
   def self.build_from_recent_matches(matches, current_user)

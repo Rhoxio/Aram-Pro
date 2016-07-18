@@ -1,5 +1,15 @@
 var Champion = React.createClass({
 
+  revealParentElements:function(){
+    $('.bottom-team').removeClass('hidden').addClass('show')
+    $('.top-team').removeClass('hidden').addClass('show')
+    $('.mid-separator').removeClass('hidden').addClass('show')
+  },
+
+  componentDidMount: function(){
+    this.revealParentElements()
+  },
+
   render: function() {
 
     // These tag divs need keys at some point...
@@ -112,35 +122,32 @@ var Champion = React.createClass({
     });
 
     var items = this.props.items.map(function(item){
-      var uniqueIdentifer = champion.id + "-" + item.id
-      console.log(uniqueIdentifer)
+      // Filter all Porosnax out
+      if(item.item_identifier != '2052'){
+        var uniqueIdentifer = champion.id + "-" + item.id
 
-      return (
-        <ItemEntry identifier={uniqueIdentifer} item={item}></ItemEntry>
-      )
+        return (
+          <ItemEntry identifier={uniqueIdentifer} item={item}></ItemEntry>
+        ) 
+      }
+
     })
 
     if(champion.team == "200"){
       // Need to  designate the side they are on before render.
-      var topSide = 'right '
+      var topSide = 'right purple-team '
     } else{
-      var topSide = 'left '
+      var topSide = 'left blue-team '
     }
 
     return (
       <div className={topSide+"champion large-12 columns"}>
         <img className="large-2 champ-image columns" src={this.props.image}/>
-        <h2 className="champion-name large-8 columns">
+        <h2 className="champion-name large-4 columns">
           {this.props.name}
         </h2>
-         <div className='riot-tags large-8 columns'>
-          {riotTags}
-         </div>
-         <div className='other-tags large-8 columns'>
-          {otherTags}
-         </div>
 
-         <div className='items columns'>
+         <div className='items columns large-10'>
           {items}
          </div>         
       </div>
@@ -196,6 +203,20 @@ var MatchButton = React.createClass({
   }
 })
 
+var MatchupIndicator = React.createClass({
+ render: function(){
+    return(
+      <div>
+        <div className='matchup'>
+          <div className='matchup-indicator point-left favorable'>
+            Some quick text.
+          </div>
+        </div>
+      </div>
+    )
+  } 
+})
+
 var ChampionList = React.createClass({
   propTypes: {
     summoner_id: React.PropTypes.number,
@@ -218,7 +239,6 @@ var ChampionList = React.createClass({
         console.log('No current game.')
       }
     }.bind(this));
-    console.log(this.props)
   },
 
   getCurrentGame: function(){
@@ -232,13 +252,12 @@ var ChampionList = React.createClass({
 
   },
 
+  showParentElements: function(){
+
+  },
+
   getRecentGames: function(){
     $.post( "/match/recent?summoner_id="+this.props.summoner_id, function( data ) {
-      // if(!data.hasOwnProperty('error')){
-      //   this.setState({champions: data.champions}, function(){})
-      // } else {
-      //   console.log('No current game.')
-      // }
       console.log(data)
     }.bind(this));
 
@@ -271,9 +290,13 @@ var ChampionList = React.createClass({
           );
         }
       });
+
+      var matchups = [<MatchupIndicator></MatchupIndicator>]
+
     } else{
       var topSideChampionNodes = []
       var bottomSideChampionNodes = []
+      var matchups = []
     }
 
     var matchButtons = this.props.matches.map(function(match, i){
@@ -283,27 +306,27 @@ var ChampionList = React.createClass({
     }.bind(this))
 
     return (
-    <div className="team-container large-12 inline-list columns">
-      <button onClick={this.getCurrentGame}>Get Current Game</button>
-      <button onClick={this.getRecentGames}>Get Recent Games</button>
-      <div className="match-container large-12 inline-list columns">
-        {matchButtons}
-      </div>
+      <div className="team-container large-12 inline-list columns">
+        <button className="simple-button button large-2" onClick={this.getCurrentGame}>Get Current Game</button>
+        <button className="simple-button button large-2" onClick={this.getRecentGames}>Get Recent Games</button>
+        <div className="match-container large-12 inline-list columns">
+          {matchButtons}
+        </div>
 
-      <div>
-        <div className="bottom-team team large-5 inline-list columns">
-          <div>
+        <div>
+          <div className="bottom-team team large-5 inline-list columns hidden">
             {bottomSideChampionNodes}
           </div>
-        </div>
 
-        <div className="top-team team large-5 inline-list columns">
-          <div>
+          <div className='mid-separator large-2 columns hidden'>
+            {matchups}
+          </div>
+
+          <div className="top-team team large-5 inline-list columns hidden">
             {topSideChampionNodes}
           </div>
-        </div>
-      </div> 
-    </div>     
+        </div> 
+      </div>     
     );
   }
 

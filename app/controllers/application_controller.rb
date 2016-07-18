@@ -104,11 +104,28 @@ class ApplicationController < ActionController::Base
 
     end
 
+    def self.get_summoners(ids)
+
+      summoner_ids = ''
+      ids.each do |id| 
+        summoner_ids += "#{id},"
+      end
+
+      summoners_uri = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/#{summoner_ids}?api_key=#{ENV['RIOT_KEY']}"
+      response = HTTParty.get(summoners_uri)
+
+      if response.success?
+        parsed_response
+      else
+        self.handle_error_response(response)
+      end
+    end
+
     def self.handle_error_response(response, msg='Unspecified error.')
       # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
       case response.code
         when 200
-          {error: msg, status: response.code}  
+          {error: msg, status: response.code}
         when 400
           {error: 'Bad request.', status: response.code}          
         when 401

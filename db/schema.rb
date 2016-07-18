@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160711213420) do
   create_table "champions", force: :cascade do |t|
     t.string   "champion_identifier"
     t.string   "championbase_id"
+    t.string   "summoner_id"
     t.string   "name"
     t.string   "summoner_identifier"
     t.string   "team"
