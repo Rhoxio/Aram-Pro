@@ -8,11 +8,10 @@ This is a Rails app with the front-end being built on Foundation and React. If y
 
 ## Currently Working On
 
-### The distinction between games that are 'current' and 'finished'
+### Getting All of the Needed Assets For the UI
 
- - The front-end needs to be able to distinguish between a game that is currently happening versus a saved game so that the UI templates can distiguish between the two. 
- - It also needs to be in place due to the fact that games that were previously in the 'current game' state will be queried against the Riot API using Sidekiq or some task runner to get item and outcome data for those matches.
+Basically, there needs to be functionality built out for grabbing all of the summoner information for each summoner in a match so their names are available. Currently, the code makes as many API calls as they have ARAM matches in their current match history, (so up to 10 if they have played 10 ARAMs, 5 if they have played 5, etc.) but this hits the rate limit very quickly. I am considering only doing live updates for current matches (one api call plus one to get all summoner names) and having the UI update correctly for those. 
 
-This can be accomplished by: 
- - Making sure that games saved through the 'get current game' route are affixed with a new attribute called game_state. This is going to live directly on the model as an attribute for easy querying.
- - A query and action will need to be created then then fed through the task runner at a set interval to poll the Riot API for new game data. Since all of the data from both endpoints end up giving back simlar data, so it should really only be a matter of assigning the new items to the old model, setting which team won, and the scores of all champions involved in the game. 
+For recent matches, it would make more sense to somehow seed the database based upon the createdAt date. The problem would be spinning up a thread asynchronously populate the database as it went baed upon the current rate limit available. I would need to set up a catch for these calls AND normal API calls. (It looks like the Riot API sends a header. https://developer.riotgames.com/docs/rate-limiting.) 
+
+
