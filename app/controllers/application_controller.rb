@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :logged_in?
   helper_method :current_user
+  include ApplicationHelper
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -18,12 +19,17 @@ class ApplicationController < ActionController::Base
     !!session[:user_id]
   end
 
-
   class RiotAPI
 
     def self.get_current_match(summoner_id)
+
       match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
       response = HTTParty.get(match_request)
+
+      ratelimit = ApplicationHelper.decode_ratelimit(response.headers)
+      redis_ratelimit = ApplicationHelper.save_ratelimit(ratelimit)
+
+      p ApplicationHelper.rate_limited?
 
       if response.success?
         parsed_response = response.parsed_response 

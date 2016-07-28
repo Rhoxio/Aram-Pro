@@ -252,10 +252,6 @@ var ChampionList = React.createClass({
 
   },
 
-  showParentElements: function(){
-
-  },
-
   getRecentGames: function(){
     $.post( "/match/recent?summoner_id="+this.props.summoner_id, function( data ) {
       console.log(data)

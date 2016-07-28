@@ -31,7 +31,7 @@ class Item < ActiveRecord::Base
 
       item.group = data['group']
       item.tags = data['tags']
-      item.aram_item = data['maps']['12'] == true || false
+      item.aram_item = data['maps']['12'] == true || falsex
       item.build_depth = data['depth'].to_i
 
       item.gold = data['gold']
