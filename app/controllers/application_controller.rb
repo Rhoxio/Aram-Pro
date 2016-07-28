@@ -29,13 +29,14 @@ class ApplicationController < ActionController::Base
       ratelimit = ApplicationHelper.decode_ratelimit(response.headers)
       redis_ratelimit = ApplicationHelper.save_ratelimit(ratelimit)
 
-      p ApplicationHelper.rate_limited?
+      p ApplicationHelper.reset_ratelimit_timestamp
+      # ApplicationHelper.rate_limited?
 
       if response.success?
         parsed_response = response.parsed_response 
       else
         self.handle_error_response(response)
-      end     
+      end
     end
 
     def self.get_recent_matches(summoner_id, opts = {})
