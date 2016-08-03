@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :current_user
   include ApplicationHelper
+  include RedisHelper
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -23,19 +24,20 @@ class ApplicationController < ActionController::Base
 
     def self.get_current_match(summoner_id)
 
-      match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
-      response = HTTParty.get(match_request)
-
-      ratelimit = ApplicationHelper.decode_ratelimit(response.headers)
-      redis_ratelimit = ApplicationHelper.save_ratelimit(ratelimit)
-
-      p ApplicationHelper.reset_ratelimit_timestamp
-      # ApplicationHelper.rate_limited?
-
-      if response.success?
-        parsed_response = response.parsed_response 
+      if RedisHelper.rate_limited?
+        return {error: 'Ratelimit exceeded.'}        
       else
-        self.handle_error_response(response)
+        match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
+        response = HTTParty.get(match_request)
+
+        ratelimit = ApplicationHelper.decode_ratelimit(response.headers)
+        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)
+
+        if response.success?
+          parsed_response = response.parsed_response 
+        else
+          self.handle_error_response(response)
+        end
       end
     end
 

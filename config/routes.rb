@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'front#show'
 
+  resources :users, only: [] do
+    resources :summmoners, only: [:create, :update, :destroy], path: "summoners"
+    resources :matches, only: [:create, :update, :destroy], path: "matches"
+  end 
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
