@@ -13,7 +13,7 @@ module RedisHelper
     if post === 'OK'
       return JSON.parse($redis.get('ratelimit'))
     else
-      p 'Failed to reset the timestamp.'
+      p 'Failed to reset the ratelimit timestamp.'
     end
   end
 

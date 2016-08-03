@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
         match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(match_request)
 
-        ratelimit = ApplicationHelper.decode_ratelimit(response.headers)
+        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
         redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)
 
         if response.success?
@@ -44,94 +44,107 @@ class ApplicationController < ActionController::Base
     def self.get_recent_matches(summoner_id, opts = {})
       include_timeline = opts['timeline'] || false
 
-      #########################################################################################################################
-      # I honestly could extrapolate this call and the associated data formatting out in to it's own method, but this method  #
-      # really does one thing and one thing only: It generates recent matches in the website's accepted format.               #
-      # The transformation logic and mapping is still all done on the model as this really just gets and prepares the data    #
-      # for processing.                                                                                                       #
-      #########################################################################################################################
+      if RedisHelper.rate_limited?
+        return {error: 'Ratelimit exceeded.'} 
+      else
+        matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
+        response = HTTParty.get(matches)
+        recent_matches = response.parsed_response
 
-      matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
-      response = HTTParty.get(matches)
-      recent_matches = response.parsed_response
+        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
+        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)      
 
-      if response.success?
+        if response.success?
 
-        recent_aram_data = []
+          recent_aram_data = []
 
-        recent_matches["games"].each do |game|
-          if game["gameMode"] == "ARAM" && game["mapId"] === 12
+          recent_matches["games"].each do |game|
+            if game["gameMode"] == "ARAM" && game["mapId"] === 12
 
-            players = game["fellowPlayers"]
-            # Pushing the current player in to the player array with the same formatting as fellowPlayers.
-            players.push({"summonerId" => recent_matches["summonerId"], "teamId" => game['teamId'], "championId"=> game['championId'] })
-            recent_aram_data.push({game_id: game["gameId"], players: players })
+              players = game["fellowPlayers"]
+              # Pushing the current player in to the player array with the same formatting as fellowPlayers.
+              players.push({"summonerId" => recent_matches["summonerId"], "teamId" => game['teamId'], "championId"=> game['championId'] })
+              recent_aram_data.push({game_id: game["gameId"], players: players })
 
+            end
           end
-        end
 
-        all_matches = []
+          all_matches = []
 
-        #TODO: If the match does not currently exist on the database...
+          #TODO: If the match does not currently exist on the database...
 
-        recent_aram_data.each do |match|
-          match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
-          match_response = HTTParty.get(match_url)
-          parsed_response = match_response.parsed_response
+          recent_aram_data.each do |match|
+            match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
+            match_response = HTTParty.get(match_url)
+            parsed_response = match_response.parsed_response
 
 
-          if match_response.success?
-            all_matches.push({match_data: parsed_response, players: match[:players]})
-          else
-            return self.handle_error_response(response, 'Hit the rate limit.')
+            if match_response.success?
+              all_matches.push({match_data: parsed_response, players: match[:players]})
+            else
+              return self.handle_error_response(response, 'Hit the rate limit.')
+            end
           end
+
+          # If the loop above threw no errors...
+          return all_matches
+        else 
+          p "Riot responded with a #{response.code}: #{response}"
+          self.handle_error_response(response)
         end
-
-        # If the loop above threw no errors...
-        return all_matches
-      else 
-        p "Riot responded with a #{response.code}: #{response}"
-        self.handle_error_response(response)
-      end    
-
+      end
     end
 
     def self.get_match(match_id, opts = {})
       include_timeline = opts['timeline'] || false
 
-      match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match_id}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
-      response = HTTParty.get(match_url)
-
-      # Since we are making only a single request, the match will come out as an error object or the parsed response. 
-      parsed_response = response.parsed_response
-
-      if response.success?
-        parsed_response
+      if RedisHelper.rate_limited?
+        return {error: 'Ratelimit exceeded.'} 
       else
-        self.handle_error_response(response)
-      end
+        match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match_id}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
+        response = HTTParty.get(match_url)
 
+        # Since we are making only a single request, the match will come out as an error object or the parsed response. 
+        parsed_response = response.parsed_response
+
+        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
+        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)        
+
+        if response.success?
+          parsed_response
+        else
+          self.handle_error_response(response)
+        end
+      end
     end
 
     def self.get_summoners(ids)
 
-      summoner_ids = ''
-      ids.each do |id| 
-        summoner_ids += "#{id},"
-      end
-
-      summoners_uri = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/#{summoner_ids}?api_key=#{ENV['RIOT_KEY']}"
-      response = HTTParty.get(summoners_uri)
-
-      if response.success?
-        parsed_response
+      if RedisHelper.rate_limited?
+        return {error: 'Ratelimit exceeded.'} 
       else
-        self.handle_error_response(response)
-      end
+        summoner_ids = ''
+        ids.each do |id| 
+          summoner_ids += "#{id},"
+        end
+
+        summoners_uri = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/#{summoner_ids}?api_key=#{ENV['RIOT_KEY']}"
+        response = HTTParty.get(summoners_uri)
+
+        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
+        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)        
+
+        if response.success?
+          parsed_response
+        else
+          self.handle_error_response(response)
+        end
+      end      
+
     end
 
     def self.handle_error_response(response, msg='Unspecified error.')
-      # This method expects a HTTParty response object. Intent is to return a handled parsed response if no error is thrown.
+      # This method expects a HTTParty response object.
       case response.code
         when 200
           {error: msg, status: response.code}

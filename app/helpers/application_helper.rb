@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def self.decode_ratelimit(headers)
-    # One call made. Will retur dynamic ratelimit.
+  def self.parse_ratelimit(headers)
+    # One call made. Will return dynamic ratelimit.
     # X-Rate-Limit-Count: 1:1,1:10,1:600,1:3600
 
     # So I can just insert values right in
@@ -11,7 +11,6 @@ module ApplicationHelper
     }
 
     headers['x-rate-limit-count'].split(',').each_with_index do |limit, index|
-      # p limit.split(':')
       # I will add more when I get a prod key.
       if index == 0
         rate_limits[:seconds][:used] = limit.split(':')[0]
