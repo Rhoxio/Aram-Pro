@@ -6,7 +6,7 @@ class CreateMatches < ActiveRecord::Migration
       t.string :platform_id
       t.string :user_id
 
-      t.datetime :match_created_at
+      t.string :match_created_at
 
       t.boolean :completed
 

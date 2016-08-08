@@ -2,28 +2,28 @@ require 'date'
 
 class Match < ActiveRecord::Base
   validates_uniqueness_of :match_id
-  belongs_to :user
 
+  belongs_to :user
   has_many :champions
 
-  def build_from_current_match(match, current_user)
+  def self.build_from_current_match(match, current_user)
     #This is a creative method. It will save a new model and return the result.
 
-    match = Match.new()
+    new_match = Match.new()
 
-    match.match_id = match['gameId']
-    match.platform_id = match['platformId']
-    match.user = current_user
-    match.match_created_at = DateTime.strptime(match['gameStartTime'].to_s,'%s') 
-    match.completed = false
+    new_match.match_id = match['gameId']
+    new_match.platform_id = match['platformId']
+    new_match.user = current_user
+    new_match.match_created_at = match['gameStartTime'] 
+    new_match.completed = false
 
     match['participants'].each do |participant|
-      match.champions << Champion.build_champion(participant)
+      new_match.champions << Champion.build_champion(participant)
     end
 
-    if match.save
+    if new_match.save
       puts "Match was built and saved!"
-      return match
+      return new_match
     else
       puts "Match attempted to be built and already existed."
       return {status: 'No match created.'}

@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20160711213420) do
     t.string   "match_id",         null: false
     t.string   "platform_id"
     t.string   "user_id"
-    t.datetime "match_created_at"
+    t.string   "match_created_at"
     t.boolean  "completed"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

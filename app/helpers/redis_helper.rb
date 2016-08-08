@@ -1,28 +1,66 @@
 module RedisHelper
 
+  def self.initialize_ratelimit
+    initial_ratelimit = {
+      :seconds => {:used => 'none', :limit => 'none', :most_recent_request => Time.now.to_i},
+      :ten_minutes => {:used => 'none', :limit => 'none', :most_recent_request => Time.now.to_i}
+    }.to_json
+
+    res = $redis.set('ratelimit', initial_ratelimit)
+
+    if res == "OK"
+      return JSON.parse($redis.get('ratelimit_timers'))
+    else
+      return {error: 'Redis save failed.', msg: res}
+    end
+  end
+
+  def self.parse_ratelimit(headers)
+    # One call made. Will return hashed ratelimit.
+    # X-Rate-Limit-Count: 1:1,1:10,1:600,1:3600
+    rate_limits = {
+      :seconds => {:used => nil, :limit => nil, :most_recent_request => nil},
+      :ten_minutes => {:used => nil, :limit => nil, :most_recent_request => nil}
+    }
+
+    headers['x-rate-limit-count'].split(',').each_with_index do |limit, index|
+      # I will add more when I get a prod key.
+      if index == 0
+        rate_limits[:seconds][:used] = limit.split(':')[0]
+        rate_limits[:seconds][:limit] = limit.split(':')[1]
+        rate_limits[:seconds][:most_recent_request] = Time.now.to_i
+      elsif index == 1
+        rate_limits[:ten_minutes][:used] = limit.split(':')[0]
+        rate_limits[:ten_minutes][:limit] = limit.split(':')[1]
+        rate_limits[:ten_minutes][:most_recent_request] = Time.now.to_i
+      end
+    end
+    return rate_limits.to_json
+  end  
+
   def self.reset_ratelimit_timestamp
     # Will return the timestamp
-    rate_limit_timer = {:most_recent_request => Time.now}.to_json
-    p $redis.set('ratelimit_timers', rate_limit_timer)
+    rate_limit_timer = {:most_recent_request => Time.now.to_i}.to_json
+    $redis.set('ratelimit_timers', rate_limit_timer)
     return JSON.parse($redis.get('ratelimit_timers'))
   end
 
-  def self.save_ratelimit(ratelimit)
-    # This uses Redis
+  # Save 
+  def self.save_ratelimit_as_json(headers)
+    # Before saving them, we need to parse.
+    ratelimit = self.parse_ratelimit(headers)
+
     post = $redis.set('ratelimit', ratelimit)
     if post === 'OK'
       return JSON.parse($redis.get('ratelimit'))
     else
       p 'Failed to reset the ratelimit timestamp.'
+      return false
     end
   end
 
-  # This will expect a query object constructed in #decode_ratelimit.
-
   def self.rate_limited?
     ratelimit = JSON.parse($redis.get('ratelimit'))
-
-    Time.parse(ratelimit["seconds"]["most_recent_request"]).year
 
     # If there is a clear ratelimit
     if self.clear_ratelimit
@@ -39,18 +77,15 @@ module RedisHelper
   end
 
   def self.clear_ratelimit
-    # This needs to be debugged. The timestamps are not consistent or something.
-    # Might have to do with the ordering of to_i in the timestamp check stuff
-
     ratelimits = JSON.parse($redis.get('ratelimit'))
 
     # Epoch Time
-    stored_timestamp = Date.parse(JSON.parse($redis.get('ratelimit_timers'))["most_recent_request"]).to_time.to_i
+    stored_timestamp = JSON.parse($redis.get('ratelimit_timers'))["most_recent_request"].to_i
 
     if ratelimits.key?("seconds")
-      seconds_limit = Date.parse(ratelimits["seconds"]["most_recent_request"]).to_time.to_i
+      seconds_limit = ratelimits["seconds"]["most_recent_request"].to_i
 
-      is_not_over_ratelimit = ratelimits["seconds"]["used"].to_time.to_i < ratelimits["seconds"]["limit"].to_time.to_i 
+      is_not_over_ratelimit = ratelimits["seconds"]["used"] < ratelimits["seconds"]["limit"] 
       does_not_need_to_update = (stored_timestamp - seconds_limit) > 10 || stored_timestamp == seconds_limit
 
       if does_not_need_to_update && is_not_over_ratelimit
@@ -61,10 +96,9 @@ module RedisHelper
     end
     
     if ratelimits.key?("ten_minutes")
-      tens_limit = Date.parse(ratelimits["ten_minutes"]["most_recent_request"]).to_time.to_i
+      tens_limit = ratelimits["ten_minutes"]["most_recent_request"].to_i
 
-      # ! 
-      is_not_over_ratelimit = ratelimits["ten_minutes"]["used"].to_time.to_i < ratelimits["ten_minutes"]["limit"].to_time.to_i 
+      is_not_over_ratelimit = ratelimits["ten_minutes"]["used"].to_i < ratelimits["ten_minutes"]["limit"].to_i
       does_not_need_to_update = (stored_timestamp - tens_limit) > 600 || stored_timestamp == tens_limit
 
       if does_not_need_to_update && is_not_over_ratelimit
@@ -75,7 +109,6 @@ module RedisHelper
         p 'Over ratelimit'
         return false
       else
-        p 'Resetting the ratelimit...'
         return false
       end      
     end

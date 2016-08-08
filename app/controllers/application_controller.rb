@@ -25,18 +25,16 @@ class ApplicationController < ActionController::Base
     def self.get_current_match(summoner_id)
 
       if RedisHelper.rate_limited?
-        return {error: 'Ratelimit exceeded.'}        
+        return {error: 'Ratelimit exceeded.'}  
       else
         match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(match_request)
-
-        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
-        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)
+        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
 
         if response.success?
-          parsed_response = response.parsed_response 
+          return response 
         else
-          self.handle_error_response(response)
+          return self.handle_error_response(response)
         end
       end
     end
@@ -50,9 +48,7 @@ class ApplicationController < ActionController::Base
         matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(matches)
         recent_matches = response.parsed_response
-
-        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
-        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)      
+        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers) 
 
         if response.success?
 
@@ -71,25 +67,38 @@ class ApplicationController < ActionController::Base
 
           all_matches = []
 
-          #TODO: If the match does not currently exist on the database...
-
           recent_aram_data.each do |match|
-            match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
-            match_response = HTTParty.get(match_url)
-            parsed_response = match_response.parsed_response
-
-
-            if match_response.success?
-              all_matches.push({match_data: parsed_response, players: match[:players]})
+            if Match.exists?(:match_id => match[:game_id])
+              p 'Match already existed.'
             else
-              return self.handle_error_response(response, 'Hit the rate limit.')
+              # Make the API Call if there is no ratelimit restrictions
+              if RedisHelper.rate_limited?
+                p 'Hit the ratelimit.'
+                return all_matches
+              else
+                # Get the match. 
+                match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
+                response = HTTParty.get(match_url)
+                parsed_response = response.parsed_response
+                redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
+
+                if response.success?
+                  all_matches.push({match_data: parsed_response, players: match[:players]})
+                else
+                  if all_matches.length > 1
+                    return all_matches
+                  else
+                    return self.handle_error_response(parsed_response)
+                  end
+                end
+              end
             end
           end
 
           # If the loop above threw no errors...
+          p all_matches
           return all_matches
         else 
-          p "Riot responded with a #{response.code}: #{response}"
           self.handle_error_response(response)
         end
       end
@@ -103,12 +112,8 @@ class ApplicationController < ActionController::Base
       else
         match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match_id}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(match_url)
-
-        # Since we are making only a single request, the match will come out as an error object or the parsed response. 
+        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
         parsed_response = response.parsed_response
-
-        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
-        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)        
 
         if response.success?
           parsed_response
@@ -125,14 +130,13 @@ class ApplicationController < ActionController::Base
       else
         summoner_ids = ''
         ids.each do |id| 
+          # Formats the ids for the request
           summoner_ids += "#{id},"
         end
 
         summoners_uri = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/#{summoner_ids}?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(summoners_uri)
-
-        ratelimit = ApplicationHelper.parse_ratelimit(response.headers)
-        redis_ratelimit = RedisHelper.save_ratelimit(ratelimit)        
+        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
 
         if response.success?
           parsed_response
