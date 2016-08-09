@@ -8,10 +8,15 @@ This is a Rails app with the front-end being built on Foundation and React. If y
 
 ## Currently Working On
 
-### Getting All of the Needed Assets For the UI
+### Setting Up Analytics and Suggestions for Champion Matchups
 
-Basically, there needs to be functionality built out for grabbing all of the summoner information for each summoner in a match so their names are available. Currently, the code makes as many API calls as they have ARAM matches in their current match history, (so up to 10 if they have played 10 ARAMs, 5 if they have played 5, etc.) but this hits the rate limit very quickly. I am considering only doing live updates for current matches (one api call plus one to get all summoner names) and having the UI update correctly for those. 
+There are some clear-cut goals that will need to be accomlished before ARAM Buster (working title) is fully ready to start accepting requests for simple match analytics. The goal of the feature is to provide users with a utility that helps them make better decisions baed upon their matchup versus the other team. General weaknesses, like sustain being strong against poke teams but weak against strong engage, will be taken in to account.
 
-For recent matches, it would make more sense to somehow seed the database based upon the createdAt date. The problem would be spinning up a thread asynchronously populate the database as it went baed upon the current rate limit available. I would need to set up a catch for these calls AND normal API calls. (It looks like the Riot API sends a header. https://developer.riotgames.com/docs/rate-limiting.) 
+This functionality will be accomplished by taking a pre-calculated champion winrate percentage and running an arbitrary 'score' (based on matchup viability; namely on usefulness to their own team and strength against the enemies' team) and giving back a generalized build path for the player's current champion.
 
+For example, let's say you are playing Alistar versus a heavy poke team who primarily uses magic damage. Stats like magic resist, health regen, mana, and tenacity are going to be important things to have as a tank. The utility should give back suggestions like Spirit Visage or Merc treads. It may even suggest something like Frozen Heart if the utility sees that Alistar is the only source of health sustain (any may suggest leveling his E first) or is the only tank on the team. It may also suggest it if there is a source of physical damage on their team.
+
+* Not quite done. WIll add more explanation. *
+
+#### Analyzing Initial State of the Game
 
