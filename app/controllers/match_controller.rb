@@ -36,9 +36,6 @@ class MatchController < ApplicationController
 
       current_match = RiotAPI.get_current_match(params[:summoner_id])
 
-      p current_match.class
-      p current_match
-
       if current_match.key?('gameId')
         new_match = Match.build_from_current_match(current_match, current_user)
 
@@ -63,8 +60,7 @@ class MatchController < ApplicationController
     if params[:summoner_id]
 
       recent_arams = RiotAPI.get_recent_matches(params[:summoner_id])
-      p recent_arams
-
+      
       if recent_arams.is_a?(Array)
         all_matches = Match.build_from_recent_matches(recent_arams, current_user)
 
