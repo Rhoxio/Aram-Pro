@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :current_user
   include ApplicationHelper
-  include RedisHelper
+  # include Ratelimit
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -24,12 +24,12 @@ class ApplicationController < ActionController::Base
 
     def self.get_current_match(summoner_id)
 
-      if RedisHelper.rate_limited?
+      if Ratelimit.rate_limited?
         return {error: 'Ratelimit exceeded.'}  
       else
         match_request = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/#{summoner_id}?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(match_request)
-        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
+        redis_ratelimit = Ratelimit.save_ratelimit_as_json(response.headers)
 
         if response.success?
           return response 
@@ -42,13 +42,13 @@ class ApplicationController < ActionController::Base
     def self.get_recent_matches(summoner_id, opts = {})
       include_timeline = opts['timeline'] || false
 
-      if RedisHelper.rate_limited?
+      if Ratelimit.rate_limited?
         return {error: 'Ratelimit exceeded.'} 
       else
         matches = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/#{summoner_id}/recent?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(matches)
         recent_matches = response.parsed_response
-        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers) 
+        redis_ratelimit = Ratelimit.save_ratelimit_as_json(response.headers) 
 
         if response.success?
 
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
               p 'Match already existed.'
             else
               # Make the API Call if there is no ratelimit restrictions
-              if RedisHelper.rate_limited?
+              if Ratelimit.rate_limited?
                 p 'Hit the ratelimit.'
                 return all_matches
               else
@@ -80,7 +80,7 @@ class ApplicationController < ActionController::Base
                 match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match[:game_id]}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
                 response = HTTParty.get(match_url)
                 parsed_response = response.parsed_response
-                redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
+                redis_ratelimit = Ratelimit.save_ratelimit_as_json(response.headers)
 
                 if response.success?
                   all_matches.push({match_data: parsed_response, players: match[:players]})
@@ -107,12 +107,12 @@ class ApplicationController < ActionController::Base
     def self.get_match(match_id, opts = {})
       include_timeline = opts['timeline'] || false
 
-      if RedisHelper.rate_limited?
+      if Ratelimit.rate_limited?
         return {error: 'Ratelimit exceeded.'} 
       else
         match_url = "https://na.api.pvp.net/api/lol/na/v2.2/match/#{match_id}?includeTimeline=#{include_timeline}&api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(match_url)
-        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
+        redis_ratelimit = Ratelimit.save_ratelimit_as_json(response.headers)
         parsed_response = response.parsed_response
 
         if response.success?
@@ -125,7 +125,7 @@ class ApplicationController < ActionController::Base
 
     def self.get_summoners(ids)
 
-      if RedisHelper.rate_limited?
+      if Ratelimit.rate_limited?
         return {error: 'Ratelimit exceeded.'} 
       else
         summoner_ids = ''
@@ -136,7 +136,7 @@ class ApplicationController < ActionController::Base
 
         summoners_uri = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/#{summoner_ids}?api_key=#{ENV['RIOT_KEY']}"
         response = HTTParty.get(summoners_uri)
-        redis_ratelimit = RedisHelper.save_ratelimit_as_json(response.headers)
+        redis_ratelimit = Ratelimit.save_ratelimit_as_json(response.headers)
 
         if response.success?
           parsed_response
