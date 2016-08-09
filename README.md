@@ -16,7 +16,8 @@ This functionality will be accomplished by taking a pre-calculated champion winr
 
 For example, let's say you are playing Alistar versus a heavy poke team who primarily uses magic damage. Stats like magic resist, health regen, mana, and tenacity are going to be important things to have as a tank. The utility should give back suggestions like Spirit Visage or Merc treads. It may even suggest something like Frozen Heart if the utility sees that Alistar is the only source of health sustain (any may suggest leveling his E first) or is the only tank on the team. It may also suggest it if there is a source of physical damage on their team.
 
-* Not quite done. WIll add more explanation. *
+##### I Don't Have Real Analytics Data, So...
+In order to get initial values that are somewhat accurate, (as I have no meaningful data at the moment) I am going to scrape a few different websites and run analytics against them to give the Championbase model more robust data on itself to work with.
 
 #### Analyzing Initial State of the Game
 
