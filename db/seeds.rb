@@ -8,12 +8,9 @@
 
 puts "-- Begin Championbase Seed --"
 Championbase.seed_championbase_list
+puts "-- Begin Scrape for Champion Stats --"
+Championbase.scrape_for_champion_stats
 puts "-- Begin Item Seed --"
 Item.seed_item_list
 puts "-- Begin Rune Seed --"
 Rune.seed_rune_list
-
-
-Championbase.scrape_for_champion_stats
-
-

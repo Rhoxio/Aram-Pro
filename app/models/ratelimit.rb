@@ -1,4 +1,5 @@
 class Ratelimit
+  
   def self.initialize_ratelimit
     initial_ratelimit = {
       :seconds => {:used => 'none', :limit => 'none', :most_recent_request => Time.now.to_i},
