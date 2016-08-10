@@ -4,19 +4,47 @@ class Championbase < ActiveRecord::Base
   has_many :champions
   validates :champion_identifier, uniqueness: true
 
+  require 'open-uri'
+
+  def self.scrape_for_champion_stats
+
+    bases = Championbase.all
+    bases.each do |champ|
+      # Metasrc uses champion names formated like aurelionsol or khazix. All lower case, no spaces, no hyphens or apostrophes, no periods.
+      encoded_champ_name = champ.name.gsub("'", "").gsub(" ", "").gsub('.', '').downcase
+
+      doc = Nokogiri::HTML(open("http://www.metasrc.com/na/aram/champion/#{encoded_champ_name}"))
+      p encoded_champ_name
+
+      # champ.doc.css('div#container div#stats table tr th')
+      champ.tier = doc.css('div#container div#stats table tr td')[0].text
+      champ.score = doc.css('div#container div#stats table tr td')[1].text
+      champ.win_rate = doc.css('div#container div#stats table tr td')[2].text.gsub('%', '').to_f
+      champ.pick_rate = doc.css('div#container div#stats table tr td')[3].text.gsub('%', '').to_f
+      champ.KDA = doc.css('div#container div#stats table tr td')[4].text.to_f
+
+      if champ.save
+        ap champ
+      else
+        p "Scrape for #{champ.name} failed."
+      end
+    end 
+  end
+
+
   def self.seed_championbase_list
     request = "http://ddragon.leagueoflegends.com/cdn/6.12.1/data/en_US/champion.json"
     response = HTTParty.get(request)
     champions = response.parsed_response
 
-    champ_tiers = {
-      "god" => ["Varus", "Sona", "Lux", "Teemo", "Jayce"],
-      "very_strong" => ["Annie", "Alistar", "Amumu", "Ashe", "Aurelion Sol", "Azir", "Brand", "Caitlyn", "Darius",  "Ezreal", "Fiddlesticks",  "Galio", "Heimerdinger", "Janna", "Karma", "Kayle", "Kennen", "LeBlanc", "Malphite", "Morgana", "Nidalee", "Rumble", "Sion", "Soraka", "Swain", "Vel’Koz", "Vladimir", "Volibear", "Ziggs", "Miss Fortune", "Nautilus"],
-      "strong" => ["Anivia", "Blitzcrank", "Cho'Gath", "Ekko", "Dr. Mundo", "Draven", "Ahri", "Fizz", "Garen", "Gragas", "Irelia", "Jax", "Jhin", "Katarina", "Kog'Maw", "Lissandra", "Malzahar", "Maokai", "Master Yi", "Sivir", "Shaco", "Tahm Kench", "Talon", "Thresh", "Veigar", "Viktor", "Wukong", "Xerath", "Yasuo", "Zyra", "Zilean"],
-      "average" => ["Akali", "Braum", "Cassiopeia", "Elise", "Fiora", "Gangplank", "Gnar", "Graves", "Illaoi", "Jinx", "Kalista", "Kha’Zix", "Kindred", "Lucian", "Lulu", "Olaf", "Orianna", "Rammus", "Rek’Sai", "Renekton", "Rengar", "Riven", "Ryze", "Sejuani", "Syndra", "Tristana", "Xin Xhao", "Zac", "Zed", "Nami"],
-      "below_average" => ["Corki", "Bard", "Diana", "Hecarim", "Jarvan IV", "Karthus", "Kassadin", "Lee Sin", "Leona", "Nocturne", "Pantheon", "Poppy", "Quinn", "Shen", "Shyvana", "Singed", "Skarner", "Taliyah", "Vayne", "Vi", "Warwick", "Yorick", "Mordekaiser", "Nasus"],
-      "weak" => ["EvelyKn", "Nunu", "Aatrox"]
-    }
+    # champ_tiers = {
+    #   "god" => ["Varus", "Sona", "Lux", "Teemo", "Jayce"],
+    #   "very_strong" => ["Annie", "Alistar", "Amumu", "Ashe", "Aurelion Sol", "Azir", "Brand", "Caitlyn", "Darius",  "Ezreal", "Fiddlesticks",  "Galio", "Heimerdinger", "Janna", "Karma", "Kayle", "Kennen", "LeBlanc", "Malphite", "Morgana", "Nidalee", "Rumble", "Sion", "Soraka", "Swain", "Vel’Koz", "Vladimir", "Volibear", "Ziggs", "Miss Fortune", "Nautilus"],
+    #   "strong" => ["Anivia", "Blitzcrank", "Cho'Gath", "Ekko", "Dr. Mundo", "Draven", "Ahri", "Fizz", "Garen", "Gragas", "Irelia", "Jax", "Jhin", "Katarina", "Kog'Maw", "Lissandra", "Malzahar", "Maokai", "Master Yi", "Sivir", "Shaco", "Tahm Kench", "Talon", "Thresh", "Veigar", "Viktor", "Wukong", "Xerath", "Yasuo", "Zyra", "Zilean"],
+    #   "average" => ["Akali", "Braum", "Cassiopeia", "Elise", "Fiora", "Gangplank", "Gnar", "Graves", "Illaoi", "Jinx", "Kalista", "Kha’Zix", "Kindred", "Lucian", "Lulu", "Olaf", "Orianna", "Rammus", "Rek’Sai", "Renekton", "Rengar", "Riven", "Ryze", "Sejuani", "Syndra", "Tristana", "Xin Xhao", "Zac", "Zed", "Nami"],
+    #   "below_average" => ["Corki", "Bard", "Diana", "Hecarim", "Jarvan IV", "Karthus", "Kassadin", "Lee Sin", "Leona", "Nocturne", "Pantheon", "Poppy", "Quinn", "Shen", "Shyvana", "Singed", "Skarner", "Taliyah", "Vayne", "Vi", "Warwick", "Yorick", "Mordekaiser", "Nasus"],
+    #   "weak" => ["EvelyKn", "Nunu", "Aatrox"]
+    # }
 
     # Some champs with apostrophes are not populating correctly.
     champ_tags = {
@@ -58,34 +86,32 @@ class Championbase < ActiveRecord::Base
       champion.other_tags = []
 
       # Assign one tier per champ
-      if champ_tiers["god"].include?(champion.name)
-        champion.other_tags << 'god'
-        champion.rating = 55
-      elsif champ_tiers["very_strong"].include?(champion.name)
-        champion.other_tags << 'very_strong'
-        champion.rating = 51
-      elsif champ_tiers["strong"].include?(champion.name)
-        champion.other_tags << 'strong'
-        champion.rating = 48
-      elsif champ_tiers["average"].include?(champion.name)
-        champion.other_tags << 'average'
-        champion.rating = 46
-      elsif champ_tiers["below_average"].include?(champion.name)
-        champion.other_tags << 'below_average'
-        champion.rating = 43
-      elsif champ_tiers["weak"].include?(champion.name)
-        champion.other_tags << 'weak'
-        champion.rating = 40
-      else
-        champion.other_tags << 'not_ranked'
-      end
+      # if champ_tiers["god"].include?(champion.name)
+      #   champion.other_tags << 'god'
+      #   champion.rating = 55
+      # elsif champ_tiers["very_strong"].include?(champion.name)
+      #   champion.other_tags << 'very_strong'
+      #   champion.rating = 51
+      # elsif champ_tiers["strong"].include?(champion.name)
+      #   champion.other_tags << 'strong'
+      #   champion.rating = 48
+      # elsif champ_tiers["average"].include?(champion.name)
+      #   champion.other_tags << 'average'
+      #   champion.rating = 46
+      # elsif champ_tiers["below_average"].include?(champion.name)
+      #   champion.other_tags << 'below_average'
+      #   champion.rating = 43
+      # elsif champ_tiers["weak"].include?(champion.name)
+      #   champion.other_tags << 'weak'
+      #   champion.rating = 40
+      # else
+      #   champion.other_tags << 'not_ranked'
+      # end
 
-      puts '-------------'
       # Assign mulitple tags per champ
       champ_tags.each do |tag, champions|
         if champ_tags[tag].include?(champion.name)
           champion.other_tags.push(tag)
-          # p "Assigned #{tag} to #{champion.name}!"
         end
       end
       

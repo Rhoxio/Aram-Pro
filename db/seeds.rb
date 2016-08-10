@@ -14,4 +14,6 @@ puts "-- Begin Rune Seed --"
 Rune.seed_rune_list
 
 
+Championbase.scrape_for_champion_stats
+
 

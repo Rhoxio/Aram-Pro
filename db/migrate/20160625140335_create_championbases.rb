@@ -10,6 +10,13 @@ class CreateChampionbases < ActiveRecord::Migration
       t.string :image
       t.string :riot_tags, array: true
 
+      t.float :score
+      t.float :win_rate
+      t.float :pick_rate
+      t.float :KDA
+
+      t.string :tier
+
       t.integer :rating, default: 0
 
       # Other tags will be used for other forms of classification later.

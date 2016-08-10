@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20160711213420) do
     t.string   "blurb"
     t.string   "image"
     t.string   "riot_tags",                                     array: true
+    t.float    "score"
+    t.float    "win_rate"
+    t.float    "pick_rate"
+    t.float    "KDA"
+    t.string   "tier"
     t.integer  "rating",              default: 0
     t.string   "other_tags",          default: [],              array: true
     t.text     "stats"

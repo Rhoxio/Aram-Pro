@@ -12,6 +12,7 @@ class Champion < ActiveRecord::Base
 
   def self.build_champion(participant)
     champ_id = participant['championId'].to_i
+    
     champion = Champion.new
     spell_1 = participant['spell1Id']
     spell_2 = participant['spell2Id']
