@@ -11,7 +11,7 @@ class Championbase < ActiveRecord::Base
     bases = Championbase.all
     bases.each do |champ|
       # Metasrc uses champion names formated like aurelionsol or khazix. All lower case, no spaces, no hyphens or apostrophes, no periods.
-      formatted_champ_name = champ.name.gsub(/[. ']/, {' '=>'', '.'=>'', "'" => ""}).downcase
+      formatted_champ_name = champ.name.gsub(/[. ']/, "").downcase
 
       doc = Nokogiri::HTML(open("http://www.metasrc.com/na/aram/champion/#{formatted_champ_name}"))
 
@@ -87,5 +87,5 @@ class Championbase < ActiveRecord::Base
       end
     end
   end
-  
+
 end
