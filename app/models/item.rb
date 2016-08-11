@@ -2,6 +2,9 @@ class Item < ActiveRecord::Base
   has_many :builds
   has_many :champions, through: :builds
 
+  has_many :projected_builds
+  has_many :champions, through: :projected_builds  
+
   validates :item_identifier, uniqueness: true
 
   serialize :gold

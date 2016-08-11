@@ -1,5 +1,6 @@
-class Matchup
-  # This class conatins all of the matchup calculation and chaching (redis) type logic and functionality.
+class Matchup < ActiveRecord::Base
+  belongs_to :match
 
-
+  # What I want is a place to store matchup data. This would probably consist of
+  # attributes to hold the
 end

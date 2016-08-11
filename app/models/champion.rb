@@ -4,7 +4,10 @@ class Champion < ActiveRecord::Base
   belongs_to :summoner
 
   has_many :builds
-  has_many :items, through: :builds  
+  has_many :items, through: :builds
+
+  has_many :projected_builds
+  has_many :items, through: :projected_builds
 
   serialize :postgame_stats
 

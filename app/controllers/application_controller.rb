@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
             if game["gameMode"] == "ARAM" && game["mapId"] === 12
 
               players = game["fellowPlayers"]
-              # Pushing the current player in to the player array with the same formatting as fellowPlayers.
+              # Pushing the current player in to the play -er array with the same formatting as fellowPlayers.
               players.push({"summonerId" => recent_matches["summonerId"], "teamId" => game['teamId'], "championId"=> game['championId'] })
               recent_aram_data.push({game_id: game["gameId"], players: players })
 
