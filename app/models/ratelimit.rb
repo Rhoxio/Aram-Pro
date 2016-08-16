@@ -1,5 +1,5 @@
 class Ratelimit
-  
+
   def self.initialize_ratelimit
     initial_ratelimit = {
       :seconds => {:used => 'none', :limit => 'none', :most_recent_request => Time.now.to_i},
@@ -23,19 +23,24 @@ class Ratelimit
       :ten_minutes => {:used => nil, :limit => nil, :most_recent_request => nil}
     }
 
-    headers['x-rate-limit-count'].split(',').each_with_index do |limit, index|
-      # I will add more when I get a prod key.
-      if index == 0
-        rate_limits[:seconds][:used] = limit.split(':')[0]
-        rate_limits[:seconds][:limit] = limit.split(':')[1]
-        rate_limits[:seconds][:most_recent_request] = Time.now.to_i
-      elsif index == 1
-        rate_limits[:ten_minutes][:used] = limit.split(':')[0]
-        rate_limits[:ten_minutes][:limit] = limit.split(':')[1]
-        rate_limits[:ten_minutes][:most_recent_request] = Time.now.to_i
+    if headers['x-rate-limit-count'] != nil
+
+      headers['x-rate-limit-count'].split(',').each_with_index do |limit, index|
+        # I will add more when I get a prod key.
+        if index == 0
+          rate_limits[:seconds][:used] = limit.split(':')[0]
+          rate_limits[:seconds][:limit] = limit.split(':')[1]
+          rate_limits[:seconds][:most_recent_request] = Time.now.to_i
+        elsif index == 1
+          rate_limits[:ten_minutes][:used] = limit.split(':')[0]
+          rate_limits[:ten_minutes][:limit] = limit.split(':')[1]
+          rate_limits[:ten_minutes][:most_recent_request] = Time.now.to_i
+        end
       end
+      return rate_limits.to_json
+    else
+      return {error: "No rate limit header present."}.to_json
     end
-    return rate_limits.to_json
   end  
 
   def self.reset_ratelimit_timestamp
@@ -50,12 +55,17 @@ class Ratelimit
     # Before saving them, we need to parse.
     ratelimit = self.parse_ratelimit(headers)
 
-    post = $redis.set('ratelimit', ratelimit)
-    if post === 'OK'
-      return JSON.parse($redis.get('ratelimit'))
+    if !JSON.parse(ratelimit).key?('error')
+      post = $redis.set('ratelimit', ratelimit)
+      
+      if post === 'OK'
+        return JSON.parse($redis.get('ratelimit'))
+      else
+        p 'Failed to reset the ratelimit timestamp.'
+        return false
+      end
     else
-      p 'Failed to reset the ratelimit timestamp.'
-      return false
+      return JSON.parse($redis.get('ratelimit'))
     end
   end
 

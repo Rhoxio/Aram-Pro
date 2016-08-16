@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Championbase - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-scrape_for_champion_stats">::scrape_for_champion_stats</a>
+    
+    <li ><a href="#method-c-seed_championbase_list">::seed_championbase_list</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Championbase">
+  <h1 id="class-Championbase" class="class">
+    class Championbase
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="KDA">KDA
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-scrape_for_champion_stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scrape_for_champion_stats</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="scrape_for_champion_stats-source">
+            <pre><span class="ruby-comment"># File app/models/championbase.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scrape_for_champion_stats</span>
+
+  <span class="ruby-identifier">bases</span> = <span class="ruby-constant">Championbase</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">bases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">champ</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Metasrc uses champion names formated like aurelionsol or khazix. All lower case, no spaces, no hyphens or apostrophes, no periods.</span>
+    <span class="ruby-identifier">formatted_champ_name</span> = <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[. &#39;]/</span>, <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">downcase</span>
+
+    <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>(<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;http://www.metasrc.com/na/aram/champion/#{formatted_champ_name}&quot;</span>))
+
+    <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">tier</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">&#39;div#container div#stats table tr td&#39;</span>)[<span class="ruby-value">0</span>].<span class="ruby-identifier">text</span>
+    <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">score</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">&#39;div#container div#stats table tr td&#39;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">text</span>
+    <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">win_rate</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">&#39;div#container div#stats table tr td&#39;</span>)[<span class="ruby-value">2</span>].<span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;%&#39;</span>, <span class="ruby-string">&#39;&#39;</span>).<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">pick_rate</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">&#39;div#container div#stats table tr td&#39;</span>)[<span class="ruby-value">3</span>].<span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;%&#39;</span>, <span class="ruby-string">&#39;&#39;</span>).<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">champ</span>.<span class="ruby-constant">KDA</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">&#39;div#container div#stats table tr td&#39;</span>)[<span class="ruby-value">4</span>].<span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_f</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">champ</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">ap</span> <span class="ruby-identifier">champ</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">p</span> <span class="ruby-node">&quot;Scrape for #{champ.name} failed.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-seed_championbase_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">seed_championbase_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="seed_championbase_list-source">
+            <pre><span class="ruby-comment"># File app/models/championbase.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">seed_championbase_list</span>
+  <span class="ruby-identifier">request</span> = <span class="ruby-string">&quot;http://ddragon.leagueoflegends.com/cdn/6.16.2/data/en_US/champion.json&quot;</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">request</span>)
+  <span class="ruby-identifier">champions</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parsed_response</span>
+
+  <span class="ruby-comment"># Some champs with apostrophes are not populating correctly.</span>
+  <span class="ruby-identifier">champ_tags</span> = {
+    <span class="ruby-string">&quot;heavy_cc&quot;</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Amumu&quot;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Annie&quot;</span>, <span class="ruby-string">&quot;Ashe&quot;</span>, <span class="ruby-string">&quot;Braum&quot;</span>, <span class="ruby-string">&quot;Blitzcrank&quot;</span>, <span class="ruby-string">&quot;Cassiopeia&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Elise&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Galio&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Janna&quot;</span>, <span class="ruby-string">&quot;Leona&quot;</span>, <span class="ruby-string">&quot;Lissandra&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Malphite&quot;</span>, <span class="ruby-string">&quot;Malzahar&quot;</span>, <span class="ruby-string">&quot;Maokai&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nami&quot;</span>, <span class="ruby-string">&quot;Nautilus&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Poppy&quot;</span>, <span class="ruby-string">&quot;Rammus&quot;</span>, <span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Ryze&quot;</span>, <span class="ruby-string">&quot;Sejuani&quot;</span>, <span class="ruby-string">&quot;Sion&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Tahm&#39;Kench&quot;</span>, <span class="ruby-string">&quot;Taric&quot;</span>, <span class="ruby-string">&quot;Thresh&quot;</span>, <span class="ruby-string">&quot;Twisted Fate&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Veigar&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Vi&quot;</span>, <span class="ruby-string">&quot;Warwick&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>],
+    <span class="ruby-string">&quot;tanky&quot;</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Amumu&quot;</span>, <span class="ruby-string">&quot;Aurelion Sol&quot;</span>, <span class="ruby-string">&quot;Braum&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Darius&quot;</span>, <span class="ruby-string">&quot;Dr. Mundo&quot;</span>, <span class="ruby-string">&quot;Irelia&quot;</span>, <span class="ruby-string">&quot;Galio&quot;</span>, <span class="ruby-string">&quot;Garen&quot;</span>, <span class="ruby-string">&quot;Illaoi&quot;</span>, <span class="ruby-string">&quot;Gnar&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Hecarim&quot;</span>, <span class="ruby-string">&quot;Malphite&quot;</span>, <span class="ruby-string">&quot;Leona&quot;</span>, <span class="ruby-string">&quot;Maokai&quot;</span>, <span class="ruby-string">&quot;Nasus&quot;</span>, <span class="ruby-string">&quot;Nautilus&quot;</span>, <span class="ruby-string">&quot;Olaf&quot;</span>, <span class="ruby-string">&quot;Rek’Sai&quot;</span>, <span class="ruby-string">&quot;Rammus&quot;</span>, <span class="ruby-string">&quot;Renekton&quot;</span>, <span class="ruby-string">&quot;Sejuani&quot;</span>, <span class="ruby-string">&quot;Shyvana&quot;</span>, <span class="ruby-string">&quot;Singed&quot;</span>, <span class="ruby-string">&quot;Sion&quot;</span>, <span class="ruby-string">&quot;Skarner&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Tahm Kench&quot;</span>, <span class="ruby-string">&quot;Taric&quot;</span>, <span class="ruby-string">&quot;Thresh&quot;</span>, <span class="ruby-string">&quot;Udyr&quot;</span>, <span class="ruby-string">&quot;Vi&quot;</span>, <span class="ruby-string">&quot;Vladimir&quot;</span>, <span class="ruby-string">&quot;Volibear&quot;</span>, <span class="ruby-string">&quot;Warwick&quot;</span>, <span class="ruby-string">&quot;Zac&quot;</span>, <span class="ruby-string">&quot;Urgot&quot;</span>],
+    <span class="ruby-string">&quot;true_damage&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Ahri&quot;</span>, <span class="ruby-string">&quot;Corki&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Fiora&quot;</span>, <span class="ruby-string">&quot;Irelia&quot;</span>, <span class="ruby-string">&quot;Garen&quot;</span>, <span class="ruby-string">&quot;Gangplank&quot;</span>, <span class="ruby-string">&quot;Twitch&quot;</span>, <span class="ruby-string">&quot;Master Yi&quot;</span>, <span class="ruby-string">&quot;Rek’Sai&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Kog&#39;Maw&quot;</span>],
+    <span class="ruby-string">&quot;high_dps&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Ashe&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Tryndamere&quot;</span>, <span class="ruby-string">&quot;Brand&quot;</span>, <span class="ruby-string">&quot;Tristana&quot;</span>, <span class="ruby-string">&quot;Caitlyn&quot;</span>, <span class="ruby-string">&quot;Cassiopeia&quot;</span>, <span class="ruby-string">&quot;Draven&quot;</span>, <span class="ruby-string">&quot;Ezreal&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Fiora&quot;</span>, <span class="ruby-string">&quot;Fizz&quot;</span>, <span class="ruby-string">&quot;Heimerdinger&quot;</span>, <span class="ruby-string">&quot;Jax&quot;</span>, <span class="ruby-string">&quot;Jayce&quot;</span>, <span class="ruby-string">&quot;Jhin&quot;</span>, <span class="ruby-string">&quot;Jinx&quot;</span>, <span class="ruby-string">&quot;Kalista&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;Kayle&quot;</span>, <span class="ruby-string">&quot;Kindred&quot;</span>, <span class="ruby-string">&quot;Kog&#39;Maw&quot;</span>, <span class="ruby-string">&quot;LeBlanc&quot;</span>, <span class="ruby-string">&quot;Lucian&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Master Yi&quot;</span>, <span class="ruby-string">&quot;Miss Fortune&quot;</span>, <span class="ruby-string">&quot;Rengar&quot;</span>, <span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Rumble&quot;</span>, <span class="ruby-string">&quot;Sivir&quot;</span>, <span class="ruby-string">&quot;Talon&quot;</span>, <span class="ruby-string">&quot;Twitch&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Vayne&quot;</span>, <span class="ruby-string">&quot;Veigar&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Viktor&quot;</span>, <span class="ruby-string">&quot;Vladimir&quot;</span>, <span class="ruby-string">&quot;Wukong&quot;</span>, <span class="ruby-string">&quot;Xerath&quot;</span>, <span class="ruby-string">&quot;Xin Zhao&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>, <span class="ruby-string">&quot;Ziggs&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>, <span class="ruby-string">&quot;Yasuo&quot;</span>],
+    <span class="ruby-string">&quot;self_healing&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Aatrox&quot;</span>, <span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Bard&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Dr. Mundo&quot;</span>, <span class="ruby-string">&quot;Elise&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Galio&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Hecarim&quot;</span>, <span class="ruby-string">&quot;Illaoi&quot;</span>, <span class="ruby-string">&quot;Irelia&quot;</span>, <span class="ruby-string">&quot;Karma&quot;</span>, <span class="ruby-string">&quot;Kayle&quot;</span>, <span class="ruby-string">&quot;Kindred&quot;</span>, <span class="ruby-string">&quot;Maokai&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nami&quot;</span>, <span class="ruby-string">&quot;Nasus&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span>, <span class="ruby-string">&quot;Nocturne&quot;</span>, <span class="ruby-string">&quot;Nunu&quot;</span>, <span class="ruby-string">&quot;Olaf&quot;</span>, <span class="ruby-string">&quot;Rek’Sai&quot;</span>, <span class="ruby-string">&quot;Renekton&quot;</span>, <span class="ruby-string">&quot;Rengar&quot;</span>, <span class="ruby-string">&quot;Ryze&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Tahm Kench&quot;</span>, <span class="ruby-string">&quot;Taric&quot;</span>, <span class="ruby-string">&quot;Trundle&quot;</span>, <span class="ruby-string">&quot;Udyr&quot;</span>, <span class="ruby-string">&quot;Vladimir&quot;</span>, <span class="ruby-string">&quot;Volibear&quot;</span>, <span class="ruby-string">&quot;Warwick&quot;</span>, <span class="ruby-string">&quot;Xin Zhao&quot;</span>, <span class="ruby-string">&quot;Yorick&quot;</span>, <span class="ruby-string">&quot;Zac&quot;</span>],
+    <span class="ruby-string">&quot;high_burst&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Ahri&quot;</span>, <span class="ruby-string">&quot;Akali&quot;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Annie&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Brand&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Diana&quot;</span>, <span class="ruby-string">&quot;Draven&quot;</span>, <span class="ruby-string">&quot;Ekko&quot;</span>, <span class="ruby-string">&quot;Ezreal&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Fizz&quot;</span>, <span class="ruby-string">&quot;Gangplank&quot;</span>, <span class="ruby-string">&quot;Heimerdinger&quot;</span>, <span class="ruby-string">&quot;Jayce&quot;</span>, <span class="ruby-string">&quot;Jhin&quot;</span>, <span class="ruby-string">&quot;Kassadin&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;Kennen&quot;</span>, <span class="ruby-string">&quot;Kha’Zix&quot;</span>, <span class="ruby-string">&quot;LeBlanc&quot;</span>, <span class="ruby-string">&quot;Lissandra&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Master Yi&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span>, <span class="ruby-string">&quot;Nocturne&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Pantheon&quot;</span>, <span class="ruby-string">&quot;Rengar&quot;</span>, <span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Ryze&quot;</span>, <span class="ruby-string">&quot;Shaco&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Talon&quot;</span>, <span class="ruby-string">&quot;Twisted Fate&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Veigar&quot;</span>, <span class="ruby-string">&quot;Viktor&quot;</span>, <span class="ruby-string">&quot;Xerath&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>, <span class="ruby-string">&quot;Ziggs&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>, <span class="ruby-string">&quot;Yasuo&quot;</span>],
+    <span class="ruby-string">&quot;healer&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Bard&quot;</span>, <span class="ruby-string">&quot;Janna&quot;</span>, <span class="ruby-string">&quot;Kayle&quot;</span>, <span class="ruby-string">&quot;Nami&quot;</span>, <span class="ruby-string">&quot;Soraka&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span> ],
+    <span class="ruby-string">&quot;aoe_cc&quot;</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Amumu&quot;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Annie&quot;</span>, <span class="ruby-string">&quot;Ashe&quot;</span>, <span class="ruby-string">&quot;Bard&quot;</span>, <span class="ruby-string">&quot;Braum&quot;</span>, <span class="ruby-string">&quot;Cassiopeia&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Galio&quot;</span>, <span class="ruby-string">&quot;Gankplank&quot;</span>, <span class="ruby-string">&quot;Karthus&quot;</span>, <span class="ruby-string">&quot;Kennen&quot;</span>, <span class="ruby-string">&quot;Leona&quot;</span>, <span class="ruby-string">&quot;Lissandra&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Malphite&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nami&quot;</span>, <span class="ruby-string">&quot;Nautilus&quot;</span>, <span class="ruby-string">&quot;Nunu&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Rumble&quot;</span>, <span class="ruby-string">&quot;Sejuani&quot;</span>, <span class="ruby-string">&quot;Sion&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Taliyah&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Veigar&quot;</span>, <span class="ruby-string">&quot;Wukong&quot;</span>, <span class="ruby-string">&quot;Zac&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>, <span class="ruby-string">&quot;Yasuo&quot;</span>],
+    <span class="ruby-string">&quot;waveclear&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Ahri&quot;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Aurelion Sol&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Brand&quot;</span>, <span class="ruby-string">&quot;Cassiopeia&quot;</span>, <span class="ruby-string">&quot;Caitlyn&quot;</span>, <span class="ruby-string">&quot;Cho&#39;Gath&quot;</span>, <span class="ruby-string">&quot;Corki&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Galio&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Heimerdinger&quot;</span>, <span class="ruby-string">&quot;Janna&quot;</span>, <span class="ruby-string">&quot;Jayce&quot;</span>, <span class="ruby-string">&quot;Jinx&quot;</span>, <span class="ruby-string">&quot;Karma&quot;</span>, <span class="ruby-string">&quot;Karthus&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Malzahar&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nasus&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Rumble&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Teemo&quot;</span>, <span class="ruby-string">&quot;Twisted Fate&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Xerath&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>, <span class="ruby-string">&quot;Ziggs&quot;</span>, <span class="ruby-string">&quot;Zilean&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>],
+    <span class="ruby-string">&quot;preserving_ult&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Bard&quot;</span>, <span class="ruby-string">&quot;Kayle&quot;</span>, <span class="ruby-string">&quot;Kindred&quot;</span>, <span class="ruby-string">&quot;Zilean&quot;</span>, <span class="ruby-string">&#39;Shen&#39;</span>],
+    <span class="ruby-string">&quot;poke&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Ashe&quot;</span>, <span class="ruby-string">&quot;Aurelion Sol&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Brand&quot;</span>, <span class="ruby-string">&quot;Caitlyn&quot;</span>, <span class="ruby-string">&quot;Corki&quot;</span>, <span class="ruby-string">&quot;Ezreal&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Heimerdinger&quot;</span>, <span class="ruby-string">&quot;Gnar&quot;</span>, <span class="ruby-string">&quot;Jayce&quot;</span>, <span class="ruby-string">&quot;Jinx&quot;</span>, <span class="ruby-string">&quot;Karma&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Soraka&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Taliyah&quot;</span>, <span class="ruby-string">&quot;Teemo&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Viktor&quot;</span>, <span class="ruby-string">&quot;Xerath&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>, <span class="ruby-string">&quot;Ziggs&quot;</span>, <span class="ruby-string">&quot;Zilean&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>, <span class="ruby-string">&#39;Urgot&#39;</span>],
+    <span class="ruby-string">&quot;initiator&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Aatrox&quot;</span>, <span class="ruby-string">&quot;Ashe&quot;</span>, <span class="ruby-string">&quot;Alistar&quot;</span>, <span class="ruby-string">&quot;Amumu&quot;</span>, <span class="ruby-string">&quot;Annie&quot;</span>, <span class="ruby-string">&quot;Braum&quot;</span>, <span class="ruby-string">&quot;Blitzcrank&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Hecarim&quot;</span>, <span class="ruby-string">&quot;Jarvan IV&quot;</span>, <span class="ruby-string">&quot;Jax&quot;</span>, <span class="ruby-string">&quot;Kennen&quot;</span>, <span class="ruby-string">&quot;Lee Sin&quot;</span>, <span class="ruby-string">&quot;Leona&quot;</span>, <span class="ruby-string">&quot;Lissandra&quot;</span>, <span class="ruby-string">&quot;Malphite&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Nautilus&quot;</span>, <span class="ruby-string">&quot;Nocturne&quot;</span>, <span class="ruby-string">&quot;Olaf&quot;</span>, <span class="ruby-string">&quot;Pantheon&quot;</span>, <span class="ruby-string">&quot;Poppy&quot;</span>, <span class="ruby-string">&quot;Rammus&quot;</span>, <span class="ruby-string">&quot;Rek’Sai&quot;</span>, <span class="ruby-string">&quot;Rengar&quot;</span>, <span class="ruby-string">&quot;Sejuani&quot;</span>, <span class="ruby-string">&quot;Shen&quot;</span>, <span class="ruby-string">&quot;Shyvana&quot;</span>, <span class="ruby-string">&quot;Sion&quot;</span>, <span class="ruby-string">&quot;Singed&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Trundle&quot;</span>, <span class="ruby-string">&quot;Vi&quot;</span>, <span class="ruby-string">&quot;Volibear&quot;</span>, <span class="ruby-string">&quot;Wukong&quot;</span>, <span class="ruby-string">&quot;Warwick&quot;</span>, <span class="ruby-string">&quot;Zac&quot;</span>],
+    <span class="ruby-string">&quot;mobile&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Ahri&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Tristana&quot;</span>, <span class="ruby-string">&quot;Caitlyn&quot;</span>, <span class="ruby-string">&quot;Corki&quot;</span>, <span class="ruby-string">&quot;Ekko&quot;</span>, <span class="ruby-string">&quot;Elise&quot;</span>, <span class="ruby-string">&quot;Ezreal&quot;</span>, <span class="ruby-string">&quot;Fiora&quot;</span>, <span class="ruby-string">&quot;Fizz&quot;</span>, <span class="ruby-string">&quot;Gnar&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Jarvan IV&quot;</span>, <span class="ruby-string">&quot;Kalista&quot;</span>, <span class="ruby-string">&quot;Kassadin&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;Kennen&quot;</span>, <span class="ruby-string">&quot;Kha’Zix&quot;</span>, <span class="ruby-string">&quot;Kindred&quot;</span>, <span class="ruby-string">&quot;LeBlanc&quot;</span>, <span class="ruby-string">&quot;Lee Sin&quot;</span>, <span class="ruby-string">&quot;Lucian&quot;</span>, <span class="ruby-string">&quot;Quinn&quot;</span>, <span class="ruby-string">&quot;Rammus&quot;</span>, <span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Shyvana&quot;</span>, <span class="ruby-string">&quot;Udyr&quot;</span>, <span class="ruby-string">&quot;Vi&quot;</span>, <span class="ruby-string">&quot;Yasuo&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>],
+    <span class="ruby-string">&quot;traps&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Caitlyn&quot;</span>, <span class="ruby-string">&quot;Heimerdinger&quot;</span>, <span class="ruby-string">&quot;Teemo&quot;</span>, <span class="ruby-string">&quot;Shaco&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span>, <span class="ruby-string">&quot;Jhin&quot;</span>],
+    <span class="ruby-string">&quot;displacement&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Aurelion Sol&quot;</span>, <span class="ruby-string">&quot;Corki&quot;</span>, <span class="ruby-string">&quot;Darius&quot;</span>, <span class="ruby-string">&quot;Blitzcrank&quot;</span>, <span class="ruby-string">&quot;Draven&quot;</span>, <span class="ruby-string">&quot;Gragas&quot;</span>, <span class="ruby-string">&quot;Hecarim&quot;</span>, <span class="ruby-string">&quot;Lee Sin&quot;</span>, <span class="ruby-string">&quot;Lulu&quot;</span>, <span class="ruby-string">&quot;Taliyah&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Poppy&quot;</span>, <span class="ruby-string">&quot;Syndra&quot;</span>, <span class="ruby-string">&quot;Quinn&quot;</span>, <span class="ruby-string">&quot;Thresh&quot;</span>, <span class="ruby-string">&quot;Singed&quot;</span>, <span class="ruby-string">&quot;Volibear&quot;</span>, <span class="ruby-string">&quot;Xin Zhao&quot;</span>, <span class="ruby-string">&quot;Zac&quot;</span>, <span class="ruby-string">&quot;Ziggs&quot;</span>, <span class="ruby-string">&quot;Urgot&quot;</span>],
+
+    <span class="ruby-string">&quot;good_scaling&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&#39;Akali&#39;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Cassiopeia&quot;</span>, <span class="ruby-string">&quot;Irelia&quot;</span>, <span class="ruby-string">&quot;Jax&quot;</span>, <span class="ruby-string">&quot;Kayle&quot;</span>, <span class="ruby-string">&quot;Master Yi&quot;</span>, <span class="ruby-string">&quot;Ryze&quot;</span>, <span class="ruby-string">&quot;Olaf&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Trundle&quot;</span>, <span class="ruby-string">&quot;Udyr&quot;</span>, <span class="ruby-string">&quot;Veigar&quot;</span>, <span class="ruby-string">&quot;Vladimir&quot;</span>, <span class="ruby-string">&quot;Xin Zhao&quot;</span>],
+    <span class="ruby-string">&quot;early_power&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Blitzcrank&quot;</span>, <span class="ruby-string">&quot;Draven&quot;</span>, <span class="ruby-string">&quot;Jayce&quot;</span>, <span class="ruby-string">&quot;Jhin&quot;</span>, <span class="ruby-string">&quot;Karma&quot;</span>, <span class="ruby-string">&quot;Miss Fortune&quot;</span>, <span class="ruby-string">&quot;Nidalee&quot;</span>, <span class="ruby-string">&quot;Pantheon&quot;</span>, <span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Shaco&quot;</span>, <span class="ruby-string">&quot;Twisted Fate&quot;</span>, <span class="ruby-string">&quot;Varus&quot;</span>, <span class="ruby-string">&quot;Volibear&quot;</span>],
+    <span class="ruby-string">&quot;terrain_generation&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Azir&quot;</span>, <span class="ruby-string">&quot;Trundle&quot;</span>, <span class="ruby-string">&quot;Jarvan IV&quot;</span>, <span class="ruby-string">&quot;Taliyah&quot;</span>],
+    <span class="ruby-string">&quot;stealth&quot;</span>=<span class="ruby-operator">&gt;</span>[<span class="ruby-string">&quot;EvelyKn&quot;</span>, <span class="ruby-string">&quot;Kha’Zix&quot;</span>, <span class="ruby-string">&quot;Rengar&quot;</span>, <span class="ruby-string">&quot;Shaco&quot;</span>, <span class="ruby-string">&quot;Teemo&quot;</span>, <span class="ruby-string">&quot;Twitch&quot;</span>, <span class="ruby-string">&quot;Vayve&quot;</span>, <span class="ruby-string">&quot;Wukong&quot;</span>],
+
+    <span class="ruby-string">&quot;strong_level_6&quot;</span>=<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;Amumu&quot;</span>, <span class="ruby-string">&quot;Annie&quot;</span>, <span class="ruby-string">&quot;Anivia&quot;</span>, <span class="ruby-string">&quot;Brand&quot;</span>, <span class="ruby-string">&quot;Darius&quot;</span>, <span class="ruby-string">&quot;Ezreal&quot;</span>, <span class="ruby-string">&quot;Fiddlesticks&quot;</span>, <span class="ruby-string">&quot;Fizz&quot;</span>, <span class="ruby-string">&quot;Jax&quot;</span>, <span class="ruby-string">&quot;Karthus&quot;</span>, <span class="ruby-string">&quot;Katarina&quot;</span>, <span class="ruby-string">&quot;LeBlanc&quot;</span>, <span class="ruby-string">&quot;Lissandra&quot;</span>, <span class="ruby-string">&quot;Lux&quot;</span>, <span class="ruby-string">&quot;Malphite&quot;</span>, <span class="ruby-string">&quot;Malzahar&quot;</span>, <span class="ruby-string">&quot;Miss Fortune&quot;</span>, <span class="ruby-string">&quot;Mordekaiser&quot;</span>, <span class="ruby-string">&quot;Morgana&quot;</span>, <span class="ruby-string">&quot;Orianna&quot;</span>, <span class="ruby-string">&quot;Sejuani&quot;</span>,<span class="ruby-string">&quot;Riven&quot;</span>, <span class="ruby-string">&quot;Sion&quot;</span>, <span class="ruby-string">&quot;Sona&quot;</span>, <span class="ruby-string">&quot;Swain&quot;</span>, <span class="ruby-string">&quot;Talon&quot;</span>, <span class="ruby-string">&quot;Taric&quot;</span>, <span class="ruby-string">&quot;Tryndamere&quot;</span>, <span class="ruby-string">&quot;Vel’Koz&quot;</span>, <span class="ruby-string">&quot;Vi&quot;</span>, <span class="ruby-string">&quot;Vladimir&quot;</span>, <span class="ruby-string">&quot;Warwick&quot;</span>, <span class="ruby-string">&quot;Yasuo&quot;</span>, <span class="ruby-string">&quot;Zed&quot;</span>, <span class="ruby-string">&quot;Zilean&quot;</span>, <span class="ruby-string">&quot;Zyra&quot;</span>]
+  }
+
+  <span class="ruby-identifier">champions</span>[<span class="ruby-string">&quot;data&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">attributes</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">champion</span> = <span class="ruby-constant">Championbase</span>.<span class="ruby-identifier">new</span>()
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;name&quot;</span>]
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">title</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;title&quot;</span>]
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">champion_identifier</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;key&quot;</span>]
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">blurb</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;blurb&quot;</span>]
+
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">image</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;image&quot;</span>][<span class="ruby-string">&quot;full&quot;</span>]
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">riot_tags</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;tags&quot;</span>]
+
+    <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">stats</span> = <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;stats&quot;</span>]
+
+    <span class="ruby-comment"># Assign mulitple tags per champ</span>
+    <span class="ruby-identifier">champ_tags</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag</span>, <span class="ruby-identifier">champions</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">champ_tags</span>[<span class="ruby-identifier">tag</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">champion</span>.<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">other_tags</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">tag</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">champion</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">p</span> <span class="ruby-node">&quot;#{champion.name} saved!&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">p</span> <span class="ruby-string">&quot;Champion already existed&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

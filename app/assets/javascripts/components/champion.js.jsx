@@ -160,19 +160,20 @@ var ItemEntry = React.createClass({
 
   handleMouseOver: function(event){
     var element = $(".tooltip-"+this.props.identifier)
-    console.log(element)
+    // console.log(element)
     $(element).removeClass('hidden')
     $(element).addClass('show') 
   },
 
   handleMouseOut: function(event){
     var element = $(".tooltip-"+this.props.identifier)
-    console.log(element)
+    // console.log(element)
     $(element).removeClass('show')
     $(element).addClass('hidden') 
   },  
 
   render:function(){
+
     return(
       <div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseOut} className='columns item-container'>
         <a href="#" className='item item-small columns'>
@@ -180,7 +181,9 @@ var ItemEntry = React.createClass({
         </a>
 
         <div className={"tooltip-"+this.props.identifier+" hidden item-tooltip"}>
-          <h5> Opened Tooltip </h5>
+          <h5>{this.props.item.name}</h5>
+          <h5>Cost: {this.props.item.gold.total}</h5>
+          <h5>Effect: {this.props.item.short_description}</h5>
         </div>
       </div>      
     )
@@ -225,9 +228,9 @@ var ChampionList = React.createClass({
 
   getInitialState: function(){
     if(this.props.matches.length > 1){
-      return{champions: [], match: this.props.matches}
+      return{champions: [], matches: this.props.matches}
     } else {
-      return{champions: [], match: []}
+      return{champions: [], matches: []}
     }
   },
 
@@ -254,7 +257,9 @@ var ChampionList = React.createClass({
 
   getRecentGames: function(){
     $.post( "/match/recent?summoner_id="+this.props.summoner_id, function( data ) {
-      console.log(data)
+      // console.log(data)
+      this.setState({matches: data})
+      console.log(this.state.matches)
     }.bind(this));
 
   },  
@@ -295,7 +300,7 @@ var ChampionList = React.createClass({
       var matchups = []
     }
 
-    var matchButtons = this.props.matches.map(function(match, i){
+    var matchButtons = this.state.matches.map(function(match, i){
       return (
         <MatchButton getMatch={this.getMatch} key={match.match_id} index={i} match_id={match.match_id}></MatchButton> 
       )

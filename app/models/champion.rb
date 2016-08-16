@@ -5,10 +5,8 @@ class Champion < ActiveRecord::Base
 
   has_many :builds
   has_many :items, through: :builds
-
-  has_many :projected_builds
-  has_many :items, through: :projected_builds
-
+  has_many :projected_builds, through: :builds, source: :item
+  
   serialize :postgame_stats
 
   accepts_nested_attributes_for :championbase

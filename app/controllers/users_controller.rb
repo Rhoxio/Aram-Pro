@@ -14,14 +14,12 @@ class UsersController < ApplicationController
       response.parsed_response.each do |key, attributes|
 
         summoner = Summoner.build_summoner(attributes)
-
         user.summoner_id = attributes['id']
+        user.summoner = params["summoner_name"]
         user.summoner_icon = attributes['profileIconId']
-
         user.summoners << summoner
-
+        
       end
-
     else
       p 'no summoner to find'
     end

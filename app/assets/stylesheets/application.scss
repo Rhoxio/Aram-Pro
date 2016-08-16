@@ -105,12 +105,14 @@ footer{
 	}
 
 	.item-tooltip{
-		position: absolute;
-    margin-top: 73px;
-    background-color: red;
+    position: absolute;
+    margin-top: 49px;
+    background-color: #374f70;
     padding: 5px;
     width: 45%;
-
+    border: 1px solid black;
+    color: white;
+    
 		&:before {
 	    content: "";
 	    display: block;

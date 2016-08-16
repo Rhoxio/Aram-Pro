@@ -5,3 +5,18 @@ LOG:  autovacuum launcher started
 FATAL:  database "library_development" does not exist
 FATAL:  database "lib_app_development" does not exist
 FATAL:  database "lib_app_development" does not exist
+FATAL:  database "kevinmaze" does not exist
+FATAL:  database "kevinmaze" does not exist
+ERROR:  syntax error at or near "table" at character 14
+STATEMENT:  select *from table builds
+ERROR:  syntax error at or near "table" at character 15
+STATEMENT:  select * from table builds
+ERROR:  syntax error at or near "TABLE" at character 15
+STATEMENT:  SELECT * FROM TABLE CHAMPIONS
+ERROR:  syntax error at or near "TABLE" at character 15
+STATEMENT:  SELECT * FROM TABLE CHAMPIONS;
+ERROR:  database "library_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "library_development"
+ERROR:  database "library_development" already exists
+STATEMENT:  CREATE DATABASE "library_development" ENCODING = 'unicode'

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class MatchController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-current_match">#current_match</a>
+    
+    <li ><a href="#method-i-get_one">#get_one</a>
+    
+    <li ><a href="#method-i-recent_matches">#recent_matches</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-MatchController">
+  <h1 id="class-MatchController" class="class">
+    class MatchController
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/match_controller.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-current_match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_match</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current_match-source">
+            <pre><span class="ruby-comment"># File app/controllers/match_controller.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_match</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:summoner_id</span>]
+
+    <span class="ruby-identifier">current_match</span> = <span class="ruby-constant">RiotAPI</span>.<span class="ruby-identifier">get_current_match</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:summoner_id</span>])
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_match</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&#39;gameId&#39;</span>)
+      <span class="ruby-identifier">new_match</span> = <span class="ruby-constant">Match</span>.<span class="ruby-identifier">build_from_current_match</span>(<span class="ruby-identifier">current_match</span>, <span class="ruby-identifier">current_user</span>)
+
+      <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">new_match</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span>[<span class="ruby-value">:champions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:championbase</span>}] }
+      <span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># current_match holds the HTTP error hash to be passed to the front.</span>
+      <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_match</span>}
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span> 
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;No summoner id.&#39;</span>} }
+    <span class="ruby-keyword">end</span>   
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_one" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_one</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_one-source">
+            <pre><span class="ruby-comment"># File app/controllers/match_controller.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_one</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">current_user</span>
+
+    <span class="ruby-identifier">match</span> = <span class="ruby-constant">Match</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">match_id</span><span class="ruby-value">:params</span>[<span class="ruby-value">:id</span>])
+
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">match</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span>[<span class="ruby-value">:champions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:championbase</span>, <span class="ruby-value">:items</span>]}] }
+    <span class="ruby-keyword">end</span> 
+
+  <span class="ruby-keyword">else</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">current_user</span>
+      <span class="ruby-identifier">error</span> = {<span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;User not logged in.&quot;</span>}
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]
+      <span class="ruby-identifier">error</span> = {<span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Param not specified&quot;</span>}
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">error</span> = {<span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Error occured.&quot;</span>}
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span> }
+    <span class="ruby-keyword">end</span> 
+
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-recent_matches" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recent_matches</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recent_matches-source">
+            <pre><span class="ruby-comment"># File app/controllers/match_controller.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recent_matches</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:summoner_id</span>]
+
+    <span class="ruby-identifier">recent_arams</span> = <span class="ruby-constant">RiotAPI</span>.<span class="ruby-identifier">get_recent_matches</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:summoner_id</span>])
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">recent_arams</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-identifier">all_matches</span> = <span class="ruby-constant">Match</span>.<span class="ruby-identifier">build_from_recent_matches</span>(<span class="ruby-identifier">recent_arams</span>, <span class="ruby-identifier">current_user</span>)
+
+      <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">all_matches</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span>[<span class="ruby-value">:champions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:championbase</span>}]}
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># recent_arams holds the HTTP error hash to be passed to the front.</span>
+      <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">recent_arams</span>}
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment">#There was some kind of error. </span>
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span>{<span class="ruby-identifier">render</span> <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">error</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;No id param provided.&quot;</span>}}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

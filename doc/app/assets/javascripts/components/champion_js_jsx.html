@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>champion.js.jsx - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../README_rdoc.html">README</a>
+  
+    <li><a href="../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/components_js.html">components.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/components/champion_js_jsx.html">champion.js.jsx</a>
+  
+    <li><a href="../../../../app/assets/javascripts/match_js.html">match.js</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/_settings_scss.html">_settings.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/dashboard_scss.html">dashboard.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/foundation_and_overrides_scss.html">foundation_and_overrides.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/front_scss.html">front.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/match_scss.html">match.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/matchup_scss.html">matchup.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/sessions_scss.html">sessions.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/summoners_scss.html">summoners.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../../logfile.html">logfile</a>
+  
+    <li><a href="../../../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../../../public/robots_txt.html">robots</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/javascripts/components/champion.js.jsx">
+
+<p>var <a href="../../../../Champion.html">Champion</a> = React.createClass({</p>
+
+<pre>revealParentElements:function(){
+  $(&#39;.bottom-team&#39;).removeClass(&#39;hidden&#39;).addClass(&#39;show&#39;)
+  $(&#39;.top-team&#39;).removeClass(&#39;hidden&#39;).addClass(&#39;show&#39;)
+  $(&#39;.mid-separator&#39;).removeClass(&#39;hidden&#39;).addClass(&#39;show&#39;)
+},
+
+componentDidMount: function(){
+  this.revealParentElements()
+},
+
+render: function() {
+
+  // These tag divs need keys at some point...
+
+  var champion =  this.props.champion
+
+  var riotTags = this.props.riot_tags.map(function(tag, i) {
+
+    switch(tag) {
+      case &quot;Tank&quot;:
+          return &lt;div className=&#39;tag tag-orange columns&#39;&gt;Tank&lt;/div&gt;
+          break;
+      case &quot;Fighter&quot;:
+          return &lt;div className=&#39;tag tag-yellow columns&#39;&gt;Fighter&lt;/div&gt;
+          break;
+      case &quot;Slayer&quot;:
+          return &lt;div className=&#39;tag tag-red columns&#39;&gt;Slayer&lt;/div&gt;
+          break;
+      case &quot;Mage&quot;:
+          return &lt;div className=&#39;tag tag-blue columns&#39;&gt;Mage&lt;/div&gt;
+          break;
+      case &quot;Controller&quot;:
+          return &lt;div className=&#39;tag tag-purple columns&#39;&gt;Controller&lt;/div&gt;
+          break;
+      case &quot;Marksman&quot;:
+          return &lt;div className=&#39;tag tag-green columns&#39;&gt;Marksman&lt;/div&gt;
+          break;
+      case &quot;Support&quot;:
+          return &lt;div className=&#39;tag tag-lt-green columns&#39;&gt;Support&lt;/div&gt;
+          break;
+      case &quot;Assassin&quot;:
+          return &lt;div className=&#39;tag tag-red columns&#39;&gt;Assassin&lt;/div&gt;
+          break;                                                                        
+      default:
+          return &lt;div className=&#39;tag tag-teal columns&#39;&gt;None&lt;/div&gt;
+    }     
+
+  });
+
+  var otherTags = this.props.other_tags.map(function(tag) {
+
+    switch(tag) {
+      case &quot;god&quot;:
+          return &lt;div className=&#39;other-tag tag-yellow columns&#39;&gt;God&lt;/div&gt;
+          break;
+      case &quot;very_strong&quot;:
+          return &lt;div className=&#39;other-tag tag-green columns&#39;&gt;Very Strong&lt;/div&gt;
+          break;
+      case &quot;strong&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;Strong&lt;/div&gt;
+          break;
+      case &quot;Average&quot;:
+          return &lt;div className=&#39;other-tag tag-blue columns&#39;&gt;Average&lt;/div&gt;
+          break;
+      case &quot;below_average&quot;:
+          return &lt;div className=&#39;other-tag tag-orange columns&#39;&gt;Below Average&lt;/div&gt;
+          break;
+      case &quot;weak&quot;:
+          return &lt;div className=&#39;other-tag tag-purple columns&#39;&gt;Weak&lt;/div&gt;
+          break;
+      case &quot;heavy_cc&quot;:
+          return &lt;div className=&#39;other-tag tag-purple columns&#39;&gt;Heavy CC&lt;/div&gt;
+          break;
+      case &quot;true_damage&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;True Damage&lt;/div&gt;
+          break;  
+      case &quot;self_healing&quot;:
+          return &lt;div className=&#39;other-tag tag-green columns&#39;&gt;Self Healing&lt;/div&gt;
+          break;   
+      case &quot;healer&quot;:
+          return &lt;div className=&#39;other-tag tag-lt-green columns&#39;&gt;Healer&lt;/div&gt;
+          break; 
+      case &quot;aoe_cc&quot;:
+          return &lt;div className=&#39;other-tag tag-purple columns&#39;&gt;AOE CC&lt;/div&gt;
+          break;
+      case &quot;waveclear&quot;:
+          return &lt;div className=&#39;other-tag tag-blue columns&#39;&gt;Waveclear&lt;/div&gt;
+          break;
+      case &quot;preserving_ult&quot;:
+          return &lt;div className=&#39;other-tag tag-yellow columns&#39;&gt;Preserving Ult&lt;/div&gt;
+          break;
+      case &quot;poke&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;Poke&lt;/div&gt;
+          break;
+      case &quot;initiator&quot;:
+          return &lt;div className=&#39;other-tag tag-orange columns&#39;&gt;Initiator&lt;/div&gt;
+          break;  
+      case &quot;mobile&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;Mobile&lt;/div&gt;
+          break;
+      case &quot;traps&quot;:
+          return &lt;div className=&#39;other-tag tag-green columns&#39;&gt;Traps&lt;/div&gt;
+          break;
+      case &quot;good_scaling&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;Scales Well&lt;/div&gt;
+          break; 
+      case &quot;early_power&quot;:
+          return &lt;div className=&#39;other-tag tag-red columns&#39;&gt;Powerful Early&lt;/div&gt;
+          break;
+      case &quot;stealth&quot;:
+          return &lt;div className=&#39;other-tag tag-purple columns&#39;&gt;Stealth&lt;/div&gt;
+          break; 
+      case &quot;strong_level_6&quot;:
+          return &lt;div className=&#39;other-tag tag-blue columns&#39;&gt;Level 6 Power&lt;/div&gt;
+          break;                                                                                                                                                                                                                          
+      default:
+          return &lt;div&gt;&lt;/div&gt;
+    }     
+
+  });
+
+  var items = this.props.items.map(function(item){
+    // Filter all Porosnax out
+    if(item.item_identifier != &#39;2052&#39;){
+      var uniqueIdentifer = champion.id + &quot;-&quot; + item.id
+
+      return (
+        &lt;ItemEntry identifier={uniqueIdentifer} item={item}&gt;&lt;/ItemEntry&gt;
+      ) 
+    }
+
+  })
+
+  if(champion.team == &quot;200&quot;){
+    // Need to  designate the side they are on before render.
+    var topSide = &#39;right purple-team &#39;
+  } else{
+    var topSide = &#39;left blue-team &#39;
+  }
+
+  return (
+    &lt;div className={topSide+&quot;champion large-12 columns&quot;}&gt;
+      &lt;img className=&quot;large-2 champ-image columns&quot; src={this.props.image}/&gt;
+      &lt;h2 className=&quot;champion-name large-4 columns&quot;&gt;
+        {this.props.name}
+      &lt;/h2&gt;
+
+       &lt;div className=&#39;items columns large-10&#39;&gt;
+        {items}
+       &lt;/div&gt;         
+    &lt;/div&gt;
+  );
+}</pre>
+
+<p>});</p>
+
+<p>// <a href="../../../../Item.html">Item</a> var ItemEntry =
+React.createClass({</p>
+
+<pre>handleMouseOver: function(event){
+  var element = $(&quot;.tooltip-&quot;+this.props.identifier)
+  // console.log(element)
+  $(element).removeClass(&#39;hidden&#39;)
+  $(element).addClass(&#39;show&#39;) 
+},
+
+handleMouseOut: function(event){
+  var element = $(&quot;.tooltip-&quot;+this.props.identifier)
+  // console.log(element)
+  $(element).removeClass(&#39;show&#39;)
+  $(element).addClass(&#39;hidden&#39;) 
+},  
+
+render:function(){
+
+  return(
+    &lt;div onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseOut} className=&#39;columns item-container&#39;&gt;
+      &lt;a href=&quot;#&quot; className=&#39;item item-small columns&#39;&gt;
+        &lt;img src={this.props.item.image}/&gt;
+      &lt;/a&gt;
+
+      &lt;div className={&quot;tooltip-&quot;+this.props.identifier+&quot; hidden item-tooltip&quot;}&gt;
+        &lt;h5&gt;{this.props.item.name}&lt;/h5&gt;
+        &lt;h5&gt;Cost: {this.props.item.gold.total}&lt;/h5&gt;
+        &lt;h5&gt;Effect: {this.props.item.short_description}&lt;/h5&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;      
+  )
+}</pre>
+
+<p>})</p>
+
+<p>// <a href="../../../../Match.html">Match</a> Button var MatchButton =
+React.createClass({</p>
+
+<pre>handleGet: function(){
+  this.props.getMatch(this.props.match_id)
+},
+
+render: function(){
+  return(
+    &lt;div&gt;
+      &lt;button className=&#39;large-1 columns match-button&#39; key={this.props.match_id} data-match={this.props.match_id} onClick={this.handleGet}&gt;Match {this.props.index + 1}&lt;/button&gt;
+    &lt;/div&gt;
+
+  )
+}</pre>
+
+<p>})</p>
+
+<p>var MatchupIndicator = React.createClass({</p>
+
+<pre>render: function(){
+   return(
+     &lt;div&gt;
+       &lt;div className=&#39;matchup&#39;&gt;
+         &lt;div className=&#39;matchup-indicator point-left favorable&#39;&gt;
+           Some quick text.
+         &lt;/div&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+   )
+ }</pre>
+
+<p>})</p>
+
+<p>var ChampionList = React.createClass({</p>
+
+<pre>propTypes: {
+  summoner_id: React.PropTypes.number,
+  matches: React.PropTypes.array
+},
+
+getInitialState: function(){
+  if(this.props.matches.length &gt; 1){
+    return{champions: [], matches: this.props.matches}
+  } else {
+    return{champions: [], matches: []}
+  }
+},
+
+componentDidMount: function(){
+  $.post( &quot;/match/current?summoner_id=&quot;+this.props.summoner_id, function( data ) {
+    if(!data.hasOwnProperty(&#39;error&#39;)){
+      this.setState({champions: data.champions}, function(){})
+    } else {
+      console.log(&#39;No current game.&#39;)
+    }
+  }.bind(this));
+},
+
+getCurrentGame: function(){
+  $.post( &quot;/match/current?summoner_id=&quot;+this.props.summoner_id, function( data ) {
+    if(!data.hasOwnProperty(&#39;error&#39;)){
+      this.setState({champions: data.champions}, function(){})
+    } else {
+      console.log(&#39;No current game.&#39;)
+    }
+  }.bind(this));
+
+},
+
+getRecentGames: function(){
+  $.post( &quot;/match/recent?summoner_id=&quot;+this.props.summoner_id, function( data ) {
+    // console.log(data)
+    this.setState({matches: data})
+    console.log(this.state.matches)
+  }.bind(this));
+
+},  
+
+getMatch: function(match){
+  $.get(&quot;/match/&quot;+match, function(data){
+    console.log(data)
+    this.setState({champions: data.champions}, function(){})
+  }.bind(this))
+},
+
+render: function() {
+
+  if(this.state.champions){
+    var topSideChampionNodes = this.state.champions.map(function(champion) {
+      if(champion.team === &quot;200&quot;){
+        return (
+          &lt;Champion champion={champion} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}&gt;
+          &lt;/Champion&gt;
+        );
+      }
+    });
+
+    var bottomSideChampionNodes = this.state.champions.map(function(champion) {
+      if(champion.team === &quot;100&quot;){
+        return (
+          &lt;Champion champion={champion} key={champion.championbase.champion_identifer} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}&gt;
+          &lt;/Champion&gt;
+        );
+      }
+    });
+
+    var matchups = [&lt;MatchupIndicator&gt;&lt;/MatchupIndicator&gt;]
+
+  } else{
+    var topSideChampionNodes = []
+    var bottomSideChampionNodes = []
+    var matchups = []
+  }
+
+  var matchButtons = this.state.matches.map(function(match, i){
+    return (
+      &lt;MatchButton getMatch={this.getMatch} key={match.match_id} index={i} match_id={match.match_id}&gt;&lt;/MatchButton&gt; 
+    )
+  }.bind(this))
+
+  return (
+    &lt;div className=&quot;team-container large-12 inline-list columns&quot;&gt;
+      &lt;button className=&quot;simple-button button large-2&quot; onClick={this.getCurrentGame}&gt;Get Current Game&lt;/button&gt;
+      &lt;button className=&quot;simple-button button large-2&quot; onClick={this.getRecentGames}&gt;Get Recent Games&lt;/button&gt;
+      &lt;div className=&quot;match-container large-12 inline-list columns&quot;&gt;
+        {matchButtons}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;div className=&quot;bottom-team team large-5 inline-list columns hidden&quot;&gt;
+          {bottomSideChampionNodes}
+        &lt;/div&gt;
+
+        &lt;div className=&#39;mid-separator large-2 columns hidden&#39;&gt;
+          {matchups}
+        &lt;/div&gt;
+
+        &lt;div className=&quot;top-team team large-5 inline-list columns hidden&quot;&gt;
+          {topSideChampionNodes}
+        &lt;/div&gt;
+      &lt;/div&gt; 
+    &lt;/div&gt;     
+  );
+}</pre>
+
+<p>});</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

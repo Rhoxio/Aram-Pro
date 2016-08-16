@@ -30,7 +30,7 @@ class Championbase < ActiveRecord::Base
   end
 
   def self.seed_championbase_list
-    request = "http://ddragon.leagueoflegends.com/cdn/6.12.1/data/en_US/champion.json"
+    request = "http://ddragon.leagueoflegends.com/cdn/6.16.2/data/en_US/champion.json"
     response = HTTParty.get(request)
     champions = response.parsed_response
 
