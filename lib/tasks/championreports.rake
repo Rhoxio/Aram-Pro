@@ -36,6 +36,7 @@ task :export_champ_tiers => :environment do
         f.puts "##### Winrate: #{champ.win_rate}"
         f.puts "###### KDA: #{champ.KDA}"
         f.puts "###### Pick Rate: #{champ.pick_rate}"
+        f.puts "###### Riot Tags: " +champ.riot_tags.join(", ").gsub('_', ' ')
         f.puts "###### Tags: " +champ.other_tags.join(", ").gsub('_', ' ')
         f.puts "---"
       end

@@ -5,6 +5,7 @@
 ##### Winrate: 67.29
 ###### KDA: 5.12
 ###### Pick Rate: 10.99
+###### Riot Tags: Support, Mage
 ###### Tags: heavy cc, self healing, high burst, healer, aoe cc, poke, initiator, strong level 6
 ---
 ### Ziggs
@@ -13,6 +14,7 @@
 ##### Winrate: 65.64
 ###### KDA: 4.58
 ###### Pick Rate: 8.33
+###### Riot Tags: Mage
 ###### Tags: high dps, high burst, waveclear, poke, displacement
 ---
 ### Teemo
@@ -21,6 +23,7 @@
 ##### Winrate: 61.89
 ###### KDA: 3.31
 ###### Pick Rate: 13.88
+###### Riot Tags: Marksman, Assassin
 ###### Tags: waveclear, poke, traps, stealth
 ---
 ### Lux
@@ -29,6 +32,7 @@
 ##### Winrate: 58.93
 ###### KDA: 5.51
 ###### Pick Rate: 13.52
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, strong level 6
 ---
 <h1> STRONG </h1>
@@ -38,6 +42,7 @@
 ##### Winrate: 64.56
 ###### KDA: 4.11
 ###### Pick Rate: 8.26
+###### Riot Tags: Mage, Support
 ###### Tags: high dps, high burst, waveclear, poke, traps
 ---
 ### Swain
@@ -46,6 +51,7 @@
 ##### Winrate: 64.02
 ###### KDA: 3.77
 ###### Pick Rate: 5.26
+###### Riot Tags: Mage, Fighter
 ###### Tags: tanky, self healing, aoe cc, waveclear, initiator, good scaling, strong level 6
 ---
 ### Jhin
@@ -54,6 +60,7 @@
 ##### Winrate: 60.77
 ###### KDA: 4.55
 ###### Pick Rate: 8.17
+###### Riot Tags: Marksman, Assassin
 ###### Tags: high dps, high burst, traps, early power
 ---
 ### Kog'Maw
@@ -62,6 +69,7 @@
 ##### Winrate: 60.16
 ###### KDA: 3.39
 ###### Pick Rate: 7.18
+###### Riot Tags: Marksman, Mage
 ###### Tags: true damage, high dps
 ---
 ### Varus
@@ -70,6 +78,7 @@
 ##### Winrate: 59.36
 ###### KDA: 4.05
 ###### Pick Rate: 8.27
+###### Riot Tags: Marksman, Mage
 ###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, poke, early power
 ---
 ### Fiddlesticks
@@ -78,6 +87,7 @@
 ##### Winrate: 58.58
 ###### KDA: 3.57
 ###### Pick Rate: 11.59
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high dps, self healing, high burst, waveclear, poke, strong level 6
 ---
 ### Janna
@@ -86,6 +96,7 @@
 ##### Winrate: 57.84
 ###### KDA: 5.32
 ###### Pick Rate: 9.5
+###### Riot Tags: Support, Mage
 ###### Tags: heavy cc, healer, waveclear
 ---
 ### Miss Fortune
@@ -94,6 +105,7 @@
 ##### Winrate: 56.61
 ###### KDA: 3.8
 ###### Pick Rate: 11.26
+###### Riot Tags: Marksman
 ###### Tags: high dps, early power, strong level 6
 ---
 ### Annie
@@ -102,6 +114,7 @@
 ##### Winrate: 55.61
 ###### KDA: 3.19
 ###### Pick Rate: 14.85
+###### Riot Tags: Mage
 ###### Tags: heavy cc, high burst, aoe cc, initiator, strong level 6
 ---
 ### Ashe
@@ -110,6 +123,7 @@
 ##### Winrate: 55.23
 ###### KDA: 3.5
 ###### Pick Rate: 17.05
+###### Riot Tags: Marksman, Support
 ###### Tags: heavy cc, high dps, aoe cc, poke, initiator
 ---
 ### Caitlyn
@@ -118,6 +132,7 @@
 ##### Winrate: 55.16
 ###### KDA: 3.61
 ###### Pick Rate: 11.16
+###### Riot Tags: Marksman
 ###### Tags: high dps, waveclear, poke, mobile, traps
 ---
 ### Veigar
@@ -126,6 +141,7 @@
 ##### Winrate: 54.89
 ###### KDA: 3.67
 ###### Pick Rate: 12.9
+###### Riot Tags: Mage
 ###### Tags: heavy cc, high dps, high burst, aoe cc, good scaling
 ---
 ### Garen
@@ -134,6 +150,7 @@
 ##### Winrate: 54.74
 ###### KDA: 2.97
 ###### Pick Rate: 12.61
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, true damage
 ---
 ### Morgana
@@ -142,6 +159,7 @@
 ##### Winrate: 53.84
 ###### KDA: 4.35
 ###### Pick Rate: 13.28
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, self healing, aoe cc, waveclear, poke, initiator, strong level 6
 ---
 ### Sivir
@@ -150,6 +168,7 @@
 ##### Winrate: 53.77
 ###### KDA: 3.52
 ###### Pick Rate: 15.07
+###### Riot Tags: Marksman
 ###### Tags: high dps
 ---
 ### Blitzcrank
@@ -158,6 +177,7 @@
 ##### Winrate: 50.32
 ###### KDA: 3.01
 ###### Pick Rate: 18.16
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, initiator, displacement, early power
 ---
 <h1> ABOVEAVERAGE </h1>
@@ -167,6 +187,7 @@
 ##### Winrate: 60.21
 ###### KDA: 4.59
 ###### Pick Rate: 4.28
+###### Riot Tags: Tank, Mage
 ###### Tags: heavy cc, tanky, self healing, aoe cc, waveclear
 ---
 ### Zyra
@@ -175,6 +196,7 @@
 ##### Winrate: 59.64
 ###### KDA: 3.88
 ###### Pick Rate: 6.16
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, poke, strong level 6
 ---
 ### Sion
@@ -183,6 +205,7 @@
 ##### Winrate: 59.26
 ###### KDA: 3.07
 ###### Pick Rate: 6.97
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
 ---
 ### Malzahar
@@ -191,6 +214,7 @@
 ##### Winrate: 58.25
 ###### KDA: 3.73
 ###### Pick Rate: 6.98
+###### Riot Tags: Mage, Assassin
 ###### Tags: heavy cc, waveclear, strong level 6
 ---
 ### Vel'Koz
@@ -199,6 +223,7 @@
 ##### Winrate: 57.73
 ###### KDA: 4.08
 ###### Pick Rate: 6.93
+###### Riot Tags: Mage
 ###### Tags: 
 ---
 ### Karthus
@@ -207,6 +232,7 @@
 ##### Winrate: 56.86
 ###### KDA: 2.78
 ###### Pick Rate: 6.63
+###### Riot Tags: Mage
 ###### Tags: aoe cc, waveclear, strong level 6
 ---
 ### Nautilus
@@ -215,6 +241,7 @@
 ##### Winrate: 56.81
 ###### KDA: 3.39
 ###### Pick Rate: 6.03
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, tanky, aoe cc, initiator
 ---
 ### Maokai
@@ -223,6 +250,7 @@
 ##### Winrate: 56.49
 ###### KDA: 3.46
 ###### Pick Rate: 5.14
+###### Riot Tags: Tank, Mage
 ###### Tags: heavy cc, tanky, self healing
 ---
 ### Illaoi
@@ -231,6 +259,7 @@
 ##### Winrate: 56.4
 ###### KDA: 2.74
 ###### Pick Rate: 5.1
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing
 ---
 ### Dr. Mundo
@@ -239,6 +268,7 @@
 ##### Winrate: 55.59
 ###### KDA: 3.37
 ###### Pick Rate: 7.62
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing
 ---
 ### Brand
@@ -247,6 +277,7 @@
 ##### Winrate: 55.2
 ###### KDA: 3.59
 ###### Pick Rate: 8.19
+###### Riot Tags: Mage
 ###### Tags: high dps, high burst, waveclear, poke, strong level 6
 ---
 ### Nami
@@ -255,6 +286,7 @@
 ##### Winrate: 55.19
 ###### KDA: 5.35
 ###### Pick Rate: 5.8
+###### Riot Tags: Support, Mage
 ###### Tags: heavy cc, self healing, healer, aoe cc
 ---
 ### Taric
@@ -263,6 +295,7 @@
 ##### Winrate: 55.17
 ###### KDA: 4.2
 ###### Pick Rate: 5.96
+###### Riot Tags: Support, Fighter
 ###### Tags: heavy cc, tanky, self healing, strong level 6
 ---
 ### Karma
@@ -271,6 +304,7 @@
 ##### Winrate: 54.95
 ###### KDA: 4.17
 ###### Pick Rate: 8.83
+###### Riot Tags: Mage, Support
 ###### Tags: self healing, waveclear, poke, early power
 ---
 ### Graves
@@ -279,6 +313,7 @@
 ##### Winrate: 54.72
 ###### KDA: 3.35
 ###### Pick Rate: 7.7
+###### Riot Tags: Marksman
 ###### Tags: 
 ---
 ### Jinx
@@ -287,6 +322,7 @@
 ##### Winrate: 54.67
 ###### KDA: 3.52
 ###### Pick Rate: 9.99
+###### Riot Tags: Marksman
 ###### Tags: high dps, waveclear, poke
 ---
 ### Rammus
@@ -295,6 +331,7 @@
 ##### Winrate: 54.57
 ###### KDA: 2.77
 ###### Pick Rate: 5.22
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, tanky, initiator, mobile
 ---
 ### Xerath
@@ -303,6 +340,7 @@
 ##### Winrate: 54.46
 ###### KDA: 4.55
 ###### Pick Rate: 6.33
+###### Riot Tags: Mage, Assassin
 ###### Tags: high dps, high burst, waveclear, poke
 ---
 ### Vladimir
@@ -311,6 +349,7 @@
 ##### Winrate: 54.13
 ###### KDA: 3.18
 ###### Pick Rate: 6.3
+###### Riot Tags: Mage, Tank
 ###### Tags: tanky, high dps, self healing, good scaling, strong level 6
 ---
 ### Gangplank
@@ -319,6 +358,7 @@
 ##### Winrate: 53.94
 ###### KDA: 3.6
 ###### Pick Rate: 7.82
+###### Riot Tags: Fighter
 ###### Tags: true damage, high burst
 ---
 ### Warwick
@@ -327,6 +367,7 @@
 ##### Winrate: 52.93
 ###### KDA: 3.38
 ###### Pick Rate: 7.64
+###### Riot Tags: Fighter, Tank
 ###### Tags: heavy cc, tanky, self healing, initiator, strong level 6
 ---
 ### Nasus
@@ -335,6 +376,7 @@
 ##### Winrate: 52.7
 ###### KDA: 3.08
 ###### Pick Rate: 8.84
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing, waveclear
 ---
 ### Darius
@@ -343,6 +385,7 @@
 ##### Winrate: 52.47
 ###### KDA: 2.69
 ###### Pick Rate: 6.99
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, displacement, strong level 6
 ---
 ### Amumu
@@ -351,6 +394,7 @@
 ##### Winrate: 51.8
 ###### KDA: 2.89
 ###### Pick Rate: 10.22
+###### Riot Tags: Tank, Mage
 ###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
 ---
 ### Ahri
@@ -359,6 +403,7 @@
 ##### Winrate: 51.6
 ###### KDA: 3.46
 ###### Pick Rate: 9.4
+###### Riot Tags: Mage, Assassin
 ###### Tags: true damage, high burst, waveclear, mobile
 ---
 ### Orianna
@@ -367,6 +412,7 @@
 ##### Winrate: 51.11
 ###### KDA: 4.16
 ###### Pick Rate: 6.59
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement, strong level 6
 ---
 ### Cho'Gath
@@ -375,6 +421,7 @@
 ##### Winrate: 50.0
 ###### KDA: 3.26
 ###### Pick Rate: 8.78
+###### Riot Tags: Tank, Mage
 ###### Tags: heavy cc, tanky, true damage, self healing, high burst, aoe cc, waveclear
 ---
 ### Malphite
@@ -383,6 +430,7 @@
 ##### Winrate: 49.92
 ###### KDA: 3.03
 ###### Pick Rate: 9.54
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
 ---
 ### Ezreal
@@ -391,6 +439,7 @@
 ##### Winrate: 49.75
 ###### KDA: 4.0
 ###### Pick Rate: 10.38
+###### Riot Tags: Marksman, Mage
 ###### Tags: high dps, high burst, poke, mobile, strong level 6
 ---
 ### Leona
@@ -399,6 +448,7 @@
 ##### Winrate: 49.23
 ###### KDA: 2.86
 ###### Pick Rate: 13.82
+###### Riot Tags: Tank, Support
 ###### Tags: heavy cc, tanky, aoe cc, initiator
 ---
 ### Lulu
@@ -407,6 +457,7 @@
 ##### Winrate: 49.18
 ###### KDA: 3.91
 ###### Pick Rate: 6.74
+###### Riot Tags: Support, Mage
 ###### Tags: displacement
 ---
 ### Katarina
@@ -415,6 +466,7 @@
 ##### Winrate: 49.13
 ###### KDA: 2.78
 ###### Pick Rate: 10.56
+###### Riot Tags: Assassin, Mage
 ###### Tags: high dps, high burst, waveclear, poke, mobile, strong level 6
 ---
 ### Alistar
@@ -423,6 +475,7 @@
 ##### Winrate: 48.76
 ###### KDA: 3.63
 ###### Pick Rate: 9.77
+###### Riot Tags: Tank, Support
 ###### Tags: heavy cc, tanky, self healing, healer, aoe cc, initiator
 ---
 ### Soraka
@@ -431,6 +484,7 @@
 ##### Winrate: 48.05
 ###### KDA: 4.56
 ###### Pick Rate: 12.2
+###### Riot Tags: Support, Mage
 ###### Tags: healer, poke
 ---
 ### Draven
@@ -439,6 +493,7 @@
 ##### Winrate: 47.73
 ###### KDA: 2.79
 ###### Pick Rate: 16.17
+###### Riot Tags: Marksman
 ###### Tags: high dps, high burst, displacement, early power
 ---
 ### Thresh
@@ -447,6 +502,7 @@
 ##### Winrate: 47.69
 ###### KDA: 3.61
 ###### Pick Rate: 8.26
+###### Riot Tags: Support, Fighter
 ###### Tags: heavy cc, tanky, displacement
 ---
 ### Tristana
@@ -455,6 +511,7 @@
 ##### Winrate: 46.28
 ###### KDA: 2.74
 ###### Pick Rate: 12.83
+###### Riot Tags: Marksman, Assassin
 ###### Tags: high dps, mobile
 ---
 ### Talon
@@ -463,6 +520,7 @@
 ##### Winrate: 46.24
 ###### KDA: 2.28
 ###### Pick Rate: 14.06
+###### Riot Tags: Assassin, Fighter
 ###### Tags: high dps, high burst, strong level 6
 ---
 ### Master Yi
@@ -471,6 +529,7 @@
 ##### Winrate: 46.16
 ###### KDA: 2.12
 ###### Pick Rate: 13.18
+###### Riot Tags: Assassin, Fighter
 ###### Tags: true damage, high dps, high burst, good scaling
 ---
 ### Vayne
@@ -479,6 +538,7 @@
 ##### Winrate: 41.11
 ###### KDA: 2.22
 ###### Pick Rate: 16.51
+###### Riot Tags: Marksman, Assassin
 ###### Tags: high dps
 ---
 ### Fizz
@@ -487,6 +547,7 @@
 ##### Winrate: 40.87
 ###### KDA: 2.22
 ###### Pick Rate: 15.43
+###### Riot Tags: Assassin, Fighter
 ###### Tags: high dps, high burst, mobile, strong level 6
 ---
 <h1> BELOWAVERAGE </h1>
@@ -496,6 +557,7 @@
 ##### Winrate: 53.35
 ###### KDA: 2.76
 ###### Pick Rate: 3.4
+###### Riot Tags: Marksman, Fighter
 ###### Tags: tanky, poke, displacement
 ---
 ### Trundle
@@ -504,6 +566,7 @@
 ##### Winrate: 52.67
 ###### KDA: 3.35
 ###### Pick Rate: 3.98
+###### Riot Tags: Fighter, Tank
 ###### Tags: self healing, initiator, good scaling, terrain generation
 ---
 ### Renekton
@@ -512,6 +575,7 @@
 ##### Winrate: 52.53
 ###### KDA: 2.62
 ###### Pick Rate: 3.48
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing
 ---
 ### Gnar
@@ -520,6 +584,7 @@
 ##### Winrate: 52.35
 ###### KDA: 3.0
 ###### Pick Rate: 5.62
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, poke, mobile
 ---
 ### Xin Zhao
@@ -528,6 +593,7 @@
 ##### Winrate: 51.86
 ###### KDA: 2.34
 ###### Pick Rate: 6.33
+###### Riot Tags: Fighter, Assassin
 ###### Tags: high dps, self healing, displacement, good scaling
 ---
 ### Volibear
@@ -536,6 +602,7 @@
 ##### Winrate: 51.48
 ###### KDA: 2.9
 ###### Pick Rate: 4.48
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing, initiator, displacement, early power
 ---
 ### Twisted Fate
@@ -544,6 +611,7 @@
 ##### Winrate: 51.33
 ###### KDA: 2.81
 ###### Pick Rate: 5.79
+###### Riot Tags: Mage
 ###### Tags: heavy cc, high burst, waveclear, early power
 ---
 ### Wukong
@@ -552,6 +620,7 @@
 ##### Winrate: 51.11
 ###### KDA: 2.86
 ###### Pick Rate: 6.26
+###### Riot Tags: Fighter, Tank
 ###### Tags: high dps, aoe cc, initiator, stealth
 ---
 ### Zac
@@ -560,6 +629,7 @@
 ##### Winrate: 50.52
 ###### KDA: 3.18
 ###### Pick Rate: 3.52
+###### Riot Tags: Tank, Fighter
 ###### Tags: tanky, self healing, aoe cc, initiator, displacement
 ---
 ### Singed
@@ -568,6 +638,7 @@
 ##### Winrate: 50.46
 ###### KDA: 2.72
 ###### Pick Rate: 6.4
+###### Riot Tags: Tank, Fighter
 ###### Tags: tanky, initiator, displacement
 ---
 ### Skarner
@@ -576,6 +647,7 @@
 ##### Winrate: 50.37
 ###### KDA: 2.85
 ###### Pick Rate: 2.0
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky
 ---
 ### Ekko
@@ -584,6 +656,7 @@
 ##### Winrate: 49.95
 ###### KDA: 2.76
 ###### Pick Rate: 7.62
+###### Riot Tags: Assassin, Fighter
 ###### Tags: high burst, mobile
 ---
 ### Lissandra
@@ -592,6 +665,7 @@
 ##### Winrate: 49.6
 ###### KDA: 2.87
 ###### Pick Rate: 4.56
+###### Riot Tags: Mage
 ###### Tags: heavy cc, high burst, aoe cc, initiator, strong level 6
 ---
 ### Jayce
@@ -600,6 +674,7 @@
 ##### Winrate: 49.56
 ###### KDA: 3.6
 ###### Pick Rate: 5.78
+###### Riot Tags: Fighter, Marksman
 ###### Tags: high dps, high burst, waveclear, poke, early power
 ---
 ### Cassiopeia
@@ -608,6 +683,7 @@
 ##### Winrate: 49.15
 ###### KDA: 3.43
 ###### Pick Rate: 6.06
+###### Riot Tags: Mage
 ###### Tags: heavy cc, high dps, aoe cc, waveclear, good scaling
 ---
 ### Braum
@@ -616,6 +692,7 @@
 ##### Winrate: 49.05
 ###### KDA: 3.73
 ###### Pick Rate: 4.65
+###### Riot Tags: Support, Tank
 ###### Tags: heavy cc, tanky, aoe cc, initiator
 ---
 ### Yorick
@@ -624,6 +701,7 @@
 ##### Winrate: 48.89
 ###### KDA: 3.0
 ###### Pick Rate: 2.64
+###### Riot Tags: Fighter, Mage
 ###### Tags: self healing
 ---
 ### Sejuani
@@ -632,6 +710,7 @@
 ##### Winrate: 48.81
 ###### KDA: 2.83
 ###### Pick Rate: 3.7
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
 ---
 ### Olaf
@@ -640,6 +719,7 @@
 ##### Winrate: 48.53
 ###### KDA: 2.71
 ###### Pick Rate: 4.01
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing, initiator, good scaling
 ---
 ### Aurelion Sol
@@ -648,6 +728,7 @@
 ##### Winrate: 48.41
 ###### KDA: 2.84
 ###### Pick Rate: 4.4
+###### Riot Tags: Mage, Fighter
 ###### Tags: tanky, waveclear, poke, displacement
 ---
 ### Viktor
@@ -656,6 +737,7 @@
 ##### Winrate: 48.35
 ###### KDA: 3.13
 ###### Pick Rate: 5.1
+###### Riot Tags: Mage
 ###### Tags: high dps, high burst, poke
 ---
 ### Syndra
@@ -664,6 +746,7 @@
 ##### Winrate: 48.34
 ###### KDA: 2.98
 ###### Pick Rate: 5.31
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement
 ---
 ### Jarvan IV
@@ -672,6 +755,7 @@
 ##### Winrate: 48.17
 ###### KDA: 3.18
 ###### Pick Rate: 4.22
+###### Riot Tags: Tank, Fighter
 ###### Tags: initiator, mobile, terrain generation
 ---
 ### Rumble
@@ -680,6 +764,7 @@
 ##### Winrate: 48.09
 ###### KDA: 2.86
 ###### Pick Rate: 4.04
+###### Riot Tags: Fighter, Mage
 ###### Tags: high dps, aoe cc, waveclear
 ---
 ### Diana
@@ -688,6 +773,7 @@
 ##### Winrate: 47.81
 ###### KDA: 2.75
 ###### Pick Rate: 4.85
+###### Riot Tags: Fighter, Mage
 ###### Tags: high burst
 ---
 ### Shen
@@ -696,6 +782,7 @@
 ##### Winrate: 47.14
 ###### KDA: 3.38
 ###### Pick Rate: 5.0
+###### Riot Tags: Tank, Melee
 ###### Tags: preserving ult, initiator
 ---
 ### Pantheon
@@ -704,6 +791,7 @@
 ##### Winrate: 47.13
 ###### KDA: 2.57
 ###### Pick Rate: 6.38
+###### Riot Tags: Fighter, Assassin
 ###### Tags: high burst, initiator, early power
 ---
 ### Twitch
@@ -712,6 +800,7 @@
 ##### Winrate: 46.97
 ###### KDA: 2.82
 ###### Pick Rate: 8.84
+###### Riot Tags: Marksman, Assassin
 ###### Tags: true damage, high dps, stealth
 ---
 ### Corki
@@ -720,6 +809,7 @@
 ##### Winrate: 46.9
 ###### KDA: 3.16
 ###### Pick Rate: 6.98
+###### Riot Tags: Marksman
 ###### Tags: true damage, waveclear, poke, mobile, displacement
 ---
 ### Irelia
@@ -728,6 +818,7 @@
 ##### Winrate: 46.82
 ###### KDA: 2.5
 ###### Pick Rate: 4.61
+###### Riot Tags: Fighter, Assassin
 ###### Tags: tanky, true damage, self healing, good scaling
 ---
 ### Kalista
@@ -736,6 +827,7 @@
 ##### Winrate: 46.43
 ###### KDA: 2.9
 ###### Pick Rate: 5.25
+###### Riot Tags: Marksman
 ###### Tags: high dps, mobile
 ---
 ### Anivia
@@ -744,6 +836,7 @@
 ##### Winrate: 46.31
 ###### KDA: 3.78
 ###### Pick Rate: 6.66
+###### Riot Tags: Mage, Support
 ###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement, good scaling, terrain generation, strong level 6
 ---
 ### Yasuo
@@ -752,6 +845,7 @@
 ##### Winrate: 46.29
 ###### KDA: 2.11
 ###### Pick Rate: 7.61
+###### Riot Tags: Fighter, Assassin
 ###### Tags: high dps, high burst, aoe cc, mobile, strong level 6
 ---
 ### Kennen
@@ -760,6 +854,7 @@
 ##### Winrate: 46.21
 ###### KDA: 2.79
 ###### Pick Rate: 5.32
+###### Riot Tags: Mage, Marksman
 ###### Tags: high burst, aoe cc, initiator, mobile
 ---
 ### Quinn
@@ -768,6 +863,7 @@
 ##### Winrate: 45.96
 ###### KDA: 2.62
 ###### Pick Rate: 4.36
+###### Riot Tags: Marksman, Fighter
 ###### Tags: mobile, displacement
 ---
 ### Lucian
@@ -776,6 +872,7 @@
 ##### Winrate: 45.78
 ###### KDA: 2.98
 ###### Pick Rate: 7.82
+###### Riot Tags: Marksman
 ###### Tags: high dps, mobile
 ---
 ### Zilean
@@ -784,6 +881,7 @@
 ##### Winrate: 45.11
 ###### KDA: 3.85
 ###### Pick Rate: 9.16
+###### Riot Tags: Support, Mage
 ###### Tags: waveclear, preserving ult, poke, strong level 6
 ---
 ### Gragas
@@ -792,6 +890,7 @@
 ##### Winrate: 44.72
 ###### KDA: 2.7
 ###### Pick Rate: 6.4
+###### Riot Tags: Fighter, Mage
 ###### Tags: heavy cc, tanky, self healing, aoe cc, waveclear, initiator, mobile, displacement
 ---
 ### Kayle
@@ -800,6 +899,7 @@
 ##### Winrate: 44.67
 ###### KDA: 2.94
 ###### Pick Rate: 10.66
+###### Riot Tags: Fighter, Support
 ###### Tags: high dps, self healing, healer, preserving ult, good scaling
 ---
 ### Azir
@@ -808,6 +908,7 @@
 ##### Winrate: 44.6
 ###### KDA: 2.54
 ###### Pick Rate: 6.38
+###### Riot Tags: Mage, Marksman
 ###### Tags: high dps, high burst, waveclear, poke, mobile, terrain generation
 ---
 ### Tahm Kench
@@ -816,6 +917,7 @@
 ##### Winrate: 44.46
 ###### KDA: 3.06
 ###### Pick Rate: 4.31
+###### Riot Tags: Support, Tank
 ###### Tags: tanky, self healing
 ---
 ### Nidalee
@@ -824,6 +926,7 @@
 ##### Winrate: 43.92
 ###### KDA: 3.33
 ###### Pick Rate: 10.51
+###### Riot Tags: Assassin, Fighter
 ###### Tags: self healing, high burst, healer, poke, traps, early power
 ---
 ### Poppy
@@ -832,6 +935,7 @@
 ##### Winrate: 43.46
 ###### KDA: 2.53
 ###### Pick Rate: 7.85
+###### Riot Tags: Tank, Fighter
 ###### Tags: heavy cc, initiator, displacement
 ---
 ### Zed
@@ -840,6 +944,7 @@
 ##### Winrate: 42.65
 ###### KDA: 2.49
 ###### Pick Rate: 6.54
+###### Riot Tags: Assassin, Fighter
 ###### Tags: high dps, high burst, waveclear, poke, mobile, strong level 6
 ---
 ### Bard
@@ -848,6 +953,7 @@
 ##### Winrate: 42.41
 ###### KDA: 3.57
 ###### Pick Rate: 4.93
+###### Riot Tags: Support, Mage
 ###### Tags: self healing, healer, aoe cc, preserving ult
 ---
 ### Fiora
@@ -856,6 +962,7 @@
 ##### Winrate: 42.39
 ###### KDA: 2.23
 ###### Pick Rate: 12.24
+###### Riot Tags: Fighter, Assassin
 ###### Tags: true damage, high dps, mobile
 ---
 ### Hecarim
@@ -864,6 +971,7 @@
 ##### Winrate: 42.38
 ###### KDA: 2.32
 ###### Pick Rate: 13.25
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing, initiator, displacement
 ---
 ### Shaco
@@ -872,6 +980,7 @@
 ##### Winrate: 41.11
 ###### KDA: 2.81
 ###### Pick Rate: 7.14
+###### Riot Tags: Assassin
 ###### Tags: high burst, traps, early power, stealth
 ---
 ### Tryndamere
@@ -880,6 +989,7 @@
 ##### Winrate: 40.8
 ###### KDA: 2.14
 ###### Pick Rate: 9.37
+###### Riot Tags: Fighter, Assassin
 ###### Tags: high dps, strong level 6
 ---
 ### Ryze
@@ -888,6 +998,7 @@
 ##### Winrate: 39.78
 ###### KDA: 2.8
 ###### Pick Rate: 11.35
+###### Riot Tags: Mage, Fighter
 ###### Tags: heavy cc, self healing, high burst, good scaling
 ---
 <h1> WEAK </h1>
@@ -897,6 +1008,7 @@
 ##### Winrate: 46.36
 ###### KDA: 2.38
 ###### Pick Rate: 3.63
+###### Riot Tags: Fighter
 ###### Tags: strong level 6
 ---
 ### Elise
@@ -905,6 +1017,7 @@
 ##### Winrate: 43.86
 ###### KDA: 2.58
 ###### Pick Rate: 3.65
+###### Riot Tags: Mage, Fighter
 ###### Tags: heavy cc, self healing, mobile
 ---
 ### Vi
@@ -913,6 +1026,7 @@
 ##### Winrate: 43.12
 ###### KDA: 2.28
 ###### Pick Rate: 4.05
+###### Riot Tags: Fighter, Assassin
 ###### Tags: heavy cc, tanky, initiator, mobile, strong level 6
 ---
 ### Nocturne
@@ -921,6 +1035,7 @@
 ##### Winrate: 42.98
 ###### KDA: 2.29
 ###### Pick Rate: 2.66
+###### Riot Tags: Assassin, Fighter
 ###### Tags: self healing, high burst, initiator
 ---
 ### Shyvana
@@ -929,6 +1044,7 @@
 ##### Winrate: 42.58
 ###### KDA: 2.71
 ###### Pick Rate: 3.76
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, initiator, mobile
 ---
 ### Akali
@@ -937,6 +1053,7 @@
 ##### Winrate: 41.82
 ###### KDA: 2.36
 ###### Pick Rate: 6.37
+###### Riot Tags: Assassin
 ###### Tags: high burst, good scaling
 ---
 ### Taliyah
@@ -945,6 +1062,7 @@
 ##### Winrate: 41.71
 ###### KDA: 2.81
 ###### Pick Rate: 4.12
+###### Riot Tags: Mage, Support
 ###### Tags: aoe cc, poke, displacement, terrain generation
 ---
 ### Kled
@@ -953,6 +1071,7 @@
 ##### Winrate: 41.61
 ###### KDA: 3.05
 ###### Pick Rate: 2.19
+###### Riot Tags: Fighter, Tank
 ###### Tags: 
 ---
 ### Jax
@@ -961,6 +1080,7 @@
 ##### Winrate: 41.59
 ###### KDA: 2.07
 ###### Pick Rate: 7.02
+###### Riot Tags: Fighter, Assassin
 ###### Tags: high dps, initiator, good scaling, strong level 6
 ---
 ### Kassadin
@@ -969,6 +1089,7 @@
 ##### Winrate: 41.38
 ###### KDA: 2.63
 ###### Pick Rate: 5.32
+###### Riot Tags: Assassin, Mage
 ###### Tags: high burst, mobile
 ---
 ### Riven
@@ -977,6 +1098,7 @@
 ##### Winrate: 40.53
 ###### KDA: 2.13
 ###### Pick Rate: 6.12
+###### Riot Tags: Fighter, Assassin
 ###### Tags: heavy cc, high dps, high burst, mobile, early power, strong level 6
 ---
 ### Rengar
@@ -985,6 +1107,7 @@
 ##### Winrate: 39.3
 ###### KDA: 2.14
 ###### Pick Rate: 3.98
+###### Riot Tags: Assassin, Fighter
 ###### Tags: high dps, self healing, high burst, initiator, stealth
 ---
 ### Rek'Sai
@@ -993,6 +1116,7 @@
 ##### Winrate: 39.12
 ###### KDA: 2.59
 ###### Pick Rate: 2.16
+###### Riot Tags: Fighter
 ###### Tags: 
 ---
 ### Kindred
@@ -1001,6 +1125,7 @@
 ##### Winrate: 39.0
 ###### KDA: 2.51
 ###### Pick Rate: 5.7
+###### Riot Tags: Marksman
 ###### Tags: high dps, self healing, preserving ult, mobile
 ---
 ### Lee Sin
@@ -1009,6 +1134,7 @@
 ##### Winrate: 38.83
 ###### KDA: 2.59
 ###### Pick Rate: 5.91
+###### Riot Tags: Fighter, Assassin
 ###### Tags: initiator, mobile, displacement
 ---
 ### LeBlanc
@@ -1017,6 +1143,7 @@
 ##### Winrate: 37.94
 ###### KDA: 2.64
 ###### Pick Rate: 7.76
+###### Riot Tags: Assassin, Mage
 ###### Tags: high dps, high burst, mobile, strong level 6
 ---
 ### Nunu
@@ -1025,6 +1152,7 @@
 ##### Winrate: 37.86
 ###### KDA: 2.78
 ###### Pick Rate: 6.92
+###### Riot Tags: Support, Fighter
 ###### Tags: self healing, aoe cc
 ---
 ### Kha'Zix
@@ -1033,6 +1161,7 @@
 ##### Winrate: 37.38
 ###### KDA: 2.29
 ###### Pick Rate: 4.42
+###### Riot Tags: Assassin, Fighter
 ###### Tags: 
 ---
 ### Evelynn
@@ -1041,6 +1170,7 @@
 ##### Winrate: 32.56
 ###### KDA: 2.16
 ###### Pick Rate: 8.59
+###### Riot Tags: Assassin, Mage
 ###### Tags: 
 ---
 <h1> BAD </h1>
@@ -1050,6 +1180,7 @@
 ##### Winrate: 37.74
 ###### KDA: 2.28
 ###### Pick Rate: 1.94
+###### Riot Tags: Fighter, Tank
 ###### Tags: self healing, initiator
 ---
 ### Udyr
@@ -1058,5 +1189,6 @@
 ##### Winrate: 36.89
 ###### KDA: 2.04
 ###### Pick Rate: 3.44
+###### Riot Tags: Fighter, Tank
 ###### Tags: tanky, self healing, mobile, good scaling
 ---
