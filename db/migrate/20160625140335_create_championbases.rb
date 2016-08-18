@@ -8,7 +8,6 @@ class CreateChampionbases < ActiveRecord::Migration
 
       t.string :blurb
       t.string :image
-      t.string :riot_tags, array: true
 
       t.float :score
       t.float :win_rate
@@ -19,8 +18,9 @@ class CreateChampionbases < ActiveRecord::Migration
 
       t.integer :rating, default: 0
 
-      # Other tags will be used for other forms of classification later.
-      t.string :other_tags, array: true, default: []
+      t.string :riot_tags, array: true
+      t.string :build_tags, array: true, default: []
+      t.string :playstyle_tags, array: true, default: []
 
       t.text :stats
 

@@ -32,14 +32,15 @@ ActiveRecord::Schema.define(version: 20160811014016) do
     t.string   "champion_identifier"
     t.string   "blurb"
     t.string   "image"
-    t.string   "riot_tags",                                     array: true
     t.float    "score"
     t.float    "win_rate"
     t.float    "pick_rate"
     t.float    "KDA"
     t.string   "tier"
     t.integer  "rating",              default: 0
-    t.string   "other_tags",          default: [],              array: true
+    t.string   "riot_tags",                                     array: true
+    t.string   "build_tags",          default: [],              array: true
+    t.string   "playstyle_tags",      default: [],              array: true
     t.text     "stats"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false

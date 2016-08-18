@@ -1,4 +1,5 @@
 task :export_champ_tiers => :environment do
+  aram_items = Item.where(:aram_item => true).sort { |a,b| b.item_identifier.to_i <=> a.item_identifier.to_i }
 
   champions = Championbase.all
   sorted_champs = {
@@ -41,7 +42,23 @@ task :export_champ_tiers => :environment do
         f.puts "---"
       end
     end
-
   end
+
+  File.open(File.join(Rails.root, 'item_tags.md'), 'w+') do |f|
+    aram_items.each do |tier, item|
+
+      f.puts "<h1> #{tier.to_s.upcase} </h1>"       
+
+      f.puts "### #{champ.name}"
+      f.puts "<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/#{champ.image}' width='48'>"
+      f.puts "##### Score: #{champ.score}"
+      f.puts "##### Winrate: #{champ.win_rate}"
+      f.puts "###### KDA: #{champ.KDA}"
+      f.puts "###### Pick Rate: #{champ.pick_rate}"
+      f.puts "###### Riot Tags: " +champ.riot_tags.join(", ").gsub('_', ' ')
+      f.puts "###### Tags: " +champ.other_tags.join(", ").gsub('_', ' ')
+      f.puts "---"
+    end
+  end  
 
 end

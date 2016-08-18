@@ -1,5 +1,6 @@
 task :analytics_test => :environment do
   match = Match.first
+  items = Item.all
   champions = match.champions
   current_champion = champions[0]
 
@@ -26,28 +27,55 @@ task :analytics_test => :environment do
   teams[:top].each do |champion|
     c_base = champion.championbase
 
-    c_base.other_tags.each do |otag|
+    c_base.build_tags.each do |otag|
       if top_tag_frequencies.key? otag
         top_tag_frequencies[otag] += 1
       elsif !top_tag_frequencies.key? otag
         top_tag_frequencies[otag] = 1
       end
     end
+
+    c_base.playstyle_tags.each do |otag|
+      if top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] += 1
+      elsif !top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] = 1
+      end
+    end    
   end
 
   bottom_tag_frequencies = {}
   teams[:bottom].each do |champion|
     c_base = champion.championbase
 
-    c_base.other_tags.each do |otag|
+    c_base.build_tags.each do |otag|
       if bottom_tag_frequencies.key? otag
         bottom_tag_frequencies[otag] += 1
       elsif !bottom_tag_frequencies.key? otag
         bottom_tag_frequencies[otag] = 1
       end
     end
+
+    c_base.playstyle_tags.each do |otag|
+      if bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] += 1
+      elsif !bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] = 1
+      end
+    end    
   end
 
+  all_item_tags = Array.new
+  items.each do |item|
+    if item.aram_item
+      item.tags.each do |tag|
+        if !all_item_tags.include? tag
+          all_item_tags.push(tag)
+        end
+      end
+    end
+  end
+  ap all_item_tags
   # p get_top_frequencies(top_tag_frequencies)
   # p get_top_frequencies(bottom_tag_frequencies)
 

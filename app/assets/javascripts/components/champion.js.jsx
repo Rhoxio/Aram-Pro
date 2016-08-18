@@ -49,7 +49,7 @@ var Champion = React.createClass({
 
     });
 
-    var otherTags = this.props.other_tags.map(function(tag) {
+    var otherTags = this.props.build_tags.map(function(tag) {
 
       switch(tag) {
         case "god":
@@ -277,7 +277,7 @@ var ChampionList = React.createClass({
       var topSideChampionNodes = this.state.champions.map(function(champion) {
         if(champion.team === "200"){
           return (
-            <Champion champion={champion} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            <Champion champion={champion} items={champion.items} riot_tags={champion.championbase.riot_tags} build_tags={champion.championbase.build_tags} image={champion.image} name={champion.name} key={champion.id}>
             </Champion>
           );
         }
@@ -286,7 +286,7 @@ var ChampionList = React.createClass({
       var bottomSideChampionNodes = this.state.champions.map(function(champion) {
         if(champion.team === "100"){
           return (
-            <Champion champion={champion} key={champion.championbase.champion_identifer} items={champion.items} riot_tags={champion.championbase.riot_tags} other_tags={champion.championbase.other_tags} image={champion.image} name={champion.name} key={champion.id}>
+            <Champion champion={champion} key={champion.championbase.champion_identifer} items={champion.items} riot_tags={champion.championbase.riot_tags} build_tags={champion.championbase.build_tags} image={champion.image} name={champion.name} key={champion.id}>
             </Champion>
           );
         }
