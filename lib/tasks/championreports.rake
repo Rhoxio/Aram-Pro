@@ -29,10 +29,14 @@ task :export_champ_tiers => :environment do
 
 
       f.puts "<h1> #{tier.to_s.upcase} </h1>"
-      champions.each do |champ|         
+      champions.each do |champ|  
+
+        popular_items = champ.popular_items.map {|item| "<img src='#{item.image}' width='48'>"}.join(' ')
+        p popular_items
 
         f.puts "### #{champ.name}"
         f.puts "<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/#{champ.image}' width='48'>"
+        f.puts "##### Popular Items: " + popular_items        
         f.puts "##### Score: #{champ.score}"
         f.puts "##### Winrate: #{champ.win_rate}"
         f.puts "###### KDA: #{champ.KDA}"
@@ -45,20 +49,20 @@ task :export_champ_tiers => :environment do
     end
   end
 
-  File.open(File.join(Rails.root, 'item_tags.md'), 'w+') do |f|
-    aram_items.each do |item|     
+  # File.open(File.join(Rails.root, 'item_tags.md'), 'w+') do |f|
+  #   aram_items.each do |item|     
 
-      f.puts "### #{item.name}"
-      f.puts "<img src='#{item.image}' width='48'>"
-      f.puts "###### Riot Tags: " +item.tags.join(", ").gsub('_', ' ')
-      if item.attributes['good_against'] && item.attributes['good_on'] && item.attributes['good_at']
-        f.puts "###### Good Against: " +item.good_against.join(", ").gsub('_', ' ')
-        f.puts "###### Good On: " +item.good_on.join(", ").gsub('_', ' ')
-        f.puts "###### Good At: " +item.good_at.join(", ").gsub('_', ' ')
-      end
+  #     f.puts "### #{item.name}"
+  #     f.puts "<img src='#{item.image}' width='48'>"
+  #     f.puts "###### Riot Tags: " +item.tags.join(", ").gsub('_', ' ')
+  #     if item.attributes['good_against'] && item.attributes['good_on'] && item.attributes['good_at']
+  #       f.puts "###### Good Against: " +item.good_against.join(", ").gsub('_', ' ')
+  #       f.puts "###### Good On: " +item.good_on.join(", ").gsub('_', ' ')
+  #       f.puts "###### Good At: " +item.good_at.join(", ").gsub('_', ' ')
+  #     end
 
-      f.puts "---"
-    end
-  end  
+  #     f.puts "---"
+  #   end
+  # end  
 
 end
