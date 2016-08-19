@@ -36,7 +36,8 @@ task :export_champ_tiers => :environment do
 
         f.puts "### #{champ.name}"
         f.puts "<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/#{champ.image}' width='48'>"
-        f.puts "##### Popular Items: " + popular_items        
+        f.puts "##### Popular Items: "
+        f.puts ""+popular_items        
         f.puts "##### Score: #{champ.score}"
         f.puts "##### Winrate: #{champ.win_rate}"
         f.puts "###### KDA: #{champ.KDA}"
