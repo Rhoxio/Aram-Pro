@@ -1129,9 +1129,11 @@ class Item < ActiveRecord::Base
       item.stats = data['stats']
       item.effect = data['effect']
 
-      item.good_against = item_tags[data['name']][:good_against]
-      item.good_on = item_tags[data['name']][:good_on]
-      item.good_at = item_tags[data['name']][:good_at]
+      if item_tags.key? data['name']
+        item.good_against = item_tags[data['name']][:good_against]
+        item.good_on = item_tags[data['name']][:good_on]
+        item.good_at = item_tags[data['name']][:good_at]
+      end
 
       if item.save
         puts "#{item.name} was saved!"

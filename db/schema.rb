@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 20160811014016) do
     t.string   "tags",                                           array: true
     t.boolean  "aram_item",         default: false
     t.integer  "build_depth"
+    t.string   "good_against",                                   array: true
+    t.string   "good_on",                                        array: true
+    t.string   "good_at",                                        array: true
     t.text     "gold"
     t.text     "stats"
     t.text     "effect"

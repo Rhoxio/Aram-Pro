@@ -38,25 +38,25 @@ task :export_champ_tiers => :environment do
         f.puts "###### KDA: #{champ.KDA}"
         f.puts "###### Pick Rate: #{champ.pick_rate}"
         f.puts "###### Riot Tags: " +champ.riot_tags.join(", ").gsub('_', ' ')
-        f.puts "###### Tags: " +champ.other_tags.join(", ").gsub('_', ' ')
+        f.puts "###### Build Tags: " +champ.build_tags.join(", ").gsub('_', ' ')
+        f.puts "###### Playstyle Tags: " +champ.playstyle_tags.join(", ").gsub('_', ' ')
         f.puts "---"
       end
     end
   end
 
   File.open(File.join(Rails.root, 'item_tags.md'), 'w+') do |f|
-    aram_items.each do |tier, item|
+    aram_items.each do |item|     
 
-      f.puts "<h1> #{tier.to_s.upcase} </h1>"       
+      f.puts "### #{item.name}"
+      f.puts "<img src='#{item.image}' width='48'>"
+      f.puts "###### Riot Tags: " +item.tags.join(", ").gsub('_', ' ')
+      if item.attributes['good_against'] && item.attributes['good_on'] && item.attributes['good_at']
+        f.puts "###### Good Against: " +item.good_against.join(", ").gsub('_', ' ')
+        f.puts "###### Good On: " +item.good_on.join(", ").gsub('_', ' ')
+        f.puts "###### Good At: " +item.good_at.join(", ").gsub('_', ' ')
+      end
 
-      f.puts "### #{champ.name}"
-      f.puts "<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/#{champ.image}' width='48'>"
-      f.puts "##### Score: #{champ.score}"
-      f.puts "##### Winrate: #{champ.win_rate}"
-      f.puts "###### KDA: #{champ.KDA}"
-      f.puts "###### Pick Rate: #{champ.pick_rate}"
-      f.puts "###### Riot Tags: " +champ.riot_tags.join(", ").gsub('_', ' ')
-      f.puts "###### Tags: " +champ.other_tags.join(", ").gsub('_', ' ')
       f.puts "---"
     end
   end  

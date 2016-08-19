@@ -1,1194 +1,1326 @@
 <h1> GOD </h1>
 ### Sona
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Sona.png' width='48'>
-##### Score: 89.44
-##### Winrate: 67.29
-###### KDA: 5.12
-###### Pick Rate: 10.99
+##### Score: 89.16
+##### Winrate: 68.16
+###### KDA: 5.2
+###### Pick Rate: 11.05
 ###### Riot Tags: Support, Mage
-###### Tags: heavy cc, self healing, high burst, healer, aoe cc, poke, initiator, strong level 6
+###### Build Tags: heavy cc, self healing, high burst, healer, aoe cc, poke
+###### Playstyle Tags: initiator, strong level 6
 ---
 ### Ziggs
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ziggs.png' width='48'>
-##### Score: 83.2
-##### Winrate: 65.64
-###### KDA: 4.58
-###### Pick Rate: 8.33
+##### Score: 82.3
+##### Winrate: 65.81
+###### KDA: 4.71
+###### Pick Rate: 8.27
 ###### Riot Tags: Mage
-###### Tags: high dps, high burst, waveclear, poke, displacement
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, displacement
 ---
 ### Teemo
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Teemo.png' width='48'>
-##### Score: 84.91
-##### Winrate: 61.89
+##### Score: 84.31
+##### Winrate: 61.63
 ###### KDA: 3.31
-###### Pick Rate: 13.88
+###### Pick Rate: 14.61
 ###### Riot Tags: Marksman, Assassin
-###### Tags: waveclear, poke, traps, stealth
+###### Build Tags: poke, stealth
+###### Playstyle Tags: waveclear, traps
 ---
 ### Lux
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lux.png' width='48'>
-##### Score: 85.54
-##### Winrate: 58.93
-###### KDA: 5.51
-###### Pick Rate: 13.52
+##### Score: 85.03
+##### Winrate: 59.6
+###### KDA: 5.57
+###### Pick Rate: 13.57
 ###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, strong level 6
+###### Build Tags: heavy cc, high dps, high burst, aoe cc
+###### Playstyle Tags: waveclear, strong level 6
+---
+### Ashe
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ashe.png' width='48'>
+##### Score: 83.95
+##### Winrate: 56.27
+###### KDA: 3.55
+###### Pick Rate: 17.83
+###### Riot Tags: Marksman, Support
+###### Build Tags: heavy cc, high dps, aoe cc, poke
+###### Playstyle Tags: initiator
 ---
 <h1> STRONG </h1>
 ### Heimerdinger
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Heimerdinger.png' width='48'>
-##### Score: 81.2
-##### Winrate: 64.56
-###### KDA: 4.11
-###### Pick Rate: 8.26
+##### Score: 80.39
+##### Winrate: 64.64
+###### KDA: 4.1
+###### Pick Rate: 8.49
 ###### Riot Tags: Mage, Support
-###### Tags: high dps, high burst, waveclear, poke, traps
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, traps
 ---
 ### Swain
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Swain.png' width='48'>
-##### Score: 75.93
-##### Winrate: 64.02
-###### KDA: 3.77
-###### Pick Rate: 5.26
+##### Score: 73.67
+##### Winrate: 62.89
+###### KDA: 3.81
+###### Pick Rate: 5.12
 ###### Riot Tags: Mage, Fighter
-###### Tags: tanky, self healing, aoe cc, waveclear, initiator, good scaling, strong level 6
----
-### Jhin
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jhin.png' width='48'>
-##### Score: 78.22
-##### Winrate: 60.77
-###### KDA: 4.55
-###### Pick Rate: 8.17
-###### Riot Tags: Marksman, Assassin
-###### Tags: high dps, high burst, traps, early power
+###### Build Tags: tanky, self healing, aoe cc
+###### Playstyle Tags: waveclear, initiator, good scaling, strong level 6
 ---
 ### Kog'Maw
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/KogMaw.png' width='48'>
-##### Score: 74.16
-##### Winrate: 60.16
+##### Score: 73.02
+##### Winrate: 60.34
 ###### KDA: 3.39
-###### Pick Rate: 7.18
+###### Pick Rate: 7.0
 ###### Riot Tags: Marksman, Mage
-###### Tags: true damage, high dps
+###### Build Tags: true damage, high dps
+###### Playstyle Tags: 
 ---
-### Varus
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Varus.png' width='48'>
-##### Score: 76.08
-##### Winrate: 59.36
-###### KDA: 4.05
-###### Pick Rate: 8.27
-###### Riot Tags: Marksman, Mage
-###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, poke, early power
+### Jhin
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jhin.png' width='48'>
+##### Score: 76.0
+##### Winrate: 60.01
+###### KDA: 4.57
+###### Pick Rate: 7.88
+###### Riot Tags: Marksman, Assassin
+###### Build Tags: high dps, high burst
+###### Playstyle Tags: traps, early power
 ---
 ### Fiddlesticks
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/FiddleSticks.png' width='48'>
-##### Score: 79.03
-##### Winrate: 58.58
-###### KDA: 3.57
-###### Pick Rate: 11.59
+##### Score: 78.31
+##### Winrate: 59.28
+###### KDA: 3.62
+###### Pick Rate: 11.39
 ###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high dps, self healing, high burst, waveclear, poke, strong level 6
+###### Build Tags: heavy cc, high dps, self healing, high burst, poke
+###### Playstyle Tags: waveclear, strong level 6
 ---
-### Janna
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Janna.png' width='48'>
-##### Score: 78.61
-##### Winrate: 57.84
-###### KDA: 5.32
-###### Pick Rate: 9.5
-###### Riot Tags: Support, Mage
-###### Tags: heavy cc, healer, waveclear
+### Varus
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Varus.png' width='48'>
+##### Score: 74.25
+##### Winrate: 58.65
+###### KDA: 4.08
+###### Pick Rate: 8.2
+###### Riot Tags: Marksman, Mage
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke
+###### Playstyle Tags: waveclear, early power
 ---
 ### Miss Fortune
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/MissFortune.png' width='48'>
-##### Score: 77.1
-##### Winrate: 56.61
-###### KDA: 3.8
-###### Pick Rate: 11.26
+##### Score: 78.26
+##### Winrate: 58.58
+###### KDA: 3.86
+###### Pick Rate: 11.53
 ###### Riot Tags: Marksman
-###### Tags: high dps, early power, strong level 6
+###### Build Tags: high dps
+###### Playstyle Tags: early power, strong level 6
 ---
-### Annie
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Annie.png' width='48'>
-##### Score: 79.95
-##### Winrate: 55.61
-###### KDA: 3.19
-###### Pick Rate: 14.85
-###### Riot Tags: Mage
-###### Tags: heavy cc, high burst, aoe cc, initiator, strong level 6
----
-### Ashe
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ashe.png' width='48'>
-##### Score: 83.17
-##### Winrate: 55.23
-###### KDA: 3.5
-###### Pick Rate: 17.05
-###### Riot Tags: Marksman, Support
-###### Tags: heavy cc, high dps, aoe cc, poke, initiator
+### Janna
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Janna.png' width='48'>
+##### Score: 77.46
+##### Winrate: 58.01
+###### KDA: 5.32
+###### Pick Rate: 9.38
+###### Riot Tags: Support, Mage
+###### Build Tags: heavy cc, healer
+###### Playstyle Tags: waveclear
 ---
 ### Caitlyn
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Caitlyn.png' width='48'>
-##### Score: 75.2
-##### Winrate: 55.16
-###### KDA: 3.61
-###### Pick Rate: 11.16
+##### Score: 73.81
+##### Winrate: 55.57
+###### KDA: 3.65
+###### Pick Rate: 10.64
 ###### Riot Tags: Marksman
-###### Tags: high dps, waveclear, poke, mobile, traps
----
-### Veigar
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Veigar.png' width='48'>
-##### Score: 77.45
-##### Winrate: 54.89
-###### KDA: 3.67
-###### Pick Rate: 12.9
-###### Riot Tags: Mage
-###### Tags: heavy cc, high dps, high burst, aoe cc, good scaling
----
-### Garen
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Garen.png' width='48'>
-##### Score: 75.64
-##### Winrate: 54.74
-###### KDA: 2.97
-###### Pick Rate: 12.61
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, true damage
+###### Build Tags: high dps, poke
+###### Playstyle Tags: waveclear, mobile, traps
 ---
 ### Morgana
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Morgana.png' width='48'>
-##### Score: 78.18
-##### Winrate: 53.84
-###### KDA: 4.35
-###### Pick Rate: 13.28
+##### Score: 79.05
+##### Winrate: 54.52
+###### KDA: 4.37
+###### Pick Rate: 14.32
 ###### Riot Tags: Mage, Support
-###### Tags: heavy cc, self healing, aoe cc, waveclear, poke, initiator, strong level 6
+###### Build Tags: heavy cc, self healing, aoe cc, poke
+###### Playstyle Tags: waveclear, initiator, strong level 6
+---
+### Garen
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Garen.png' width='48'>
+##### Score: 74.64
+##### Winrate: 54.46
+###### KDA: 2.96
+###### Pick Rate: 12.97
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, true damage
+###### Playstyle Tags: 
+---
+### Veigar
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Veigar.png' width='48'>
+##### Score: 76.0
+##### Winrate: 54.38
+###### KDA: 3.67
+###### Pick Rate: 13.08
+###### Riot Tags: Mage
+###### Build Tags: heavy cc, high dps, high burst, aoe cc
+###### Playstyle Tags: good scaling
 ---
 ### Sivir
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Sivir.png' width='48'>
-##### Score: 79.08
-##### Winrate: 53.77
+##### Score: 78.61
+##### Winrate: 54.3
 ###### KDA: 3.52
-###### Pick Rate: 15.07
+###### Pick Rate: 15.28
 ###### Riot Tags: Marksman
-###### Tags: high dps
+###### Build Tags: high dps, high dps
+###### Playstyle Tags: initiator
+---
+### Annie
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Annie.png' width='48'>
+##### Score: 77.59
+##### Winrate: 53.81
+###### KDA: 3.16
+###### Pick Rate: 15.36
+###### Riot Tags: Mage
+###### Build Tags: heavy cc, high burst, aoe cc
+###### Playstyle Tags: initiator, strong level 6
 ---
 ### Blitzcrank
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Blitzcrank.png' width='48'>
-##### Score: 79.08
-##### Winrate: 50.32
-###### KDA: 3.01
-###### Pick Rate: 18.16
+##### Score: 79.16
+##### Winrate: 51.06
+###### KDA: 3.04
+###### Pick Rate: 18.64
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, initiator, displacement, early power
+###### Build Tags: heavy cc
+###### Playstyle Tags: initiator, displacement, early power
 ---
 <h1> ABOVEAVERAGE </h1>
-### Galio
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Galio.png' width='48'>
-##### Score: 72.38
-##### Winrate: 60.21
-###### KDA: 4.59
-###### Pick Rate: 4.28
-###### Riot Tags: Tank, Mage
-###### Tags: heavy cc, tanky, self healing, aoe cc, waveclear
----
 ### Zyra
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zyra.png' width='48'>
-##### Score: 73.14
-##### Winrate: 59.64
-###### KDA: 3.88
-###### Pick Rate: 6.16
+##### Score: 71.83
+##### Winrate: 59.68
+###### KDA: 3.95
+###### Pick Rate: 5.84
 ###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high dps, high burst, aoe cc, waveclear, poke, strong level 6
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke
+###### Playstyle Tags: waveclear, strong level 6
+---
+### Galio
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Galio.png' width='48'>
+##### Score: 70.43
+##### Winrate: 59.55
+###### KDA: 4.61
+###### Pick Rate: 4.0
+###### Riot Tags: Tank, Mage
+###### Build Tags: heavy cc, tanky, self healing, aoe cc
+###### Playstyle Tags: waveclear
 ---
 ### Sion
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Sion.png' width='48'>
-##### Score: 72.42
-##### Winrate: 59.26
-###### KDA: 3.07
-###### Pick Rate: 6.97
+##### Score: 71.36
+##### Winrate: 59.16
+###### KDA: 3.04
+###### Pick Rate: 7.07
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
----
-### Malzahar
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Malzahar.png' width='48'>
-##### Score: 72.65
-##### Winrate: 58.25
-###### KDA: 3.73
-###### Pick Rate: 6.98
-###### Riot Tags: Mage, Assassin
-###### Tags: heavy cc, waveclear, strong level 6
----
-### Vel'Koz
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Velkoz.png' width='48'>
-##### Score: 72.72
-##### Winrate: 57.73
-###### KDA: 4.08
-###### Pick Rate: 6.93
-###### Riot Tags: Mage
-###### Tags: 
----
-### Karthus
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Karthus.png' width='48'>
-##### Score: 69.11
-##### Winrate: 56.86
-###### KDA: 2.78
-###### Pick Rate: 6.63
-###### Riot Tags: Mage
-###### Tags: aoe cc, waveclear, strong level 6
----
-### Nautilus
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nautilus.png' width='48'>
-##### Score: 69.35
-##### Winrate: 56.81
-###### KDA: 3.39
-###### Pick Rate: 6.03
-###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, tanky, aoe cc, initiator
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator, strong level 6
 ---
 ### Maokai
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Maokai.png' width='48'>
-##### Score: 67.93
-##### Winrate: 56.49
+##### Score: 68.36
+##### Winrate: 58.12
 ###### KDA: 3.46
-###### Pick Rate: 5.14
+###### Pick Rate: 5.01
 ###### Riot Tags: Tank, Mage
-###### Tags: heavy cc, tanky, self healing
+###### Build Tags: heavy cc, tanky, self healing
+###### Playstyle Tags: 
 ---
-### Illaoi
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Illaoi.png' width='48'>
-##### Score: 66.48
-##### Winrate: 56.4
-###### KDA: 2.74
-###### Pick Rate: 5.1
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing
----
-### Dr. Mundo
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/DrMundo.png' width='48'>
-##### Score: 70.3
-##### Winrate: 55.59
-###### KDA: 3.37
-###### Pick Rate: 7.62
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing
----
-### Brand
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Brand.png' width='48'>
-##### Score: 71.11
-##### Winrate: 55.2
-###### KDA: 3.59
-###### Pick Rate: 8.19
+### Vel'Koz
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Velkoz.png' width='48'>
+##### Score: 71.72
+##### Winrate: 58.01
+###### KDA: 4.14
+###### Pick Rate: 6.69
 ###### Riot Tags: Mage
-###### Tags: high dps, high burst, waveclear, poke, strong level 6
+###### Build Tags: poke, high dps
+###### Playstyle Tags: good scaling
 ---
-### Nami
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nami.png' width='48'>
-##### Score: 71.01
-##### Winrate: 55.19
-###### KDA: 5.35
-###### Pick Rate: 5.8
-###### Riot Tags: Support, Mage
-###### Tags: heavy cc, self healing, healer, aoe cc
+### Malzahar
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Malzahar.png' width='48'>
+##### Score: 70.2
+##### Winrate: 57.11
+###### KDA: 3.71
+###### Pick Rate: 6.77
+###### Riot Tags: Mage, Assassin
+###### Build Tags: heavy cc
+###### Playstyle Tags: waveclear, strong level 6
+---
+### Karthus
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Karthus.png' width='48'>
+##### Score: 68.0
+##### Winrate: 56.89
+###### KDA: 2.81
+###### Pick Rate: 6.48
+###### Riot Tags: Mage
+###### Build Tags: aoe cc
+###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Taric
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Taric.png' width='48'>
-##### Score: 69.12
-##### Winrate: 55.17
+##### Score: 69.28
+##### Winrate: 56.41
 ###### KDA: 4.2
-###### Pick Rate: 5.96
+###### Pick Rate: 5.92
 ###### Riot Tags: Support, Fighter
-###### Tags: heavy cc, tanky, self healing, strong level 6
+###### Build Tags: heavy cc, tanky, self healing
+###### Playstyle Tags: strong level 6
 ---
-### Karma
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Karma.png' width='48'>
-##### Score: 72.8
-##### Winrate: 54.95
-###### KDA: 4.17
-###### Pick Rate: 8.83
-###### Riot Tags: Mage, Support
-###### Tags: self healing, waveclear, poke, early power
+### Illaoi
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Illaoi.png' width='48'>
+##### Score: 64.97
+##### Winrate: 55.82
+###### KDA: 2.75
+###### Pick Rate: 5.07
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: 
 ---
-### Graves
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Graves.png' width='48'>
-##### Score: 69.53
-##### Winrate: 54.72
-###### KDA: 3.35
-###### Pick Rate: 7.7
-###### Riot Tags: Marksman
-###### Tags: 
+### Brand
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Brand.png' width='48'>
+##### Score: 70.12
+##### Winrate: 55.51
+###### KDA: 3.59
+###### Pick Rate: 8.01
+###### Riot Tags: Mage
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, strong level 6
 ---
-### Jinx
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jinx.png' width='48'>
-##### Score: 72.94
-##### Winrate: 54.67
-###### KDA: 3.52
-###### Pick Rate: 9.99
-###### Riot Tags: Marksman
-###### Tags: high dps, waveclear, poke
+### Nautilus
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nautilus.png' width='48'>
+##### Score: 66.59
+##### Winrate: 55.38
+###### KDA: 3.4
+###### Pick Rate: 5.71
+###### Riot Tags: Tank, Fighter
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator
 ---
 ### Rammus
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Rammus.png' width='48'>
-##### Score: 64.93
-##### Winrate: 54.57
-###### KDA: 2.77
-###### Pick Rate: 5.22
+##### Score: 64.51
+##### Winrate: 55.37
+###### KDA: 2.76
+###### Pick Rate: 5.03
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, tanky, initiator, mobile
+###### Build Tags: heavy cc, tanky
+###### Playstyle Tags: initiator, mobile
 ---
-### Xerath
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Xerath.png' width='48'>
-##### Score: 69.59
-##### Winrate: 54.46
-###### KDA: 4.55
-###### Pick Rate: 6.33
-###### Riot Tags: Mage, Assassin
-###### Tags: high dps, high burst, waveclear, poke
+### Jinx
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jinx.png' width='48'>
+##### Score: 71.66
+##### Winrate: 54.37
+###### KDA: 3.53
+###### Pick Rate: 10.06
+###### Riot Tags: Marksman
+###### Build Tags: high dps, poke
+###### Playstyle Tags: waveclear
+---
+### Graves
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Graves.png' width='48'>
+##### Score: 67.26
+##### Winrate: 53.78
+###### KDA: 3.36
+###### Pick Rate: 7.41
+###### Riot Tags: Marksman
+###### Build Tags: high burst, high dps
+###### Playstyle Tags: mobile
+---
+### Karma
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Karma.png' width='48'>
+##### Score: 70.81
+##### Winrate: 53.55
+###### KDA: 4.11
+###### Pick Rate: 9.22
+###### Riot Tags: Mage, Support
+###### Build Tags: self healing, poke
+###### Playstyle Tags: waveclear, early power
 ---
 ### Vladimir
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Vladimir.png' width='48'>
-##### Score: 66.75
-##### Winrate: 54.13
-###### KDA: 3.18
-###### Pick Rate: 6.3
+##### Score: 64.7
+##### Winrate: 53.52
+###### KDA: 3.13
+###### Pick Rate: 6.0
 ###### Riot Tags: Mage, Tank
-###### Tags: tanky, high dps, self healing, good scaling, strong level 6
+###### Build Tags: tanky, high dps, self healing
+###### Playstyle Tags: good scaling, strong level 6
+---
+### Dr. Mundo
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/DrMundo.png' width='48'>
+##### Score: 67.06
+##### Winrate: 53.32
+###### KDA: 3.33
+###### Pick Rate: 7.63
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: 
+---
+### Xerath
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Xerath.png' width='48'>
+##### Score: 66.88
+##### Winrate: 53.1
+###### KDA: 4.5
+###### Pick Rate: 6.08
+###### Riot Tags: Mage, Assassin
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear
 ---
 ### Gangplank
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Gangplank.png' width='48'>
-##### Score: 69.41
-##### Winrate: 53.94
-###### KDA: 3.6
-###### Pick Rate: 7.82
+##### Score: 66.76
+##### Winrate: 52.82
+###### KDA: 3.55
+###### Pick Rate: 7.48
 ###### Riot Tags: Fighter
-###### Tags: true damage, high burst
----
-### Warwick
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Warwick.png' width='48'>
-##### Score: 67.78
-##### Winrate: 52.93
-###### KDA: 3.38
-###### Pick Rate: 7.64
-###### Riot Tags: Fighter, Tank
-###### Tags: heavy cc, tanky, self healing, initiator, strong level 6
----
-### Nasus
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nasus.png' width='48'>
-##### Score: 68.68
-##### Winrate: 52.7
-###### KDA: 3.08
-###### Pick Rate: 8.84
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing, waveclear
----
-### Darius
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Darius.png' width='48'>
-##### Score: 65.2
-##### Winrate: 52.47
-###### KDA: 2.69
-###### Pick Rate: 6.99
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, displacement, strong level 6
+###### Build Tags: true damage, high burst
+###### Playstyle Tags: 
 ---
 ### Amumu
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Amumu.png' width='48'>
-##### Score: 69.35
-##### Winrate: 51.8
-###### KDA: 2.89
-###### Pick Rate: 10.22
+##### Score: 69.61
+##### Winrate: 52.74
+###### KDA: 2.92
+###### Pick Rate: 10.5
 ###### Riot Tags: Tank, Mage
-###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator, strong level 6
+---
+### Nami
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nami.png' width='48'>
+##### Score: 67.29
+##### Winrate: 52.59
+###### KDA: 5.25
+###### Pick Rate: 5.74
+###### Riot Tags: Support, Mage
+###### Build Tags: heavy cc, self healing, healer, aoe cc
+###### Playstyle Tags: 
 ---
 ### Ahri
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ahri.png' width='48'>
-##### Score: 69.07
-##### Winrate: 51.6
+##### Score: 69.02
+##### Winrate: 52.44
 ###### KDA: 3.46
-###### Pick Rate: 9.4
+###### Pick Rate: 9.54
 ###### Riot Tags: Mage, Assassin
-###### Tags: true damage, high burst, waveclear, mobile
+###### Build Tags: true damage, high burst
+###### Playstyle Tags: waveclear, mobile
 ---
-### Orianna
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Orianna.png' width='48'>
-##### Score: 66.01
-##### Winrate: 51.11
-###### KDA: 4.16
-###### Pick Rate: 6.59
-###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement, strong level 6
+### Darius
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Darius.png' width='48'>
+##### Score: 64.45
+##### Winrate: 52.16
+###### KDA: 2.7
+###### Pick Rate: 7.35
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky
+###### Playstyle Tags: displacement, strong level 6
 ---
-### Cho'Gath
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Chogath.png' width='48'>
-##### Score: 66.3
-##### Winrate: 50.0
-###### KDA: 3.26
-###### Pick Rate: 8.78
-###### Riot Tags: Tank, Mage
-###### Tags: heavy cc, tanky, true damage, self healing, high burst, aoe cc, waveclear
+### Warwick
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Warwick.png' width='48'>
+##### Score: 66.09
+##### Winrate: 52.07
+###### KDA: 3.34
+###### Pick Rate: 7.77
+###### Riot Tags: Fighter, Tank
+###### Build Tags: heavy cc, tanky, self healing
+###### Playstyle Tags: initiator, strong level 6
+---
+### Nasus
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nasus.png' width='48'>
+##### Score: 66.5
+##### Winrate: 51.64
+###### KDA: 3.06
+###### Pick Rate: 8.77
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: waveclear
 ---
 ### Malphite
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Malphite.png' width='48'>
-##### Score: 66.86
-##### Winrate: 49.92
-###### KDA: 3.03
-###### Pick Rate: 9.54
+##### Score: 66.93
+##### Winrate: 51.21
+###### KDA: 3.06
+###### Pick Rate: 9.4
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
----
-### Ezreal
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ezreal.png' width='48'>
-##### Score: 69.63
-##### Winrate: 49.75
-###### KDA: 4.0
-###### Pick Rate: 10.38
-###### Riot Tags: Marksman, Mage
-###### Tags: high dps, high burst, poke, mobile, strong level 6
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator, strong level 6
 ---
 ### Leona
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Leona.png' width='48'>
-##### Score: 71.78
-##### Winrate: 49.23
-###### KDA: 2.86
-###### Pick Rate: 13.82
+##### Score: 72.36
+##### Winrate: 50.4
+###### KDA: 2.88
+###### Pick Rate: 14.26
 ###### Riot Tags: Tank, Support
-###### Tags: heavy cc, tanky, aoe cc, initiator
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator
 ---
-### Lulu
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lulu.png' width='48'>
-##### Score: 63.9
-##### Winrate: 49.18
-###### KDA: 3.91
-###### Pick Rate: 6.74
-###### Riot Tags: Support, Mage
-###### Tags: displacement
+### Cho'Gath
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Chogath.png' width='48'>
+##### Score: 65.54
+##### Winrate: 50.11
+###### KDA: 3.25
+###### Pick Rate: 8.89
+###### Riot Tags: Tank, Mage
+###### Build Tags: heavy cc, tanky, true damage, self healing, high burst, aoe cc
+###### Playstyle Tags: waveclear
 ---
-### Katarina
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Katarina.png' width='48'>
-##### Score: 67.05
-##### Winrate: 49.13
-###### KDA: 2.78
-###### Pick Rate: 10.56
-###### Riot Tags: Assassin, Mage
-###### Tags: high dps, high burst, waveclear, poke, mobile, strong level 6
+### Orianna
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Orianna.png' width='48'>
+##### Score: 63.41
+##### Winrate: 49.96
+###### KDA: 4.14
+###### Pick Rate: 6.22
+###### Riot Tags: Mage, Support
+###### Build Tags: heavy cc, high burst, aoe cc, poke
+###### Playstyle Tags: waveclear, displacement, strong level 6
 ---
 ### Alistar
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Alistar.png' width='48'>
-##### Score: 67.14
-##### Winrate: 48.76
-###### KDA: 3.63
-###### Pick Rate: 9.77
+##### Score: 66.51
+##### Winrate: 49.61
+###### KDA: 3.62
+###### Pick Rate: 9.48
 ###### Riot Tags: Tank, Support
-###### Tags: heavy cc, tanky, self healing, healer, aoe cc, initiator
+###### Build Tags: heavy cc, tanky, self healing, healer, aoe cc
+###### Playstyle Tags: initiator
 ---
-### Soraka
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Soraka.png' width='48'>
-##### Score: 71.5
-##### Winrate: 48.05
-###### KDA: 4.56
-###### Pick Rate: 12.2
-###### Riot Tags: Support, Mage
-###### Tags: healer, poke
----
-### Draven
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Draven.png' width='48'>
-##### Score: 73.45
-##### Winrate: 47.73
-###### KDA: 2.79
-###### Pick Rate: 16.17
-###### Riot Tags: Marksman
-###### Tags: high dps, high burst, displacement, early power
+### Ezreal
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ezreal.png' width='48'>
+##### Score: 67.46
+##### Winrate: 49.16
+###### KDA: 3.99
+###### Pick Rate: 10.0
+###### Riot Tags: Marksman, Mage
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: mobile, strong level 6
 ---
 ### Thresh
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Thresh.png' width='48'>
-##### Score: 64.01
-##### Winrate: 47.69
-###### KDA: 3.61
-###### Pick Rate: 8.26
+##### Score: 64.0
+##### Winrate: 49.04
+###### KDA: 3.63
+###### Pick Rate: 7.99
 ###### Riot Tags: Support, Fighter
-###### Tags: heavy cc, tanky, displacement
+###### Build Tags: heavy cc, tanky
+###### Playstyle Tags: displacement
+---
+### Katarina
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Katarina.png' width='48'>
+##### Score: 65.66
+##### Winrate: 48.88
+###### KDA: 2.8
+###### Pick Rate: 10.45
+###### Riot Tags: Assassin, Mage
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, mobile, strong level 6
+---
+### Soraka
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Soraka.png' width='48'>
+##### Score: 70.62
+##### Winrate: 47.73
+###### KDA: 4.6
+###### Pick Rate: 12.56
+###### Riot Tags: Support, Mage
+###### Build Tags: healer, poke
+###### Playstyle Tags: 
+---
+### Draven
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Draven.png' width='48'>
+##### Score: 71.97
+##### Winrate: 47.25
+###### KDA: 2.79
+###### Pick Rate: 16.34
+###### Riot Tags: Marksman
+###### Build Tags: high dps, high burst
+###### Playstyle Tags: displacement, early power
 ---
 ### Tristana
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Tristana.png' width='48'>
-##### Score: 67.34
-##### Winrate: 46.28
-###### KDA: 2.74
-###### Pick Rate: 12.83
+##### Score: 66.57
+##### Winrate: 46.75
+###### KDA: 2.72
+###### Pick Rate: 12.75
 ###### Riot Tags: Marksman, Assassin
-###### Tags: high dps, mobile
----
-### Talon
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Talon.png' width='48'>
-##### Score: 68.17
-##### Winrate: 46.24
-###### KDA: 2.28
-###### Pick Rate: 14.06
-###### Riot Tags: Assassin, Fighter
-###### Tags: high dps, high burst, strong level 6
+###### Build Tags: high dps
+###### Playstyle Tags: mobile
 ---
 ### Master Yi
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/MasterYi.png' width='48'>
-##### Score: 66.58
-##### Winrate: 46.16
-###### KDA: 2.12
-###### Pick Rate: 13.18
+##### Score: 65.1
+##### Winrate: 45.34
+###### KDA: 2.11
+###### Pick Rate: 13.48
 ###### Riot Tags: Assassin, Fighter
-###### Tags: true damage, high dps, high burst, good scaling
+###### Build Tags: true damage, high dps, high burst
+###### Playstyle Tags: good scaling
+---
+### Talon
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Talon.png' width='48'>
+##### Score: 66.03
+##### Winrate: 44.45
+###### KDA: 2.26
+###### Pick Rate: 14.61
+###### Riot Tags: Assassin, Fighter
+###### Build Tags: high dps, high burst
+###### Playstyle Tags: strong level 6
+---
+### Hecarim
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Hecarim.png' width='48'>
+##### Score: 63.47
+##### Winrate: 43.07
+###### KDA: 2.33
+###### Pick Rate: 13.59
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: initiator, displacement
 ---
 ### Vayne
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Vayne.png' width='48'>
-##### Score: 66.48
-##### Winrate: 41.11
-###### KDA: 2.22
-###### Pick Rate: 16.51
+##### Score: 66.6
+##### Winrate: 41.75
+###### KDA: 2.21
+###### Pick Rate: 17.01
 ###### Riot Tags: Marksman, Assassin
-###### Tags: high dps
+###### Build Tags: high dps
+###### Playstyle Tags: 
 ---
 ### Fizz
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Fizz.png' width='48'>
-##### Score: 64.75
-##### Winrate: 40.87
-###### KDA: 2.22
-###### Pick Rate: 15.43
+##### Score: 64.28
+##### Winrate: 41.12
+###### KDA: 2.21
+###### Pick Rate: 15.73
 ###### Riot Tags: Assassin, Fighter
-###### Tags: high dps, high burst, mobile, strong level 6
+###### Build Tags: high dps, high burst
+###### Playstyle Tags: mobile, strong level 6
 ---
 <h1> BELOWAVERAGE </h1>
 ### Urgot
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Urgot.png' width='48'>
-##### Score: 61.22
-##### Winrate: 53.35
-###### KDA: 2.76
-###### Pick Rate: 3.4
+##### Score: 60.44
+##### Winrate: 53.52
+###### KDA: 2.81
+###### Pick Rate: 3.24
 ###### Riot Tags: Marksman, Fighter
-###### Tags: tanky, poke, displacement
+###### Build Tags: tanky, poke
+###### Playstyle Tags: displacement
 ---
 ### Trundle
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Trundle.png' width='48'>
-##### Score: 62.44
-##### Winrate: 52.67
-###### KDA: 3.35
-###### Pick Rate: 3.98
+##### Score: 62.23
+##### Winrate: 53.08
+###### KDA: 3.28
+###### Pick Rate: 4.26
 ###### Riot Tags: Fighter, Tank
-###### Tags: self healing, initiator, good scaling, terrain generation
----
-### Renekton
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Renekton.png' width='48'>
-##### Score: 60.28
-##### Winrate: 52.53
-###### KDA: 2.62
-###### Pick Rate: 3.48
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing
----
-### Gnar
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Gnar.png' width='48'>
-##### Score: 63.76
-##### Winrate: 52.35
-###### KDA: 3.0
-###### Pick Rate: 5.62
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, poke, mobile
----
-### Xin Zhao
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/XinZhao.png' width='48'>
-##### Score: 63.05
-##### Winrate: 51.86
-###### KDA: 2.34
-###### Pick Rate: 6.33
-###### Riot Tags: Fighter, Assassin
-###### Tags: high dps, self healing, displacement, good scaling
----
-### Volibear
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Volibear.png' width='48'>
-##### Score: 61.16
-##### Winrate: 51.48
-###### KDA: 2.9
-###### Pick Rate: 4.48
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing, initiator, displacement, early power
+###### Build Tags: self healing
+###### Playstyle Tags: initiator, good scaling, terrain generation
 ---
 ### Twisted Fate
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/TwistedFate.png' width='48'>
-##### Score: 62.67
-##### Winrate: 51.33
-###### KDA: 2.81
-###### Pick Rate: 5.79
-###### Riot Tags: Mage
-###### Tags: heavy cc, high burst, waveclear, early power
----
-### Wukong
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/MonkeyKing.png' width='48'>
-##### Score: 63.19
-##### Winrate: 51.11
-###### KDA: 2.86
-###### Pick Rate: 6.26
-###### Riot Tags: Fighter, Tank
-###### Tags: high dps, aoe cc, initiator, stealth
----
-### Zac
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zac.png' width='48'>
-##### Score: 59.41
-##### Winrate: 50.52
-###### KDA: 3.18
-###### Pick Rate: 3.52
-###### Riot Tags: Tank, Fighter
-###### Tags: tanky, self healing, aoe cc, initiator, displacement
----
-### Singed
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Singed.png' width='48'>
-##### Score: 62.48
-##### Winrate: 50.46
-###### KDA: 2.72
-###### Pick Rate: 6.4
-###### Riot Tags: Tank, Fighter
-###### Tags: tanky, initiator, displacement
----
-### Skarner
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Skarner.png' width='48'>
-##### Score: 56.58
-##### Winrate: 50.37
+##### Score: 60.99
+##### Winrate: 52.1
 ###### KDA: 2.85
-###### Pick Rate: 2.0
+###### Pick Rate: 4.61
+###### Riot Tags: Mage
+###### Build Tags: heavy cc, high burst
+###### Playstyle Tags: waveclear, early power
+---
+### Renekton
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Renekton.png' width='48'>
+##### Score: 58.6
+##### Winrate: 51.63
+###### KDA: 2.6
+###### Pick Rate: 3.5
 ###### Riot Tags: Fighter, Tank
-###### Tags: tanky
----
-### Ekko
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ekko.png' width='48'>
-##### Score: 63.77
-##### Winrate: 49.95
-###### KDA: 2.76
-###### Pick Rate: 7.62
-###### Riot Tags: Assassin, Fighter
-###### Tags: high burst, mobile
----
-### Lissandra
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lissandra.png' width='48'>
-##### Score: 59.4
-##### Winrate: 49.6
-###### KDA: 2.87
-###### Pick Rate: 4.56
-###### Riot Tags: Mage
-###### Tags: heavy cc, high burst, aoe cc, initiator, strong level 6
----
-### Jayce
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jayce.png' width='48'>
-##### Score: 62.37
-##### Winrate: 49.56
-###### KDA: 3.6
-###### Pick Rate: 5.78
-###### Riot Tags: Fighter, Marksman
-###### Tags: high dps, high burst, waveclear, poke, early power
----
-### Cassiopeia
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Cassiopeia.png' width='48'>
-##### Score: 62.06
-##### Winrate: 49.15
-###### KDA: 3.43
-###### Pick Rate: 6.06
-###### Riot Tags: Mage
-###### Tags: heavy cc, high dps, aoe cc, waveclear, good scaling
----
-### Braum
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Braum.png' width='48'>
-##### Score: 60.56
-##### Winrate: 49.05
-###### KDA: 3.73
-###### Pick Rate: 4.65
-###### Riot Tags: Support, Tank
-###### Tags: heavy cc, tanky, aoe cc, initiator
----
-### Yorick
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yorick.png' width='48'>
-##### Score: 56.32
-##### Winrate: 48.89
-###### KDA: 3.0
-###### Pick Rate: 2.64
-###### Riot Tags: Fighter, Mage
-###### Tags: self healing
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: 
 ---
 ### Sejuani
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Sejuani.png' width='48'>
-##### Score: 57.38
-##### Winrate: 48.81
-###### KDA: 2.83
-###### Pick Rate: 3.7
+##### Score: 59.33
+##### Winrate: 51.53
+###### KDA: 2.88
+###### Pick Rate: 3.74
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, tanky, aoe cc, initiator, strong level 6
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator, strong level 6
+---
+### Yorick
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yorick.png' width='48'>
+##### Score: 57.9
+##### Winrate: 51.48
+###### KDA: 3.03
+###### Pick Rate: 2.52
+###### Riot Tags: Fighter, Mage
+###### Build Tags: self healing
+###### Playstyle Tags: 
+---
+### Singed
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Singed.png' width='48'>
+##### Score: 62.75
+##### Winrate: 51.48
+###### KDA: 2.73
+###### Pick Rate: 6.53
+###### Riot Tags: Tank, Fighter
+###### Build Tags: tanky
+###### Playstyle Tags: initiator, displacement
+---
+### Xin Zhao
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/XinZhao.png' width='48'>
+##### Score: 61.54
+##### Winrate: 51.39
+###### KDA: 2.32
+###### Pick Rate: 6.24
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: high dps, self healing
+###### Playstyle Tags: displacement, good scaling
+---
+### Gnar
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Gnar.png' width='48'>
+##### Score: 61.38
+##### Winrate: 51.04
+###### KDA: 2.98
+###### Pick Rate: 5.48
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, poke
+###### Playstyle Tags: mobile
+---
+### Skarner
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Skarner.png' width='48'>
+##### Score: 56.44
+##### Winrate: 51.01
+###### KDA: 2.87
+###### Pick Rate: 1.96
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky
+###### Playstyle Tags: mobile
+---
+### Lissandra
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lissandra.png' width='48'>
+##### Score: 59.56
+##### Winrate: 50.84
+###### KDA: 2.86
+###### Pick Rate: 4.43
+###### Riot Tags: Mage
+###### Build Tags: heavy cc, high burst, aoe cc
+###### Playstyle Tags: initiator, strong level 6
+---
+### Wukong
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/MonkeyKing.png' width='48'>
+##### Score: 61.81
+##### Winrate: 50.72
+###### KDA: 2.84
+###### Pick Rate: 6.22
+###### Riot Tags: Fighter, Tank
+###### Build Tags: high dps, aoe cc, stealth
+###### Playstyle Tags: initiator
+---
+### Volibear
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Volibear.png' width='48'>
+##### Score: 59.51
+##### Winrate: 50.66
+###### KDA: 2.87
+###### Pick Rate: 4.5
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: initiator, displacement, early power
+---
+### Jayce
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jayce.png' width='48'>
+##### Score: 62.17
+##### Winrate: 50.54
+###### KDA: 3.64
+###### Pick Rate: 5.55
+###### Riot Tags: Fighter, Marksman
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, early power
+---
+### Braum
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Braum.png' width='48'>
+##### Score: 60.84
+##### Winrate: 50.39
+###### KDA: 3.77
+###### Pick Rate: 4.49
+###### Riot Tags: Support, Tank
+###### Build Tags: heavy cc, tanky, aoe cc
+###### Playstyle Tags: initiator
+---
+### Ekko
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ekko.png' width='48'>
+##### Score: 62.57
+##### Winrate: 50.24
+###### KDA: 2.77
+###### Pick Rate: 7.23
+###### Riot Tags: Assassin, Fighter
+###### Build Tags: high burst
+###### Playstyle Tags: mobile
+---
+### Cassiopeia
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Cassiopeia.png' width='48'>
+##### Score: 61.76
+##### Winrate: 50.22
+###### KDA: 3.46
+###### Pick Rate: 5.71
+###### Riot Tags: Mage
+###### Build Tags: heavy cc, high dps, aoe cc
+###### Playstyle Tags: waveclear, good scaling
 ---
 ### Olaf
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Olaf.png' width='48'>
 ##### Score: 57.32
-##### Winrate: 48.53
-###### KDA: 2.71
-###### Pick Rate: 4.01
+##### Winrate: 49.27
+###### KDA: 2.69
+###### Pick Rate: 4.1
 ###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing, initiator, good scaling
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: initiator, good scaling
+---
+### Zac
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zac.png' width='48'>
+##### Score: 56.73
+##### Winrate: 48.95
+###### KDA: 3.13
+###### Pick Rate: 3.3
+###### Riot Tags: Tank, Fighter
+###### Build Tags: tanky, self healing, aoe cc
+###### Playstyle Tags: initiator, displacement
 ---
 ### Aurelion Sol
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/AurelionSol.png' width='48'>
-##### Score: 57.97
-##### Winrate: 48.41
-###### KDA: 2.84
-###### Pick Rate: 4.4
-###### Riot Tags: Mage, Fighter
-###### Tags: tanky, waveclear, poke, displacement
----
-### Viktor
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Viktor.png' width='48'>
-##### Score: 59.4
-##### Winrate: 48.35
-###### KDA: 3.13
-###### Pick Rate: 5.1
-###### Riot Tags: Mage
-###### Tags: high dps, high burst, poke
----
-### Syndra
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Syndra.png' width='48'>
-##### Score: 59.43
-##### Winrate: 48.34
-###### KDA: 2.98
-###### Pick Rate: 5.31
-###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement
----
-### Jarvan IV
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/JarvanIV.png' width='48'>
-##### Score: 58.12
-##### Winrate: 48.17
-###### KDA: 3.18
-###### Pick Rate: 4.22
-###### Riot Tags: Tank, Fighter
-###### Tags: initiator, mobile, terrain generation
----
-### Rumble
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Rumble.png' width='48'>
-##### Score: 57.22
-##### Winrate: 48.09
-###### KDA: 2.86
-###### Pick Rate: 4.04
-###### Riot Tags: Fighter, Mage
-###### Tags: high dps, aoe cc, waveclear
----
-### Diana
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Diana.png' width='48'>
-##### Score: 57.86
-##### Winrate: 47.81
-###### KDA: 2.75
-###### Pick Rate: 4.85
-###### Riot Tags: Fighter, Mage
-###### Tags: high burst
----
-### Shen
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shen.png' width='48'>
-##### Score: 58.55
-##### Winrate: 47.14
-###### KDA: 3.38
-###### Pick Rate: 5.0
-###### Riot Tags: Tank, Melee
-###### Tags: preserving ult, initiator
----
-### Pantheon
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Pantheon.png' width='48'>
-##### Score: 58.98
-##### Winrate: 47.13
-###### KDA: 2.57
-###### Pick Rate: 6.38
-###### Riot Tags: Fighter, Assassin
-###### Tags: high burst, initiator, early power
----
-### Twitch
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Twitch.png' width='48'>
-##### Score: 62.66
-##### Winrate: 46.97
-###### KDA: 2.82
-###### Pick Rate: 8.84
-###### Riot Tags: Marksman, Assassin
-###### Tags: true damage, high dps, stealth
----
-### Corki
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Corki.png' width='48'>
-##### Score: 60.65
-##### Winrate: 46.9
-###### KDA: 3.16
-###### Pick Rate: 6.98
-###### Riot Tags: Marksman
-###### Tags: true damage, waveclear, poke, mobile, displacement
----
-### Irelia
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Irelia.png' width='48'>
-##### Score: 56.1
-##### Winrate: 46.82
-###### KDA: 2.5
-###### Pick Rate: 4.61
-###### Riot Tags: Fighter, Assassin
-###### Tags: tanky, true damage, self healing, good scaling
----
-### Kalista
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kalista.png' width='48'>
-##### Score: 57.35
-##### Winrate: 46.43
+##### Score: 57.42
+##### Winrate: 48.63
 ###### KDA: 2.9
-###### Pick Rate: 5.25
-###### Riot Tags: Marksman
-###### Tags: high dps, mobile
----
-### Anivia
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Anivia.png' width='48'>
-##### Score: 60.76
-##### Winrate: 46.31
-###### KDA: 3.78
-###### Pick Rate: 6.66
-###### Riot Tags: Mage, Support
-###### Tags: heavy cc, high burst, aoe cc, waveclear, poke, displacement, good scaling, terrain generation, strong level 6
----
-### Yasuo
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yasuo.png' width='48'>
-##### Score: 59.02
-##### Winrate: 46.29
-###### KDA: 2.11
-###### Pick Rate: 7.61
-###### Riot Tags: Fighter, Assassin
-###### Tags: high dps, high burst, aoe cc, mobile, strong level 6
+###### Pick Rate: 4.36
+###### Riot Tags: Mage, Fighter
+###### Build Tags: tanky, poke
+###### Playstyle Tags: waveclear, displacement
 ---
 ### Kennen
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kennen.png' width='48'>
-##### Score: 57.03
-##### Winrate: 46.21
-###### KDA: 2.79
-###### Pick Rate: 5.32
+##### Score: 58.12
+##### Winrate: 48.39
+###### KDA: 2.86
+###### Pick Rate: 5.09
 ###### Riot Tags: Mage, Marksman
-###### Tags: high burst, aoe cc, initiator, mobile
+###### Build Tags: high burst, aoe cc
+###### Playstyle Tags: initiator, mobile
 ---
-### Quinn
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Quinn.png' width='48'>
-##### Score: 55.16
-##### Winrate: 45.96
-###### KDA: 2.62
-###### Pick Rate: 4.36
-###### Riot Tags: Marksman, Fighter
-###### Tags: mobile, displacement
----
-### Lucian
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lucian.png' width='48'>
-##### Score: 60.4
-##### Winrate: 45.78
-###### KDA: 2.98
-###### Pick Rate: 7.82
-###### Riot Tags: Marksman
-###### Tags: high dps, mobile
----
-### Zilean
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zilean.png' width='48'>
-##### Score: 63.18
-##### Winrate: 45.11
-###### KDA: 3.85
-###### Pick Rate: 9.16
+### Lulu
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lulu.png' width='48'>
+##### Score: 61.9
+##### Winrate: 48.37
+###### KDA: 3.88
+###### Pick Rate: 6.56
 ###### Riot Tags: Support, Mage
-###### Tags: waveclear, preserving ult, poke, strong level 6
+###### Build Tags: 
+###### Playstyle Tags: displacement, waveclear
+---
+### Rumble
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Rumble.png' width='48'>
+##### Score: 56.01
+##### Winrate: 48.08
+###### KDA: 2.86
+###### Pick Rate: 3.75
+###### Riot Tags: Fighter, Mage
+###### Build Tags: high dps, aoe cc
+###### Playstyle Tags: waveclear
+---
+### Jarvan IV
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/JarvanIV.png' width='48'>
+##### Score: 56.55
+##### Winrate: 47.62
+###### KDA: 3.17
+###### Pick Rate: 4.06
+###### Riot Tags: Tank, Fighter
+###### Build Tags: 
+###### Playstyle Tags: initiator, mobile, terrain generation
+---
+### Mordekaiser
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Mordekaiser.png' width='48'>
+##### Score: 54.2
+##### Winrate: 47.38
+###### KDA: 2.4
+###### Pick Rate: 3.51
+###### Riot Tags: Fighter
+###### Build Tags: 
+###### Playstyle Tags: strong level 6
+---
+### Diana
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Diana.png' width='48'>
+##### Score: 56.52
+##### Winrate: 47.34
+###### KDA: 2.78
+###### Pick Rate: 4.76
+###### Riot Tags: Fighter, Mage
+###### Build Tags: high burst
+###### Playstyle Tags: 
+---
+### Pantheon
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Pantheon.png' width='48'>
+##### Score: 58.03
+##### Winrate: 47.04
+###### KDA: 2.58
+###### Pick Rate: 6.37
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: high burst
+###### Playstyle Tags: initiator, early power
+---
+### Viktor
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Viktor.png' width='48'>
+##### Score: 56.84
+##### Winrate: 46.99
+###### KDA: 3.06
+###### Pick Rate: 4.87
+###### Riot Tags: Mage
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: 
+---
+### Syndra
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Syndra.png' width='48'>
+##### Score: 57.1
+##### Winrate: 46.98
+###### KDA: 2.99
+###### Pick Rate: 5.17
+###### Riot Tags: Mage, Support
+###### Build Tags: heavy cc, high burst, aoe cc, poke
+###### Playstyle Tags: waveclear, displacement
+---
+### Corki
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Corki.png' width='48'>
+##### Score: 60.37
+##### Winrate: 46.97
+###### KDA: 3.11
+###### Pick Rate: 7.45
+###### Riot Tags: Marksman
+###### Build Tags: true damage, poke
+###### Playstyle Tags: waveclear, mobile, displacement
+---
+### Shen
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shen.png' width='48'>
+##### Score: 57.15
+##### Winrate: 46.88
+###### KDA: 3.37
+###### Pick Rate: 4.77
+###### Riot Tags: Tank, Melee
+###### Build Tags: preserving ult
+###### Playstyle Tags: initiator
+---
+### Irelia
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Irelia.png' width='48'>
+##### Score: 55.23
+##### Winrate: 46.75
+###### KDA: 2.52
+###### Pick Rate: 4.57
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: tanky, true damage, self healing
+###### Playstyle Tags: good scaling
+---
+### Twitch
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Twitch.png' width='48'>
+##### Score: 61.03
+##### Winrate: 46.7
+###### KDA: 2.79
+###### Pick Rate: 8.56
+###### Riot Tags: Marksman, Assassin
+###### Build Tags: true damage, high dps, stealth
+###### Playstyle Tags: 
+---
+### Anivia
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Anivia.png' width='48'>
+##### Score: 60.8
+##### Winrate: 46.38
+###### KDA: 3.85
+###### Pick Rate: 7.2
+###### Riot Tags: Mage, Support
+###### Build Tags: heavy cc, high burst, aoe cc, poke
+###### Playstyle Tags: waveclear, displacement, good scaling, terrain generation, strong level 6
 ---
 ### Gragas
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Gragas.png' width='48'>
-##### Score: 56.91
-##### Winrate: 44.72
-###### KDA: 2.7
-###### Pick Rate: 6.4
+##### Score: 57.17
+##### Winrate: 46.28
+###### KDA: 2.73
+###### Pick Rate: 6.07
 ###### Riot Tags: Fighter, Mage
-###### Tags: heavy cc, tanky, self healing, aoe cc, waveclear, initiator, mobile, displacement
+###### Build Tags: heavy cc, tanky, self healing, aoe cc
+###### Playstyle Tags: waveclear, initiator, mobile, displacement
 ---
-### Kayle
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kayle.png' width='48'>
-##### Score: 63.17
-##### Winrate: 44.67
-###### KDA: 2.94
-###### Pick Rate: 10.66
-###### Riot Tags: Fighter, Support
-###### Tags: high dps, self healing, healer, preserving ult, good scaling
+### Lucian
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Lucian.png' width='48'>
+##### Score: 59.34
+##### Winrate: 45.76
+###### KDA: 2.97
+###### Pick Rate: 7.73
+###### Riot Tags: Marksman
+###### Build Tags: high dps
+###### Playstyle Tags: mobile
+---
+### Quinn
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Quinn.png' width='48'>
+##### Score: 53.88
+##### Winrate: 45.68
+###### KDA: 2.62
+###### Pick Rate: 4.19
+###### Riot Tags: Marksman, Fighter
+###### Build Tags: 
+###### Playstyle Tags: mobile, displacement
+---
+### Yasuo
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yasuo.png' width='48'>
+##### Score: 57.49
+##### Winrate: 45.53
+###### KDA: 2.13
+###### Pick Rate: 7.65
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: high dps, high burst, aoe cc
+###### Playstyle Tags: mobile, strong level 6
+---
+### Kalista
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kalista.png' width='48'>
+##### Score: 55.62
+##### Winrate: 45.07
+###### KDA: 2.87
+###### Pick Rate: 5.58
+###### Riot Tags: Marksman
+###### Build Tags: high dps
+###### Playstyle Tags: mobile
+---
+### Zilean
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zilean.png' width='48'>
+##### Score: 61.48
+##### Winrate: 44.76
+###### KDA: 3.75
+###### Pick Rate: 8.99
+###### Riot Tags: Support, Mage
+###### Build Tags: preserving ult, poke
+###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Azir
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Azir.png' width='48'>
-##### Score: 56.48
-##### Winrate: 44.6
-###### KDA: 2.54
-###### Pick Rate: 6.38
+##### Score: 54.68
+##### Winrate: 44.19
+###### KDA: 2.52
+###### Pick Rate: 5.97
 ###### Riot Tags: Mage, Marksman
-###### Tags: high dps, high burst, waveclear, poke, mobile, terrain generation
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, mobile, terrain generation
 ---
-### Tahm Kench
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/TahmKench.png' width='48'>
-##### Score: 54.44
-##### Winrate: 44.46
-###### KDA: 3.06
-###### Pick Rate: 4.31
-###### Riot Tags: Support, Tank
-###### Tags: tanky, self healing
+### Kayle
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kayle.png' width='48'>
+##### Score: 61.71
+##### Winrate: 44.0
+###### KDA: 2.87
+###### Pick Rate: 10.88
+###### Riot Tags: Fighter, Support
+###### Build Tags: high dps, self healing, healer, preserving ult
+###### Playstyle Tags: good scaling
 ---
 ### Nidalee
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nidalee.png' width='48'>
-##### Score: 62.95
-##### Winrate: 43.92
-###### KDA: 3.33
-###### Pick Rate: 10.51
+##### Score: 62.29
+##### Winrate: 43.65
+###### KDA: 3.31
+###### Pick Rate: 10.98
 ###### Riot Tags: Assassin, Fighter
-###### Tags: self healing, high burst, healer, poke, traps, early power
+###### Build Tags: self healing, high burst, healer, poke
+###### Playstyle Tags: traps, early power
 ---
 ### Poppy
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Poppy.png' width='48'>
-##### Score: 57.39
-##### Winrate: 43.46
-###### KDA: 2.53
-###### Pick Rate: 7.85
+##### Score: 56.74
+##### Winrate: 43.45
+###### KDA: 2.5
+###### Pick Rate: 8.06
 ###### Riot Tags: Tank, Fighter
-###### Tags: heavy cc, initiator, displacement
+###### Build Tags: heavy cc
+###### Playstyle Tags: initiator, displacement
 ---
 ### Zed
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zed.png' width='48'>
-##### Score: 54.72
-##### Winrate: 42.65
-###### KDA: 2.49
-###### Pick Rate: 6.54
+##### Score: 54.28
+##### Winrate: 42.64
+###### KDA: 2.48
+###### Pick Rate: 6.84
 ###### Riot Tags: Assassin, Fighter
-###### Tags: high dps, high burst, waveclear, poke, mobile, strong level 6
----
-### Bard
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Bard.png' width='48'>
-##### Score: 54.24
-##### Winrate: 42.41
-###### KDA: 3.57
-###### Pick Rate: 4.93
-###### Riot Tags: Support, Mage
-###### Tags: self healing, healer, aoe cc, preserving ult
----
-### Fiora
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Fiora.png' width='48'>
-##### Score: 61.84
-##### Winrate: 42.39
-###### KDA: 2.23
-###### Pick Rate: 12.24
-###### Riot Tags: Fighter, Assassin
-###### Tags: true damage, high dps, mobile
----
-### Hecarim
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Hecarim.png' width='48'>
-##### Score: 63.39
-##### Winrate: 42.38
-###### KDA: 2.32
-###### Pick Rate: 13.25
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing, initiator, displacement
----
-### Shaco
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shaco.png' width='48'>
-##### Score: 54.64
-##### Winrate: 41.11
-###### KDA: 2.81
-###### Pick Rate: 7.14
-###### Riot Tags: Assassin
-###### Tags: high burst, traps, early power, stealth
----
-### Tryndamere
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Tryndamere.png' width='48'>
-##### Score: 56.2
-##### Winrate: 40.8
-###### KDA: 2.14
-###### Pick Rate: 9.37
-###### Riot Tags: Fighter, Assassin
-###### Tags: high dps, strong level 6
----
-### Ryze
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ryze.png' width='48'>
-##### Score: 59.13
-##### Winrate: 39.78
-###### KDA: 2.8
-###### Pick Rate: 11.35
-###### Riot Tags: Mage, Fighter
-###### Tags: heavy cc, self healing, high burst, good scaling
----
-<h1> WEAK </h1>
-### Mordekaiser
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Mordekaiser.png' width='48'>
-##### Score: 54.09
-##### Winrate: 46.36
-###### KDA: 2.38
-###### Pick Rate: 3.63
-###### Riot Tags: Fighter
-###### Tags: strong level 6
----
-### Elise
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Elise.png' width='48'>
-##### Score: 52.09
-##### Winrate: 43.86
-###### KDA: 2.58
-###### Pick Rate: 3.65
-###### Riot Tags: Mage, Fighter
-###### Tags: heavy cc, self healing, mobile
----
-### Vi
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Vi.png' width='48'>
-##### Score: 51.37
-##### Winrate: 43.12
-###### KDA: 2.28
-###### Pick Rate: 4.05
-###### Riot Tags: Fighter, Assassin
-###### Tags: heavy cc, tanky, initiator, mobile, strong level 6
----
-### Nocturne
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nocturne.png' width='48'>
-##### Score: 49.34
-##### Winrate: 42.98
-###### KDA: 2.29
-###### Pick Rate: 2.66
-###### Riot Tags: Assassin, Fighter
-###### Tags: self healing, high burst, initiator
----
-### Shyvana
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shyvana.png' width='48'>
-##### Score: 51.22
-##### Winrate: 42.58
-###### KDA: 2.71
-###### Pick Rate: 3.76
-###### Riot Tags: Fighter, Tank
-###### Tags: tanky, initiator, mobile
----
-### Akali
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Akali.png' width='48'>
-##### Score: 53.46
-##### Winrate: 41.82
-###### KDA: 2.36
-###### Pick Rate: 6.37
-###### Riot Tags: Assassin
-###### Tags: high burst, good scaling
----
-### Taliyah
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Taliyah.png' width='48'>
-##### Score: 51.06
-##### Winrate: 41.71
-###### KDA: 2.81
-###### Pick Rate: 4.12
-###### Riot Tags: Mage, Support
-###### Tags: aoe cc, poke, displacement, terrain generation
----
-### Kled
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kled.png' width='48'>
-##### Score: 48.74
-##### Winrate: 41.61
-###### KDA: 3.05
-###### Pick Rate: 2.19
-###### Riot Tags: Fighter, Tank
-###### Tags: 
+###### Build Tags: high dps, high burst, poke
+###### Playstyle Tags: waveclear, mobile, strong level 6
 ---
 ### Jax
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jax.png' width='48'>
-##### Score: 53.6
-##### Winrate: 41.59
-###### KDA: 2.07
-###### Pick Rate: 7.02
+##### Score: 54.11
+##### Winrate: 42.64
+###### KDA: 2.05
+###### Pick Rate: 7.28
 ###### Riot Tags: Fighter, Assassin
-###### Tags: high dps, initiator, good scaling, strong level 6
+###### Build Tags: high dps
+###### Playstyle Tags: initiator, good scaling, strong level 6
 ---
-### Kassadin
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kassadin.png' width='48'>
-##### Score: 52.07
-##### Winrate: 41.38
-###### KDA: 2.63
-###### Pick Rate: 5.32
-###### Riot Tags: Assassin, Mage
-###### Tags: high burst, mobile
+### Fiora
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Fiora.png' width='48'>
+##### Score: 61.16
+##### Winrate: 42.4
+###### KDA: 2.23
+###### Pick Rate: 12.47
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: true damage, high dps
+###### Playstyle Tags: mobile
+---
+### Shaco
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shaco.png' width='48'>
+##### Score: 53.56
+##### Winrate: 41.21
+###### KDA: 2.78
+###### Pick Rate: 6.91
+###### Riot Tags: Assassin
+###### Build Tags: high burst, stealth
+###### Playstyle Tags: traps, early power
+---
+### Tryndamere
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Tryndamere.png' width='48'>
+##### Score: 55.49
+##### Winrate: 40.05
+###### KDA: 2.13
+###### Pick Rate: 10.05
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: high dps
+###### Playstyle Tags: strong level 6
+---
+### Ryze
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Ryze.png' width='48'>
+##### Score: 57.59
+##### Winrate: 38.68
+###### KDA: 2.77
+###### Pick Rate: 11.72
+###### Riot Tags: Mage, Fighter
+###### Build Tags: heavy cc, self healing, high burst
+###### Playstyle Tags: good scaling
+---
+<h1> WEAK </h1>
+### Kled
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kled.png' width='48'>
+##### Score: 50.69
+##### Winrate: 44.22
+###### KDA: 3.07
+###### Pick Rate: 2.23
+###### Riot Tags: Fighter, Tank
+###### Build Tags: high burst
+###### Playstyle Tags: mobile, initiator
+---
+### Tahm Kench
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/TahmKench.png' width='48'>
+##### Score: 52.9
+##### Winrate: 44.1
+###### KDA: 3.06
+###### Pick Rate: 3.99
+###### Riot Tags: Support, Tank
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: 
+---
+### Vi
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Vi.png' width='48'>
+##### Score: 51.41
+##### Winrate: 44.03
+###### KDA: 2.27
+###### Pick Rate: 3.99
+###### Riot Tags: Fighter, Assassin
+###### Build Tags: heavy cc, tanky
+###### Playstyle Tags: initiator, mobile, strong level 6
+---
+### Nocturne
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nocturne.png' width='48'>
+##### Score: 49.68
+##### Winrate: 43.95
+###### KDA: 2.34
+###### Pick Rate: 2.66
+###### Riot Tags: Assassin, Fighter
+###### Build Tags: self healing, high burst
+###### Playstyle Tags: initiator
+---
+### Taliyah
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Taliyah.png' width='48'>
+##### Score: 51.61
+##### Winrate: 43.29
+###### KDA: 2.82
+###### Pick Rate: 3.92
+###### Riot Tags: Mage, Support
+###### Build Tags: aoe cc, poke
+###### Playstyle Tags: displacement, terrain generation
+---
+### Shyvana
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Shyvana.png' width='48'>
+##### Score: 51.0
+##### Winrate: 43.14
+###### KDA: 2.68
+###### Pick Rate: 3.76
+###### Riot Tags: Fighter, Tank
+###### Build Tags: tanky
+###### Playstyle Tags: initiator, mobile
+---
+### Elise
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Elise.png' width='48'>
+##### Score: 49.15
+##### Winrate: 41.92
+###### KDA: 2.56
+###### Pick Rate: 3.41
+###### Riot Tags: Mage, Fighter
+###### Build Tags: heavy cc, self healing
+###### Playstyle Tags: mobile
+---
+### Akali
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Akali.png' width='48'>
+##### Score: 52.43
+##### Winrate: 41.73
+###### KDA: 2.37
+###### Pick Rate: 6.24
+###### Riot Tags: Assassin
+###### Build Tags: high burst
+###### Playstyle Tags: good scaling
 ---
 ### Riven
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Riven.png' width='48'>
-##### Score: 51.45
-##### Winrate: 40.53
+##### Score: 51.42
+##### Winrate: 41.47
 ###### KDA: 2.13
-###### Pick Rate: 6.12
+###### Pick Rate: 5.99
 ###### Riot Tags: Fighter, Assassin
-###### Tags: heavy cc, high dps, high burst, mobile, early power, strong level 6
+###### Build Tags: heavy cc, high dps, high burst
+###### Playstyle Tags: mobile, early power, strong level 6
 ---
-### Rengar
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Rengar.png' width='48'>
-##### Score: 47.33
-##### Winrate: 39.3
-###### KDA: 2.14
-###### Pick Rate: 3.98
-###### Riot Tags: Assassin, Fighter
-###### Tags: high dps, self healing, high burst, initiator, stealth
+### Bard
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Bard.png' width='48'>
+##### Score: 52.13
+##### Winrate: 41.38
+###### KDA: 3.56
+###### Pick Rate: 4.69
+###### Riot Tags: Support, Mage
+###### Build Tags: self healing, healer, aoe cc, preserving ult
+###### Playstyle Tags: 
 ---
-### Rek'Sai
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/RekSai.png' width='48'>
-##### Score: 45.46
-##### Winrate: 39.12
-###### KDA: 2.59
-###### Pick Rate: 2.16
-###### Riot Tags: Fighter
-###### Tags: 
----
-### Kindred
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kindred.png' width='48'>
-##### Score: 50.07
-##### Winrate: 39.0
-###### KDA: 2.51
-###### Pick Rate: 5.7
-###### Riot Tags: Marksman
-###### Tags: high dps, self healing, preserving ult, mobile
+### Kassadin
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kassadin.png' width='48'>
+##### Score: 50.86
+##### Winrate: 40.58
+###### KDA: 2.58
+###### Pick Rate: 5.61
+###### Riot Tags: Assassin, Mage
+###### Build Tags: high burst
+###### Playstyle Tags: mobile
 ---
 ### Lee Sin
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/LeeSin.png' width='48'>
-##### Score: 50.36
-##### Winrate: 38.83
-###### KDA: 2.59
-###### Pick Rate: 5.91
+##### Score: 50.88
+##### Winrate: 40.42
+###### KDA: 2.6
+###### Pick Rate: 5.72
 ###### Riot Tags: Fighter, Assassin
-###### Tags: initiator, mobile, displacement
+###### Build Tags: 
+###### Playstyle Tags: initiator, mobile, displacement
+---
+### Kindred
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Kindred.png' width='48'>
+##### Score: 49.71
+##### Winrate: 39.87
+###### KDA: 2.52
+###### Pick Rate: 5.34
+###### Riot Tags: Marksman
+###### Build Tags: high dps, self healing, preserving ult
+###### Playstyle Tags: mobile
+---
+### Aatrox
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Aatrox.png' width='48'>
+##### Score: 44.6
+##### Winrate: 39.48
+###### KDA: 2.3
+###### Pick Rate: 2.1
+###### Riot Tags: Fighter, Tank
+###### Build Tags: self healing
+###### Playstyle Tags: initiator
 ---
 ### LeBlanc
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Leblanc.png' width='48'>
-##### Score: 52.13
-##### Winrate: 37.94
-###### KDA: 2.64
-###### Pick Rate: 7.76
+##### Score: 52.23
+##### Winrate: 39.1
+###### KDA: 2.66
+###### Pick Rate: 7.57
 ###### Riot Tags: Assassin, Mage
-###### Tags: high dps, high burst, mobile, strong level 6
+###### Build Tags: high dps, high burst
+###### Playstyle Tags: mobile, strong level 6
 ---
-### Nunu
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nunu.png' width='48'>
-##### Score: 51.15
-##### Winrate: 37.86
-###### KDA: 2.78
-###### Pick Rate: 6.92
-###### Riot Tags: Support, Fighter
-###### Tags: self healing, aoe cc
----
-### Kha'Zix
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Khazix.png' width='48'>
-##### Score: 46.35
-##### Winrate: 37.38
-###### KDA: 2.29
-###### Pick Rate: 4.42
+### Rengar
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Rengar.png' width='48'>
+##### Score: 46.26
+##### Winrate: 38.99
+###### KDA: 2.13
+###### Pick Rate: 3.92
 ###### Riot Tags: Assassin, Fighter
-###### Tags: 
----
-### Evelynn
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Evelynn.png' width='48'>
-##### Score: 47.2
-##### Winrate: 32.56
-###### KDA: 2.16
-###### Pick Rate: 8.59
-###### Riot Tags: Assassin, Mage
-###### Tags: 
----
-<h1> BAD </h1>
-### Aatrox
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Aatrox.png' width='48'>
-##### Score: 43.26
-##### Winrate: 37.74
-###### KDA: 2.28
-###### Pick Rate: 1.94
-###### Riot Tags: Fighter, Tank
-###### Tags: self healing, initiator
+###### Build Tags: high dps, self healing, high burst, stealth
+###### Playstyle Tags: initiator
 ---
 ### Udyr
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Udyr.png' width='48'>
-##### Score: 44.08
-##### Winrate: 36.89
-###### KDA: 2.04
-###### Pick Rate: 3.44
+##### Score: 45.9
+##### Winrate: 38.75
+###### KDA: 2.06
+###### Pick Rate: 3.9
 ###### Riot Tags: Fighter, Tank
-###### Tags: tanky, self healing, mobile, good scaling
+###### Build Tags: tanky, self healing
+###### Playstyle Tags: mobile, good scaling
+---
+### Nunu
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Nunu.png' width='48'>
+##### Score: 51.18
+##### Winrate: 38.47
+###### KDA: 2.8
+###### Pick Rate: 7.05
+###### Riot Tags: Support, Fighter
+###### Build Tags: self healing, aoe cc
+###### Playstyle Tags: 
+---
+### Kha'Zix
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Khazix.png' width='48'>
+##### Score: 45.92
+##### Winrate: 38.06
+###### KDA: 2.3
+###### Pick Rate: 4.09
+###### Riot Tags: Assassin, Fighter
+###### Build Tags: high burst, self healing, stealth
+###### Playstyle Tags: mobile
+---
+### Evelynn
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Evelynn.png' width='48'>
+##### Score: 47.8
+##### Winrate: 33.28
+###### KDA: 2.16
+###### Pick Rate: 9.09
+###### Riot Tags: Assassin, Mage
+###### Build Tags: stealth
+###### Playstyle Tags: initiator, mobile
+---
+<h1> BAD </h1>
+### Rek'Sai
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/RekSai.png' width='48'>
+##### Score: 42.36
+##### Winrate: 36.59
+###### KDA: 2.52
+###### Pick Rate: 2.18
+###### Riot Tags: Fighter
+###### Build Tags: tanky
+###### Playstyle Tags: initiator, mobile
 ---
