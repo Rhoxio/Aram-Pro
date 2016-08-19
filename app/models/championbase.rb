@@ -4,6 +4,9 @@ class Championbase < ActiveRecord::Base
   has_many :champions
   validates :champion_identifier, uniqueness: true
 
+  has_many :builds
+  has_many :popular_items, through: :builds, source: :item
+
   require 'open-uri'
 
   def self.scrape_for_champion_stats
@@ -14,6 +17,8 @@ class Championbase < ActiveRecord::Base
       formatted_champ_name = champ.name.gsub(/[. ']/, "").downcase
 
       doc = Nokogiri::HTML(open("http://www.metasrc.com/na/aram/champion/#{formatted_champ_name}"))
+
+      champ.popular_items = doc.css('div#items ul li img').map{ |e| Item.where(item_identifier: e["id"].split('-')[1]).take }
 
       champ.tier = doc.css('div#container div#stats table tr td')[0].text
       champ.score = doc.css('div#container div#stats table tr td')[1].text
@@ -177,7 +182,7 @@ class Championbase < ActiveRecord::Base
 
     # Some champs with apostrophes are not populating correctly.
     tag_type_distinctions = {
-      
+
       :stat_emphasis_tags => [
         # Nothing yet. Will line up with tags present on items.
       ],

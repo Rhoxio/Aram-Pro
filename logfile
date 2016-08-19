@@ -20,3 +20,5 @@ DETAIL:  There is 1 other session using the database.
 STATEMENT:  DROP DATABASE IF EXISTS "library_development"
 ERROR:  database "library_development" already exists
 STATEMENT:  CREATE DATABASE "library_development" ENCODING = 'unicode'
+ERROR:  column builds.championbase_id does not exist at character 94
+STATEMENT:  SELECT "items".* FROM "items" INNER JOIN "builds" ON "items"."id" = "builds"."item_id" WHERE "builds"."championbase_id" = $1

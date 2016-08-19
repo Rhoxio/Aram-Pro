@@ -1103,9 +1103,7 @@ class Item < ActiveRecord::Base
         :good_at => []  
         }
     }
-
-    # .gsub("<[^>]*>", ""); A regex to strip tags out from the description if need be.
-
+    
     request = "http://ddragon.leagueoflegends.com/cdn/6.12.1/data/en_US/item.json"
     response = HTTParty.get(request)
     items = response.parsed_response
