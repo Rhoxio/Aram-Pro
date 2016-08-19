@@ -32,7 +32,6 @@ task :export_champ_tiers => :environment do
       champions.each do |champ|  
 
         popular_items = champ.popular_items.map {|item| "<img src='#{item.image}' width='48'>"}.join(' ')
-        p popular_items
 
         f.puts "### #{champ.name}"
         f.puts "<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/#{champ.image}' width='48'>"
