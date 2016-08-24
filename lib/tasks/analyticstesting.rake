@@ -85,6 +85,7 @@ task :analytics_test => :environment do
   # I may need to implement some sort of treshold that adds 10-15% of the original value to the
   # values in stat_averages to get a more specialized spread of stats to be assigned. I will
   # have to tweek it to see if I can get more balanced outputs, because there is simply no offset right now.
+
   balanced_champion_role_assignments = Hash.new
   popular_stat_counts.each do |champion, stats|
     balanced_champion_role_assignments[champion] = []
@@ -110,8 +111,11 @@ task :analytics_test => :environment do
     end
   end
 
-
   ap balanced_champion_role_assignments
+
+  ap $redis
+
+  # ap assign_tags_within_treshold(10, stat_averages, stat_value_congregation)
 
   # # Sort Teams Out
   # champions.each do |champion|
