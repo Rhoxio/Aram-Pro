@@ -8,7 +8,7 @@ This is a Rails app with the front-end being built on Foundation and React. If y
 
 ## Currently Working On
 
-### Setting Up Analytics and Suggestions for Champion Matchups
+### Setting Up Analytics and Suggestions for Champion Matchups (ARAM Buster Backend Dependencies)
 
 There are some clear-cut goals that will need to be accomlished before ARAM Buster (working title) is fully ready to start accepting requests for simple match analytics. The goal of the feature is to provide users with a utility that helps them make better decisions baed upon their matchup. General weaknesses, like sustain being strong against poke teams but weak against initiation, will be taken in to account.
 
@@ -23,7 +23,7 @@ I have a system that scrapes in order to acquire items that are most popularly b
 
 _For post-game analytics, this will mean very little aside from checking if the suggestions were built and how they potentially affected outcomes._
 
-However, since Aram Buster is focused around giving you a realistic view of your chances to win against the other team and increase your chances of winning by providing you with item and "optimal" playstyle information. This is all currently based on tags and I have a utility that calculates tag frequency within a game already built, but it needs to be present on the match model itself. (Semantically, this will keep my controllers and services thin so all I have to do is serve data straight up to the front. Plus, why wouldn't I want to save this on the database for future use?)
+Aram Buster is focused around giving you a realistic view of your chances to win against the other team and increase your chances of winning by providing you with item and "optimal" playstyle information. This is all currently based on tags and I have a utility that calculates tag frequency within a game already built, but it needs to be present on the match model itself. (Semantically, this will keep my controllers and services thin so all I have to do is serve data straight up to the front. Plus, why wouldn't I want to save this on the database for future use?)
 
 ##### Persisting the Analytics
 
