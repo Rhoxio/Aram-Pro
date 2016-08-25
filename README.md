@@ -12,16 +12,18 @@ This is a Rails app with the front-end being built on Foundation and React. If y
 
 There are some clear-cut goals that will need to be accomlished before ARAM Buster (working title) is fully ready to start accepting requests for simple match analytics. The goal of the feature is to provide users with a utility that helps them make better decisions baed upon their matchup. General weaknesses, like sustain being strong against poke teams but weak against initiation, will be taken in to account.
 
-This functionality will be accomplished by taking a pre-calculated champion winrate percentage and running an arbitrary 'score' (based on matchup viability; namely on usefulness to their own team and strength against the enemies' team) and giving back a generalized build path for the player's current champion.
-
-For example, let's say you are playing Alistar versus a heavy poke team who primarily uses magic damage. Stats like magic resist, health regen, mana, and tenacity are going to be important things to have as a tank. The utility should give back suggestions like Spirit Visage or Merc treads. It may even suggest something like Frozen Heart if the utility sees that Alistar is the only source of health sustain (any may suggest leveling his E first) or is the only tank on the team if there is a source of physical damage on their team.
-
 ##### I Don't Have Reliable and Robust Analytics Data (Yet), So...
 In order to get initial values that are somewhat accurate, (as I have no meaningful data at the moment outside of wgat will be scraped) I am going to scrape a few different websites and run analytics against them to give the Championbase model more robust data on itself to work with. **(Done)**
 
-I am going to have to come up with a table that basically has counters and strengths highlighted for all tags in the champ_tags hash in the championbase.rb file. This is going to be self-judgement based until I get enough data to actually run analytics and calculations against the pre-assigned tags. It may come to pass that some of the tags get nuked or end up maintaining precedence over other tags in certain matchups. 
+##### Match Averages and Other Analytics
+I have an attribute set up on the Match model that shows the averages (at the time the match was created and saved) that takes the averages on each champion present in the game's winrates and overall scores and saves it to the Match. This is going to be present on the front-end itself. This also makes it easier for me to run match analytics and give an average spread for similar games _(once that gets implemented)_. **(Done)**
 
-An example of ths would be something like: A team with lots of auto-attacking champions will not be inherently weak against a team with lots of tanks if there is a high dps mage present and some sort of peel or hard CC. If they are all squishy and have no way to peel or CC, then their winrate projection will drop sharply as they have entered a matchup with no real way to counter the other team outside of itemization and personal skill. However, if you end up in a matchup where both teams are very poke heavy, more weight will be given to champions with healing abilities, tanky initiators (not just initiators), and champions with good early games (as pressure early with heavy poke can end up snowbaling games out fo control easily). 
+##### Next Up: Item Suggestions
+I have a system that scrapes in order to acquire items that are most popularly built, but I need to set up a system that reads tags (or highest offensive/defensive) stat averages and suggests alternative build paths depending on how the game begins to unfold. 
+
+_For post-game analytics, this will mean very little aside from checking if the suggestions were built and how they potentially affected outcomes._
+
+However, since Aram Buster is focused around giving you a realistic view of your chances to win against the other team and increase your chances of winning by providing you with item and "optimal" playstyle information. This is all currently based on tags and I have a utility that calculates tag frequency within a game already built, but it needs to be present on the match model itself. (Semantically, this will keep my controllers and services thin so all I have to do is serve data straight up to the front. Plus, why wouldn't I want to save this on the database for future use?)
 
 ##### Persisting the Analytics
 
