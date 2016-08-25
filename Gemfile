@@ -39,6 +39,7 @@ gem 'rack-throttle'
 gem 'react-rails'
 gem 'awesome_print'
 gem 'pry'
+gem "redis-namespace"
 
 
 # gem 'hirb'

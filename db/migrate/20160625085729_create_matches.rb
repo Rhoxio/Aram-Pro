@@ -10,6 +10,9 @@ class CreateMatches < ActiveRecord::Migration
 
       t.boolean :completed
 
+      t.text :winrates
+      t.text :scores
+
       t.timestamps null: false
     end
   end

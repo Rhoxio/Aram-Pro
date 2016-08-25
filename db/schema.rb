@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20160811014016) do
     t.string   "user_id"
     t.string   "match_created_at"
     t.boolean  "completed"
+    t.text     "winrates"
+    t.text     "scores"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

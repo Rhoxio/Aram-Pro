@@ -1,9 +1,9 @@
 task :analytics_test => :environment do
-  # match = Match.first
+  match = Match.first
   items = Item.all
   championbases = Championbase.all
-  # champions = match.champions
-  # current_champion = champions[0]
+  champions = match.champions
+  current_champion = champions[0]
 
   def get_top_frequencies(frequencies, threshold = 3)
     frequencies.sort_by(&:last).last(threshold).to_h
@@ -111,63 +111,65 @@ task :analytics_test => :environment do
     end
   end
 
-  ap balanced_champion_role_assignments
+  Analytics.new_entry("champion_roles", balanced_champion_role_assignments)
 
-  ap $redis
+  # ap $analytics.get("test")
+  # ap $analytics
 
+  # ap $redis.keys("*")
   # ap assign_tags_within_treshold(10, stat_averages, stat_value_congregation)
 
   # # Sort Teams Out
-  # champions.each do |champion|
-  #   if champion.team == '100'
-  #     teams[:bottom].push(champion)
-  #   else
-  #     teams[:top].push(champion)
-  #   end
-  # end
+  champions.each do |champion|
+    if champion.team == '100'
+      teams[:bottom].push(champion)
+    else
+      teams[:top].push(champion)
+    end
+  end
 
   # # Frequencies of tags for the given match.
-  # top_tag_frequencies = {}
-  # teams[:top].each do |champion|
-  #   c_base = champion.championbase
+  top_tag_frequencies = {}
+  teams[:top].each do |champion|
+    c_base = champion.championbase
 
-  #   c_base.build_tags.each do |otag|
-  #     if top_tag_frequencies.key? otag
-  #       top_tag_frequencies[otag] += 1
-  #     elsif !top_tag_frequencies.key? otag
-  #       top_tag_frequencies[otag] = 1
-  #     end
-  #   end
+    c_base.build_tags.each do |otag|
+      if top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] += 1
+      elsif !top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] = 1
+      end
+    end
 
-  #   c_base.playstyle_tags.each do |otag|
-  #     if top_tag_frequencies.key? otag
-  #       top_tag_frequencies[otag] += 1
-  #     elsif !top_tag_frequencies.key? otag
-  #       top_tag_frequencies[otag] = 1
-  #     end
-  #   end    
-  # end
+    c_base.playstyle_tags.each do |otag|
+      if top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] += 1
+      elsif !top_tag_frequencies.key? otag
+        top_tag_frequencies[otag] = 1
+      end
+    end    
+  end
 
-  # bottom_tag_frequencies = {}
-  # teams[:bottom].each do |champion|
-  #   c_base = champion.championbase
+  bottom_tag_frequencies = {}
+  teams[:bottom].each do |champion|
+    c_base = champion.championbase
 
-  #   c_base.build_tags.each do |otag|
-  #     if bottom_tag_frequencies.key? otag
-  #       bottom_tag_frequencies[otag] += 1
-  #     elsif !bottom_tag_frequencies.key? otag
-  #       bottom_tag_frequencies[otag] = 1
-  #     end
-  #   end
+    c_base.build_tags.each do |otag|
+      if bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] += 1
+      elsif !bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] = 1
+      end
+    end
 
-  #   c_base.playstyle_tags.each do |otag|
-  #     if bottom_tag_frequencies.key? otag
-  #       bottom_tag_frequencies[otag] += 1
-  #     elsif !bottom_tag_frequencies.key? otag
-  #       bottom_tag_frequencies[otag] = 1
-  #     end
-  #   end    
-  # end
+    c_base.playstyle_tags.each do |otag|
+      if bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] += 1
+      elsif !bottom_tag_frequencies.key? otag
+        bottom_tag_frequencies[otag] = 1
+      end
+    end    
+  end
 
   all_item_tags = Array.new
 
@@ -192,11 +194,11 @@ task :analytics_test => :environment do
     end
   end
 
-  # p get_top_frequencies(top_tag_frequencies)
-  # p get_top_frequencies(bottom_tag_frequencies)
+  p get_top_frequencies(top_tag_frequencies)
+  p get_top_frequencies(bottom_tag_frequencies)
 
-  # p top_tag_frequencies
-  # p bottom_tag_frequencies
+  p top_tag_frequencies
+  p bottom_tag_frequencies
 
   # Winrate Arrays
   top_winrates = teams[:top].map{|champ| champ.championbase.win_rate}
@@ -217,10 +219,10 @@ task :analytics_test => :environment do
   # top_average_winrates = top_winrates.inject{ |sum, el| p sum + el }
 
   # Complete!
-  # p top_average_winrates
-  # p bottom_average_winrates
+  p top_average_winrates
+  p bottom_average_winrates
 
-  # p top_average_scores
-  # p bottom_average_scores
+  p top_average_scores
+  p bottom_average_scores
 
 end
