@@ -111,13 +111,12 @@ task :analytics_test => :environment do
     end
   end
 
-  Analytics.new_entry("champion_roles", balanced_champion_role_assignments)
+  # Analytics.new_entry("champion_roles", balanced_champion_role_assignments)
 
   # ap $analytics.get("test")
   # ap $analytics
 
   # ap $redis.keys("*")
-  # ap assign_tags_within_treshold(10, stat_averages, stat_value_congregation)
 
   # # Sort Teams Out
   champions.each do |champion|
@@ -216,13 +215,53 @@ task :analytics_test => :environment do
   top_average_winrates = (top_winrates.inject{ |sum, el| sum + el }.to_f / top_winrates.size).round(2)
   bottom_average_winrates = (bottom_winrates.inject{ |sum, el| sum + el }.to_f / bottom_winrates.size).round(2)
 
-  # top_average_winrates = top_winrates.inject{ |sum, el| p sum + el }
+  # I need to compare item tag frequencies for every recommended item on the championbase model against
+  # the top tag frequencies. It looks as if I will need to make a table that holds counters to other
+  # item archetypes. That comes first:
+
+  item_stat_counters = {
+    :movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
+    :hitpoints => [:high_dps, :good_scaling, :early_power],
+    :critical_chance => [:armor, :hitpoints, :tanky],
+    :magic_damage => [:magic_resist, :hitpoints, :tanky],
+    :mana => [:poke, :self_healing, :good_scaling, :poke],
+    :armor => [:armor_penetration, :true_damage],
+    :magic_resist => [:magic_penetration, :true_damage],
+    :physical_damage => [:armor, :hitpoints, :tanky],
+    :attack_speed => [:armor, :hitpoints, :tanky],
+    :lifesteal => [],
+    :hp_regen => [:mana, :mana_regen, :high_dps],
+    :percent_movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
+    :mana_regen => [:poke, :early_power, :good_scaling]
+  }
+
+  # Now, to get the frequencies of tags for a specific champion's items to see how the 'natural'
+  # spread looks against counters.
+  stat_spread = Hash.new
+  ap current_champion.name
+  current_champion.championbase.popular_items.each do |pitem|
+    pitem.stats.each do |stat, value|
+      if !stat_spread.key? item_stat_translation[stat]
+        stat_spread[item_stat_translation[stat]] = {:total_value => 0, :count => 0}
+        stat_spread[item_stat_translation[stat]][:total_value] += value
+        stat_spread[item_stat_translation[stat]][:count] += 1
+      elsif stat_spread.key? item_stat_translation[stat]
+        stat_spread[item_stat_translation[stat]][:total_value] += value
+        stat_spread[item_stat_translation[stat]][:count] += 1
+      end
+    end
+  end
+
+  ap stat_spread
 
   # Complete!
-  p top_average_winrates
-  p bottom_average_winrates
+  # p top_average_winrates
+  # p bottom_average_winrates
 
-  p top_average_scores
-  p bottom_average_scores
+  # p top_average_scores
+  # p bottom_average_scores
+
+
+
 
 end
