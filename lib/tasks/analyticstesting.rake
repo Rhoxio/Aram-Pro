@@ -1,12 +1,13 @@
 task :analytics_test => :environment do
-  match = Match.first
+  match = Match.find(4)
   items = Item.all
   championbases = Championbase.all
   champions = match.champions
-  current_champion = champions[0]
+  current_champion = champions[9]
 
-  def get_top_frequencies(frequencies, threshold = 3)
-    frequencies.sort_by(&:last).last(threshold).to_h
+
+  def get_top_frequencies(frequencies, threshold = 5)
+    frequencies.sort_by(&:last).last(threshold).reverse.to_h.deep_symbolize_keys
   end  
 
   teams = {
@@ -29,6 +30,24 @@ task :analytics_test => :environment do
     "PercentMovementSpeedMod" => :percent_movespeed,
     "FlatMPRegenMod" => :mana_regen  
   }
+
+  item_sym_to_tag_translation = {
+    :movespeed => "FlatMovementSpeedMod",
+    :hitpoints => "FlatHPPoolMod",
+    :critical_chance => "FlatCritChanceMod",
+    :magic_damage => "FlatMagicDamageMod",
+    :mana => "FlatMPPoolMod",
+    :armor => "FlatArmorMod",
+    :magic_resist => "FlatSpellBlockMod",
+    :physical_damage => "FlatPhysicalDamageMod",
+    :attack_speed => "PercentAttackSpeedMod",
+    :lifesteal => "PercentLifeStealMod",
+    :hp_regen => "FlatHPRegenMod" ,
+    :percent_movespeed => "PercentMovementSpeedMod",
+    :mana_regen => "FlatMPRegenMod",
+    :armor_penetration => "ArmorPenetration",
+    :magic_penetration => "MagicPenetration"
+  }  
 
   popular_stat_counts = Hash.new
   championbases.each do |champion|
@@ -133,20 +152,22 @@ task :analytics_test => :environment do
     c_base = champion.championbase
 
     c_base.build_tags.each do |otag|
-      if top_tag_frequencies.key? otag
-        top_tag_frequencies[otag] += 1
-      elsif !top_tag_frequencies.key? otag
-        top_tag_frequencies[otag] = 1
+      otag_sym = otag.to_sym
+      if top_tag_frequencies.key? otag_sym
+        top_tag_frequencies[otag_sym] += 1
+      elsif !top_tag_frequencies.key? otag_sym
+        top_tag_frequencies[otag_sym] = 1
       end
     end
 
-    c_base.playstyle_tags.each do |otag|
-      if top_tag_frequencies.key? otag
-        top_tag_frequencies[otag] += 1
-      elsif !top_tag_frequencies.key? otag
-        top_tag_frequencies[otag] = 1
-      end
-    end    
+    # c_base.playstyle_tags.each do |otag|
+    #   otag_sym = otag.to_sym
+    #   if top_tag_frequencies.key? otag_sym
+    #     top_tag_frequencies[otag_sym] += 1
+    #   elsif !top_tag_frequencies.key? otag_sym
+    #     top_tag_frequencies[otag_sym] = 1
+    #   end
+    # end    
   end
 
   bottom_tag_frequencies = {}
@@ -154,20 +175,22 @@ task :analytics_test => :environment do
     c_base = champion.championbase
 
     c_base.build_tags.each do |otag|
-      if bottom_tag_frequencies.key? otag
-        bottom_tag_frequencies[otag] += 1
-      elsif !bottom_tag_frequencies.key? otag
-        bottom_tag_frequencies[otag] = 1
+      otag_sym = otag.to_sym
+      if bottom_tag_frequencies.key? otag_sym
+        bottom_tag_frequencies[otag_sym] += 1
+      elsif !bottom_tag_frequencies.key? otag_sym
+        bottom_tag_frequencies[otag_sym] = 1
       end
     end
 
-    c_base.playstyle_tags.each do |otag|
-      if bottom_tag_frequencies.key? otag
-        bottom_tag_frequencies[otag] += 1
-      elsif !bottom_tag_frequencies.key? otag
-        bottom_tag_frequencies[otag] = 1
-      end
-    end    
+    # c_base.playstyle_tags.each do |otag|
+    #   otag_sym = otag.to_sym
+    #   if bottom_tag_frequencies.key? otag_sym
+    #     bottom_tag_frequencies[otag_sym] += 1
+    #   elsif !bottom_tag_frequencies.key? otag_sym
+    #     bottom_tag_frequencies[otag_sym] = 1
+    #   end
+    # end    
   end
 
   all_item_tags = Array.new
@@ -192,12 +215,6 @@ task :analytics_test => :environment do
       end
     end
   end
-
-  p get_top_frequencies(top_tag_frequencies)
-  p get_top_frequencies(bottom_tag_frequencies)
-
-  p top_tag_frequencies
-  p bottom_tag_frequencies
 
   # Winrate Arrays
   top_winrates = teams[:top].map{|champ| champ.championbase.win_rate}
@@ -232,9 +249,43 @@ task :analytics_test => :environment do
     :lifesteal => [],
     :hp_regen => [:mana, :mana_regen, :high_dps],
     :percent_movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
-    :mana_regen => [:poke, :early_power, :good_scaling]
+    :mana_regen => [:poke, :early_power, :good_scaling],
+    :armor_penetration => [],
+    :magic_penetration => []
   }
 
+  archetype_stat_weights = {
+    :tanky => {
+      :high => [:hitpoints, :armor, :magic_resist], 
+      :medium => [:hp_regen, :movespeed, :percent_movespeed, :physical_damage, :magic_damage], 
+      :low => [:physical_damage, :magic_damage, :mana], 
+      :irrelevant => [:critical_chance, :attack_speed, :lifesteal]
+    },
+    :squishy_mage => {
+      :high => [:magic_damage, :magic_penetration], 
+      :medium => [:mana, :mana_regen, :hitpoints], 
+      :low => [:armor, :magic_resist, :movespeed, :percent_movespeed], 
+      :irrelevant => [:critical_chance, :physical_damage, :attack_speed, :lifesteal, :hp_regen]
+    },
+    :squishy_physical => {
+      :high =>[:physical_damage, :armor_penetration, :critical_chance, :lifesteal, :attack_speed], 
+      :medium => [:movespeed, :percent_movespeed], 
+      :low => [:armor, :magic_resist, :hitpoints],
+      :irrelevant => [:magic_damage, :hp_regen, :mana_regen, :mana]
+    },
+    :squishy_support => {
+      :high =>[:mana_regen, :hitpoints, :magic_damage, :mana], 
+      :medium => [:armor, :magic_resist], 
+      :low => [:hp_regen, :movespeed, :percent_movespeed],
+      :irrelevant => [:critical_chance, :physical_damage, :attack_speed, :lifesteal]
+    },    
+    :hybrid => {
+      :high => [:physical_damage, :magic_damage, :magic_penetration, :armor_penetration, :attack_speed],
+      :medium => [:hitpoints, :armor, :magic_resist, :movespeed, :percent_movespeed],
+      :low => [:lifesteal, :hp_regen, :mana_regen, :critical_chance],
+      :irrelevant => []
+    }
+  }
   # Now, to get the frequencies of tags for a specific champion's items to see how the 'natural'
   # spread looks against counters.
   stat_spread = Hash.new
@@ -252,7 +303,157 @@ task :analytics_test => :environment do
     end
   end
 
-  ap stat_spread
+  def top_stat_by_value(frequencies, threshold = 5)
+    frequencies.sort_by {|k,v| v[:total_value]}.last(threshold).reverse.to_h
+  end 
+
+  def top_stat_by_count(frequencies, threshold = 5)
+    frequencies.sort_by {|k,v| v[:count]}.last(threshold).reverse.to_h
+  end   
+
+  ap top_stat_by_value(stat_spread)
+  ap top_stat_by_count(stat_spread)
+
+  top_tags = get_top_frequencies(top_tag_frequencies)
+  bottom_tags = get_top_frequencies(bottom_tag_frequencies)
+  ap top_tags
+  ap bottom_tags
+
+  tag_sets = [bottom_tags, top_tags]
+
+  # ap top_tag_frequencies
+  # ap bottom_tag_frequencies  
+
+  # I now have stat spread and frequencies. Now, I need to check if the frequency itself is
+  # enough to merit sticking to the popular build based on the tags present in top_tag_frequencies
+  # or bottom_tag_frequencies based upon which team current_champion is on.
+
+  # Unless something is really fucked up with the champion tag spreads, you should have a majority consisting of
+  # either :tanky or :squishy_(type) champions with some :hybrid mixed in. The stat weights hash should hold a roadmap to help guide wether or not
+  # an item with specific stats would be an acceptable choice for a substitution in the build.
+
+  # Grabbing the primary tag that is most prevalent in the top 5 tags for the opposing team.
+  # Will always give back one.
+  def extract_primary_tag(current_champion, tag_sets)
+    # 0 bottom, 1 top
+    if current_champion.team == "100"
+      tag_sets[0].each do |tag, value|
+        if [:squishy_support, :squishy_physical, :squishy_mage, :hybrid, :tanky].include? tag
+          ap tag
+          return tag
+        end
+      end
+    elsif current_champion.team == "200"
+      tag_sets[1].each do |tag, value|
+        if [:squishy_support, :squishy_physical, :squishy_mage, :hybrid, :tanky].include? tag
+          ap tag
+          return tag
+        end
+      end
+    end
+    p "No primary tags found."
+    return nil
+  end
+
+  # Need to find the most prominent tag on the enemy team now...
+
+  # item_stat_counters = {
+  #   :movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
+  #   :hitpoints => [:high_dps, :good_scaling, :early_power],
+  #   :critical_chance => [:armor, :hitpoints, :tanky],
+  #   :magic_damage => [:magic_resist, :hitpoints, :tanky],
+  #   :mana => [:poke, :self_healing, :good_scaling, :poke],
+  #   :armor => [:armor_penetration, :true_damage],
+  #   :magic_resist => [:magic_penetration, :true_damage],
+  #   :physical_damage => [:armor, :hitpoints, :tanky],
+  #   :attack_speed => [:armor, :hitpoints, :tanky],
+  #   :lifesteal => [],
+  #   :hp_regen => [:mana, :mana_regen, :high_dps],
+  #   :percent_movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
+  #   :mana_regen => [:poke, :early_power, :good_scaling]
+  # }  
+
+  # :squishy_physical => {
+  #   :high =>[:physical_damage, :armor_penetration, :critical_chance, :lifesteal, :attack_speed], 
+  #   :medium => [:movespeed, :percent_movespeed], 
+  #   :low => [:armor, :magic_resist, :hitpoints],
+  #   :irrelevant => [:magic_damage, :hp_regen, :mana_regen, :mana]
+  # },  
+
+  primary_tag_archetype = archetype_stat_weights[extract_primary_tag(current_champion, tag_sets)]
+
+  # Gived back the 
+  def map_champion_counters(primary_tag_archetype, item_stat_counters, threshold = 3)
+    threat_frequencies = {:high => {}, :medium => {}, :low => {}, :irrelevant => {} }
+    primary_tag_archetype[:high].each do |t|
+      item_stat_counters[t].each do |ic|
+        if !threat_frequencies[:high].key? ic
+          threat_frequencies[:high][ic] = 0
+          threat_frequencies[:high][ic] += 1
+        elsif threat_frequencies[:high].key? ic
+          threat_frequencies[:high][ic] += 1
+        end
+      end     
+    end
+
+    primary_tag_archetype[:medium].each do |t|
+      item_stat_counters[t].each do |ic|
+        if !threat_frequencies[:medium].key? ic
+          threat_frequencies[:medium][ic] = 0
+          threat_frequencies[:medium][ic] += 1
+        elsif threat_frequencies[:medium].key? ic
+          threat_frequencies[:medium][ic] += 1
+        end
+      end     
+    end
+
+    primary_tag_archetype[:low].each do |t|
+      item_stat_counters[t].each do |ic|
+        if !threat_frequencies[:low].key? ic
+          threat_frequencies[:low][ic] = 0
+          threat_frequencies[:low][ic] += 1
+        elsif threat_frequencies[:low].key? ic
+          threat_frequencies[:low][ic] += 1
+        end
+      end     
+    end
+
+    primary_tag_archetype[:irrelevant].each do |t|
+      item_stat_counters[t].each do |ic|
+        if !threat_frequencies[:irrelevant].key? ic
+          threat_frequencies[:irrelevant][ic] = 0
+          threat_frequencies[:irrelevant][ic] += 1
+        elsif threat_frequencies[:irrelevant].key? ic
+          threat_frequencies[:irrelevant][ic] += 1
+        end
+      end     
+    end              
+
+    threat_frequencies.each do |k, v|
+      threat_frequencies[k] = threat_frequencies[k].sort_by {|k,v| v}.last(threshold).reverse.to_h
+    end
+
+    return threat_frequencies
+
+  end
+  ap current_champion.name
+  ap map_champion_counters(primary_tag_archetype, item_stat_counters, 5)
+
+
+
+  # primary_tags.each do |prime_tag|
+  #   case prime_tag
+  #   when :squishy_physical
+  #     weights = archetype_stat_weights[:squishy_physical]
+  #     high_value = weights[:high].map {|tag| item_sym_to_tag_translation[tag]}
+
+   
+
+  # end  
+
+  # ap weights = archetype_stat_weights[:squishy_physical]
+  # ap high_value = weights[:high].map {|tag| item_sym_to_tag_translation[tag]}
+
 
   # Complete!
   # p top_average_winrates
