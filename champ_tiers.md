@@ -8,7 +8,7 @@
 ###### KDA: 5.2
 ###### Pick Rate: 11.05
 ###### Riot Tags: Support, Mage
-###### Build Tags: heavy cc, self healing, high burst, healer, aoe cc, poke, magic damage, squishy
+###### Build Tags: heavy cc, self healing, high burst, healer, aoe cc, poke, magic damage, squishy support
 ###### Playstyle Tags: initiator, strong level 6
 ---
 ### Ziggs
@@ -20,7 +20,7 @@
 ###### KDA: 4.71
 ###### Pick Rate: 8.27
 ###### Riot Tags: Mage
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, displacement
 ---
 ### Teemo
@@ -32,7 +32,7 @@
 ###### KDA: 3.31
 ###### Pick Rate: 14.61
 ###### Riot Tags: Marksman, Assassin
-###### Build Tags: poke, stealth, magic damage, squishy
+###### Build Tags: poke, stealth, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, traps
 ---
 ### Lux
@@ -44,7 +44,7 @@
 ###### KDA: 5.57
 ###### Pick Rate: 13.57
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high dps, high burst, aoe cc, magic damage, squishy
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Ashe
@@ -56,7 +56,7 @@
 ###### KDA: 3.55
 ###### Pick Rate: 17.83
 ###### Riot Tags: Marksman, Support
-###### Build Tags: heavy cc, high dps, aoe cc, poke, physical damage, squishy
+###### Build Tags: heavy cc, high dps, aoe cc, poke, physical damage, squishy physical
 ###### Playstyle Tags: initiator
 ---
 <h1> STRONG </h1>
@@ -69,7 +69,7 @@
 ###### KDA: 4.1
 ###### Pick Rate: 8.49
 ###### Riot Tags: Mage, Support
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, traps
 ---
 ### Swain
@@ -93,7 +93,7 @@
 ###### KDA: 3.39
 ###### Pick Rate: 7.0
 ###### Riot Tags: Marksman, Mage
-###### Build Tags: true damage, high dps, physical damage, squishy
+###### Build Tags: true damage, high dps, physical damage, squishy physical
 ###### Playstyle Tags: 
 ---
 ### Jhin
@@ -105,7 +105,7 @@
 ###### KDA: 4.57
 ###### Pick Rate: 7.88
 ###### Riot Tags: Marksman, Assassin
-###### Build Tags: high dps, high burst, squishy, physical damage
+###### Build Tags: high dps, high burst, squishy physical, physical damage
 ###### Playstyle Tags: traps, early power
 ---
 ### Fiddlesticks
@@ -117,7 +117,7 @@
 ###### KDA: 3.62
 ###### Pick Rate: 11.39
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high dps, self healing, high burst, poke, magic damage, cooldowns, squishy
+###### Build Tags: heavy cc, high dps, self healing, high burst, poke, magic damage, cooldowns, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Varus
@@ -129,7 +129,7 @@
 ###### KDA: 4.08
 ###### Pick Rate: 8.2
 ###### Riot Tags: Marksman, Mage
-###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke, physical damage, squishy
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke, physical damage, squishy physical
 ###### Playstyle Tags: waveclear, early power
 ---
 ### Miss Fortune
@@ -141,7 +141,7 @@
 ###### KDA: 3.86
 ###### Pick Rate: 11.53
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, physical damage, squishy
+###### Build Tags: high dps, physical damage, squishy physical
 ###### Playstyle Tags: early power, strong level 6
 ---
 ### Janna
@@ -153,7 +153,7 @@
 ###### KDA: 5.32
 ###### Pick Rate: 9.38
 ###### Riot Tags: Support, Mage
-###### Build Tags: heavy cc, healer, magic damage, squishy
+###### Build Tags: heavy cc, healer, magic damage, squishy support
 ###### Playstyle Tags: waveclear
 ---
 ### Caitlyn
@@ -165,7 +165,7 @@
 ###### KDA: 3.65
 ###### Pick Rate: 10.64
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, poke, physical damage, squishy
+###### Build Tags: high dps, poke, physical damage, squishy physical
 ###### Playstyle Tags: waveclear, mobile, traps
 ---
 ### Morgana
@@ -177,7 +177,7 @@
 ###### KDA: 4.37
 ###### Pick Rate: 14.32
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, self healing, aoe cc, poke, magic damage, squishy
+###### Build Tags: heavy cc, self healing, aoe cc, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, initiator, strong level 6
 ---
 ### Garen
@@ -201,7 +201,7 @@
 ###### KDA: 3.67
 ###### Pick Rate: 13.08
 ###### Riot Tags: Mage
-###### Build Tags: heavy cc, high dps, high burst, aoe cc, magic damage, squishy
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: good scaling
 ---
 ### Sivir
@@ -213,7 +213,7 @@
 ###### KDA: 3.52
 ###### Pick Rate: 15.28
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, high dps, physical damage, squishy
+###### Build Tags: high dps, physical damage, squishy physical
 ###### Playstyle Tags: initiator
 ---
 ### Annie
@@ -225,7 +225,7 @@
 ###### KDA: 3.16
 ###### Pick Rate: 15.36
 ###### Riot Tags: Mage
-###### Build Tags: heavy cc, high burst, aoe cc, magic damage, squishy
+###### Build Tags: heavy cc, high burst, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: initiator, strong level 6
 ---
 ### Blitzcrank
@@ -250,7 +250,7 @@
 ###### KDA: 3.95
 ###### Pick Rate: 5.84
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke, magic damage, squishy, slows, roots
+###### Build Tags: heavy cc, high dps, high burst, aoe cc, poke, magic damage, squishy mage, slows, roots
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Galio
@@ -298,7 +298,7 @@
 ###### KDA: 4.14
 ###### Pick Rate: 6.69
 ###### Riot Tags: Mage
-###### Build Tags: poke, high dps, magic damage, squishy
+###### Build Tags: poke, high dps, magic damage, squishy mage
 ###### Playstyle Tags: good scaling
 ---
 ### Malzahar
@@ -310,7 +310,7 @@
 ###### KDA: 3.71
 ###### Pick Rate: 6.77
 ###### Riot Tags: Mage, Assassin
-###### Build Tags: heavy cc, magic damage, squishy
+###### Build Tags: heavy cc, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Karthus
@@ -322,7 +322,7 @@
 ###### KDA: 2.81
 ###### Pick Rate: 6.48
 ###### Riot Tags: Mage
-###### Build Tags: aoe cc, magic damage, squishy
+###### Build Tags: aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Taric
@@ -358,7 +358,7 @@
 ###### KDA: 3.59
 ###### Pick Rate: 8.01
 ###### Riot Tags: Mage
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Nautilus
@@ -394,7 +394,7 @@
 ###### KDA: 3.53
 ###### Pick Rate: 10.06
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, poke, physical damage, squishy
+###### Build Tags: high dps, poke, physical damage, squishy physical
 ###### Playstyle Tags: waveclear
 ---
 ### Graves
@@ -406,7 +406,7 @@
 ###### KDA: 3.36
 ###### Pick Rate: 7.41
 ###### Riot Tags: Marksman
-###### Build Tags: high burst, high dps, physical damage, squishy
+###### Build Tags: high burst, high dps, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Karma
@@ -418,7 +418,7 @@
 ###### KDA: 4.11
 ###### Pick Rate: 9.22
 ###### Riot Tags: Mage, Support
-###### Build Tags: self healing, poke, magic damage, squishy
+###### Build Tags: self healing, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, early power
 ---
 ### Vladimir
@@ -454,7 +454,7 @@
 ###### KDA: 4.5
 ###### Pick Rate: 6.08
 ###### Riot Tags: Mage, Assassin
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear
 ---
 ### Gangplank
@@ -466,7 +466,7 @@
 ###### KDA: 3.55
 ###### Pick Rate: 7.48
 ###### Riot Tags: Fighter
-###### Build Tags: true damage, high burst, physical damage, squishy
+###### Build Tags: true damage, high burst, physical damage, squishy physical
 ###### Playstyle Tags: 
 ---
 ### Amumu
@@ -490,7 +490,7 @@
 ###### KDA: 5.25
 ###### Pick Rate: 5.74
 ###### Riot Tags: Support, Mage
-###### Build Tags: heavy cc, self healing, healer, aoe cc
+###### Build Tags: heavy cc, self healing, healer, aoe cc, squishy support
 ###### Playstyle Tags: 
 ---
 ### Ahri
@@ -502,7 +502,7 @@
 ###### KDA: 3.46
 ###### Pick Rate: 9.54
 ###### Riot Tags: Mage, Assassin
-###### Build Tags: true damage, high burst, magic damage
+###### Build Tags: true damage, high burst, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, mobile
 ---
 ### Darius
@@ -586,7 +586,7 @@
 ###### KDA: 4.14
 ###### Pick Rate: 6.22
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy
+###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, displacement, strong level 6
 ---
 ### Alistar
@@ -610,7 +610,7 @@
 ###### KDA: 3.99
 ###### Pick Rate: 10.0
 ###### Riot Tags: Marksman, Mage
-###### Build Tags: high dps, high burst, poke, physical damage, hybrid, squishy
+###### Build Tags: high dps, high burst, poke, physical damage, hybrid
 ###### Playstyle Tags: mobile, strong level 6
 ---
 ### Thresh
@@ -622,7 +622,7 @@
 ###### KDA: 3.63
 ###### Pick Rate: 7.99
 ###### Riot Tags: Support, Fighter
-###### Build Tags: heavy cc, tanky
+###### Build Tags: heavy cc, tanky, tanky
 ###### Playstyle Tags: displacement
 ---
 ### Katarina
@@ -634,7 +634,7 @@
 ###### KDA: 2.8
 ###### Pick Rate: 10.45
 ###### Riot Tags: Assassin, Mage
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, mobile, strong level 6
 ---
 ### Soraka
@@ -646,7 +646,7 @@
 ###### KDA: 4.6
 ###### Pick Rate: 12.56
 ###### Riot Tags: Support, Mage
-###### Build Tags: healer, poke
+###### Build Tags: healer, poke, squishy support
 ###### Playstyle Tags: 
 ---
 ### Draven
@@ -658,7 +658,7 @@
 ###### KDA: 2.79
 ###### Pick Rate: 16.34
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, high burst, physical damage
+###### Build Tags: high dps, high burst, physical damage, squishy physical
 ###### Playstyle Tags: displacement, early power
 ---
 ### Tristana
@@ -670,7 +670,7 @@
 ###### KDA: 2.72
 ###### Pick Rate: 12.75
 ###### Riot Tags: Marksman, Assassin
-###### Build Tags: high dps, physical damage, squishy
+###### Build Tags: high dps, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Master Yi
@@ -682,7 +682,7 @@
 ###### KDA: 2.11
 ###### Pick Rate: 13.48
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: true damage, high dps, high burst, physical damage, squishy
+###### Build Tags: true damage, high dps, high burst, physical damage, squishy physical
 ###### Playstyle Tags: good scaling
 ---
 ### Talon
@@ -694,7 +694,7 @@
 ###### KDA: 2.26
 ###### Pick Rate: 14.61
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: high dps, high burst, physical damage, squishy
+###### Build Tags: high dps, high burst, physical damage, squishy physical
 ###### Playstyle Tags: strong level 6
 ---
 ### Hecarim
@@ -718,7 +718,7 @@
 ###### KDA: 2.21
 ###### Pick Rate: 17.01
 ###### Riot Tags: Marksman, Assassin
-###### Build Tags: high dps, physical damage, squishy, stealth
+###### Build Tags: high dps, physical damage, squishy physical, stealth
 ###### Playstyle Tags: 
 ---
 ### Fizz
@@ -730,7 +730,7 @@
 ###### KDA: 2.21
 ###### Pick Rate: 15.73
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: high dps, high burst, cooldowns, magic damage, squishy
+###### Build Tags: high dps, high burst, cooldowns, magic damage, squishy mage
 ###### Playstyle Tags: mobile, strong level 6
 ---
 <h1> BELOWAVERAGE </h1>
@@ -755,7 +755,7 @@
 ###### KDA: 3.28
 ###### Pick Rate: 4.26
 ###### Riot Tags: Fighter, Tank
-###### Build Tags: self healing, physical damage
+###### Build Tags: self healing, physical damage, tanky
 ###### Playstyle Tags: initiator, good scaling, terrain generation
 ---
 ### Twisted Fate
@@ -767,7 +767,7 @@
 ###### KDA: 2.85
 ###### Pick Rate: 4.61
 ###### Riot Tags: Mage
-###### Build Tags: heavy cc, high burst, magic damage, squishy
+###### Build Tags: heavy cc, high burst, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, early power
 ---
 ### Renekton
@@ -794,6 +794,18 @@
 ###### Build Tags: heavy cc, tanky, aoe cc
 ###### Playstyle Tags: initiator, strong level 6
 ---
+### Yorick
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yorick.png' width='48'>
+##### Popular Items: 
+<img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3004.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3065.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3078.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3110.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3111.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3156.png' width='48'>
+##### Score: 57.9
+##### Winrate: 51.48
+###### KDA: 3.03
+###### Pick Rate: 2.52
+###### Riot Tags: Fighter, Mage
+###### Build Tags: self healing, physical damage, tanky
+###### Playstyle Tags: 
+---
 ### Singed
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Singed.png' width='48'>
 ##### Popular Items: 
@@ -806,18 +818,6 @@
 ###### Build Tags: tanky, magic damage
 ###### Playstyle Tags: initiator, displacement
 ---
-### Yorick
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Yorick.png' width='48'>
-##### Popular Items: 
-<img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3004.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3065.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3078.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3110.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3111.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3156.png' width='48'>
-##### Score: 57.9
-##### Winrate: 51.48
-###### KDA: 3.03
-###### Pick Rate: 2.52
-###### Riot Tags: Fighter, Mage
-###### Build Tags: self healing, physical damage
-###### Playstyle Tags: 
----
 ### Xin Zhao
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/XinZhao.png' width='48'>
 ##### Popular Items: 
@@ -827,7 +827,7 @@
 ###### KDA: 2.32
 ###### Pick Rate: 6.24
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: high dps, self healing, physical damage
+###### Build Tags: high dps, self healing, physical damage, tanky
 ###### Playstyle Tags: displacement, good scaling
 ---
 ### Gnar
@@ -863,7 +863,7 @@
 ###### KDA: 2.86
 ###### Pick Rate: 4.43
 ###### Riot Tags: Mage
-###### Build Tags: heavy cc, high burst, aoe cc, magic damage, squishy
+###### Build Tags: heavy cc, high burst, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: initiator, strong level 6
 ---
 ### Wukong
@@ -875,7 +875,7 @@
 ###### KDA: 2.84
 ###### Pick Rate: 6.22
 ###### Riot Tags: Fighter, Tank
-###### Build Tags: high dps, aoe cc, stealth, physical damage
+###### Build Tags: high dps, aoe cc, stealth, physical damage, tanky
 ###### Playstyle Tags: initiator
 ---
 ### Volibear
@@ -899,7 +899,7 @@
 ###### KDA: 3.64
 ###### Pick Rate: 5.55
 ###### Riot Tags: Fighter, Marksman
-###### Build Tags: high dps, high burst, poke, squishy, physical damage
+###### Build Tags: high dps, high burst, poke, squishy physical, physical damage
 ###### Playstyle Tags: waveclear, early power
 ---
 ### Braum
@@ -923,7 +923,7 @@
 ###### KDA: 2.77
 ###### Pick Rate: 7.23
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: high burst, magic damage, slows
+###### Build Tags: high burst, magic damage, slows, squishy mage
 ###### Playstyle Tags: mobile
 ---
 ### Cassiopeia
@@ -935,7 +935,7 @@
 ###### KDA: 3.46
 ###### Pick Rate: 5.71
 ###### Riot Tags: Mage
-###### Build Tags: heavy cc, high dps, aoe cc, magic damage, slows, roots, squishy
+###### Build Tags: heavy cc, high dps, aoe cc, magic damage, slows, roots, squishy mage
 ###### Playstyle Tags: waveclear, good scaling
 ---
 ### Olaf
@@ -983,7 +983,7 @@
 ###### KDA: 2.86
 ###### Pick Rate: 5.09
 ###### Riot Tags: Mage, Marksman
-###### Build Tags: high burst, aoe cc, magic damage, squishy
+###### Build Tags: high burst, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: initiator, mobile
 ---
 ### Lulu
@@ -995,7 +995,7 @@
 ###### KDA: 3.88
 ###### Pick Rate: 6.56
 ###### Riot Tags: Support, Mage
-###### Build Tags: magic damage, squishy
+###### Build Tags: magic damage, squishy support
 ###### Playstyle Tags: displacement, waveclear
 ---
 ### Rumble
@@ -1007,7 +1007,7 @@
 ###### KDA: 2.86
 ###### Pick Rate: 3.75
 ###### Riot Tags: Fighter, Mage
-###### Build Tags: high dps, aoe cc, magic damage, squishy
+###### Build Tags: high dps, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: waveclear
 ---
 ### Jarvan IV
@@ -1019,7 +1019,7 @@
 ###### KDA: 3.17
 ###### Pick Rate: 4.06
 ###### Riot Tags: Tank, Fighter
-###### Build Tags: physical damage
+###### Build Tags: physical damage, tanky
 ###### Playstyle Tags: initiator, mobile, terrain generation
 ---
 ### Mordekaiser
@@ -1043,7 +1043,7 @@
 ###### KDA: 2.78
 ###### Pick Rate: 4.76
 ###### Riot Tags: Fighter, Mage
-###### Build Tags: high burst, magic damage, cooldowns
+###### Build Tags: high burst, magic damage, cooldowns, squishy mage
 ###### Playstyle Tags: 
 ---
 ### Pantheon
@@ -1055,7 +1055,7 @@
 ###### KDA: 2.58
 ###### Pick Rate: 6.37
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: high burst, physical damage
+###### Build Tags: high burst, physical damage, tanky
 ###### Playstyle Tags: initiator, early power
 ---
 ### Viktor
@@ -1067,7 +1067,7 @@
 ###### KDA: 3.06
 ###### Pick Rate: 4.87
 ###### Riot Tags: Mage
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: 
 ---
 ### Syndra
@@ -1079,7 +1079,7 @@
 ###### KDA: 2.99
 ###### Pick Rate: 5.17
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy
+###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, displacement
 ---
 ### Corki
@@ -1091,7 +1091,7 @@
 ###### KDA: 3.11
 ###### Pick Rate: 7.45
 ###### Riot Tags: Marksman
-###### Build Tags: true damage, poke, hybrid, squishy
+###### Build Tags: true damage, poke, hybrid
 ###### Playstyle Tags: waveclear, mobile, displacement
 ---
 ### Shen
@@ -1103,7 +1103,7 @@
 ###### KDA: 3.37
 ###### Pick Rate: 4.77
 ###### Riot Tags: Tank, Melee
-###### Build Tags: preserving ult
+###### Build Tags: preserving ult, tanky
 ###### Playstyle Tags: initiator
 ---
 ### Irelia
@@ -1127,7 +1127,7 @@
 ###### KDA: 2.79
 ###### Pick Rate: 8.56
 ###### Riot Tags: Marksman, Assassin
-###### Build Tags: true damage, high dps, stealth, physical damage, squishy
+###### Build Tags: true damage, high dps, stealth, physical damage, squishy physical
 ###### Playstyle Tags: 
 ---
 ### Anivia
@@ -1139,7 +1139,7 @@
 ###### KDA: 3.85
 ###### Pick Rate: 7.2
 ###### Riot Tags: Mage, Support
-###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy
+###### Build Tags: heavy cc, high burst, aoe cc, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, displacement, good scaling, terrain generation, strong level 6
 ---
 ### Gragas
@@ -1163,7 +1163,7 @@
 ###### KDA: 2.97
 ###### Pick Rate: 7.73
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, physical damage, squishy
+###### Build Tags: high dps, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Quinn
@@ -1175,7 +1175,7 @@
 ###### KDA: 2.62
 ###### Pick Rate: 4.19
 ###### Riot Tags: Marksman, Fighter
-###### Build Tags: physical damage, squishy
+###### Build Tags: physical damage, squishy physical
 ###### Playstyle Tags: mobile, displacement
 ---
 ### Yasuo
@@ -1187,7 +1187,7 @@
 ###### KDA: 2.13
 ###### Pick Rate: 7.65
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: high dps, high burst, aoe cc, physical damage, squishy
+###### Build Tags: high dps, high burst, aoe cc, physical damage, squishy physical
 ###### Playstyle Tags: mobile, strong level 6
 ---
 ### Kalista
@@ -1199,7 +1199,7 @@
 ###### KDA: 2.87
 ###### Pick Rate: 5.58
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, physical damage, squishy
+###### Build Tags: high dps, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Zilean
@@ -1211,7 +1211,7 @@
 ###### KDA: 3.75
 ###### Pick Rate: 8.99
 ###### Riot Tags: Support, Mage
-###### Build Tags: preserving ult, poke, magic damage, squishy
+###### Build Tags: preserving ult, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, strong level 6
 ---
 ### Azir
@@ -1223,7 +1223,7 @@
 ###### KDA: 2.52
 ###### Pick Rate: 5.97
 ###### Riot Tags: Mage, Marksman
-###### Build Tags: high dps, high burst, poke, magic damage, squishy
+###### Build Tags: high dps, high burst, poke, magic damage, squishy mage
 ###### Playstyle Tags: waveclear, mobile, terrain generation
 ---
 ### Kayle
@@ -1235,7 +1235,7 @@
 ###### KDA: 2.87
 ###### Pick Rate: 10.88
 ###### Riot Tags: Fighter, Support
-###### Build Tags: high dps, self healing, healer, preserving ult, hybrid, squishy
+###### Build Tags: high dps, self healing, healer, preserving ult, hybrid
 ###### Playstyle Tags: good scaling
 ---
 ### Nidalee
@@ -1247,7 +1247,7 @@
 ###### KDA: 3.31
 ###### Pick Rate: 10.98
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: self healing, high burst, healer, poke, magic damage, squishy
+###### Build Tags: self healing, high burst, healer, poke, magic damage, squishy mage
 ###### Playstyle Tags: traps, early power
 ---
 ### Poppy
@@ -1262,6 +1262,18 @@
 ###### Build Tags: heavy cc, tanky
 ###### Playstyle Tags: initiator, displacement
 ---
+### Zed
+<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zed.png' width='48'>
+##### Popular Items: 
+<img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3036.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3071.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3142.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3147.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3156.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3158.png' width='48'>
+##### Score: 54.28
+##### Winrate: 42.64
+###### KDA: 2.48
+###### Pick Rate: 6.84
+###### Riot Tags: Assassin, Fighter
+###### Build Tags: high dps, high burst, poke, physical damage, squishy physical
+###### Playstyle Tags: waveclear, mobile, strong level 6
+---
 ### Jax
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Jax.png' width='48'>
 ##### Popular Items: 
@@ -1274,18 +1286,6 @@
 ###### Build Tags: high dps, hybrid
 ###### Playstyle Tags: initiator, good scaling, strong level 6
 ---
-### Zed
-<img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Zed.png' width='48'>
-##### Popular Items: 
-<img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3036.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3071.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3142.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3147.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3156.png' width='48'> <img src='http://ddragon.leagueoflegends.com/cdn/6.14.1/img/item/3158.png' width='48'>
-##### Score: 54.28
-##### Winrate: 42.64
-###### KDA: 2.48
-###### Pick Rate: 6.84
-###### Riot Tags: Assassin, Fighter
-###### Build Tags: high dps, high burst, poke, physical damage, squishy
-###### Playstyle Tags: waveclear, mobile, strong level 6
----
 ### Fiora
 <img src='http://ddragon.leagueoflegends.com/cdn/6.16.2/img/champion/Fiora.png' width='48'>
 ##### Popular Items: 
@@ -1295,7 +1295,7 @@
 ###### KDA: 2.23
 ###### Pick Rate: 12.47
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: true damage, high dps, physical damage, squishy
+###### Build Tags: true damage, high dps, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Shaco
@@ -1307,7 +1307,7 @@
 ###### KDA: 2.78
 ###### Pick Rate: 6.91
 ###### Riot Tags: Assassin
-###### Build Tags: high burst, stealth, hybrid, squishy
+###### Build Tags: high burst, stealth, hybrid, squishy mage
 ###### Playstyle Tags: traps, early power
 ---
 ### Tryndamere
@@ -1319,7 +1319,7 @@
 ###### KDA: 2.13
 ###### Pick Rate: 10.05
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: high dps, preserving ult
+###### Build Tags: high dps, preserving ult, squishy physical
 ###### Playstyle Tags: strong level 6
 ---
 ### Ryze
@@ -1331,7 +1331,7 @@
 ###### KDA: 2.77
 ###### Pick Rate: 11.72
 ###### Riot Tags: Mage, Fighter
-###### Build Tags: heavy cc, self healing, high burst, magic damage
+###### Build Tags: heavy cc, self healing, high burst, magic damage, tanky
 ###### Playstyle Tags: good scaling
 ---
 <h1> WEAK </h1>
@@ -1344,7 +1344,7 @@
 ###### KDA: 3.07
 ###### Pick Rate: 2.23
 ###### Riot Tags: Fighter, Tank
-###### Build Tags: high burst
+###### Build Tags: high burst, tanky
 ###### Playstyle Tags: mobile, initiator
 ---
 ### Tahm Kench
@@ -1380,7 +1380,7 @@
 ###### KDA: 2.34
 ###### Pick Rate: 2.66
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: self healing, high burst, physical damage
+###### Build Tags: self healing, high burst, physical damage, tanky
 ###### Playstyle Tags: initiator
 ---
 ### Taliyah
@@ -1392,7 +1392,7 @@
 ###### KDA: 2.82
 ###### Pick Rate: 3.92
 ###### Riot Tags: Mage, Support
-###### Build Tags: aoe cc, poke, magic damage, squishy
+###### Build Tags: aoe cc, poke, magic damage, squishy mage
 ###### Playstyle Tags: displacement, terrain generation
 ---
 ### Shyvana
@@ -1416,7 +1416,7 @@
 ###### KDA: 2.56
 ###### Pick Rate: 3.41
 ###### Riot Tags: Mage, Fighter
-###### Build Tags: heavy cc, self healing, magic damage
+###### Build Tags: heavy cc, self healing, magic damage, tanky
 ###### Playstyle Tags: mobile
 ---
 ### Akali
@@ -1440,7 +1440,7 @@
 ###### KDA: 2.13
 ###### Pick Rate: 5.99
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: heavy cc, high dps, high burst
+###### Build Tags: heavy cc, high dps, high burst, squishy physical
 ###### Playstyle Tags: mobile, early power, strong level 6
 ---
 ### Bard
@@ -1452,7 +1452,7 @@
 ###### KDA: 3.56
 ###### Pick Rate: 4.69
 ###### Riot Tags: Support, Mage
-###### Build Tags: self healing, healer, aoe cc, preserving ult, cooldowns, squishy
+###### Build Tags: self healing, healer, aoe cc, preserving ult, cooldowns, squishy support
 ###### Playstyle Tags: 
 ---
 ### Kassadin
@@ -1464,7 +1464,7 @@
 ###### KDA: 2.58
 ###### Pick Rate: 5.61
 ###### Riot Tags: Assassin, Mage
-###### Build Tags: high burst, magic damage, squishy
+###### Build Tags: high burst, magic damage, squishy mage
 ###### Playstyle Tags: mobile
 ---
 ### Lee Sin
@@ -1476,7 +1476,7 @@
 ###### KDA: 2.6
 ###### Pick Rate: 5.72
 ###### Riot Tags: Fighter, Assassin
-###### Build Tags: physical damage
+###### Build Tags: physical damage, tanky
 ###### Playstyle Tags: initiator, mobile, displacement
 ---
 ### Kindred
@@ -1488,7 +1488,7 @@
 ###### KDA: 2.52
 ###### Pick Rate: 5.34
 ###### Riot Tags: Marksman
-###### Build Tags: high dps, self healing, preserving ult, physical damage, squishy
+###### Build Tags: high dps, self healing, preserving ult, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Aatrox
@@ -1500,7 +1500,7 @@
 ###### KDA: 2.3
 ###### Pick Rate: 2.1
 ###### Riot Tags: Fighter, Tank
-###### Build Tags: self healing
+###### Build Tags: self healing, tanky
 ###### Playstyle Tags: initiator
 ---
 ### LeBlanc
@@ -1512,7 +1512,7 @@
 ###### KDA: 2.66
 ###### Pick Rate: 7.57
 ###### Riot Tags: Assassin, Mage
-###### Build Tags: high dps, high burst, magic damage, squishy
+###### Build Tags: high dps, high burst, magic damage, squishy mage
 ###### Playstyle Tags: mobile, strong level 6
 ---
 ### Rengar
@@ -1524,7 +1524,7 @@
 ###### KDA: 2.13
 ###### Pick Rate: 3.92
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: high dps, self healing, high burst, stealth, physical damage
+###### Build Tags: high dps, self healing, high burst, stealth, physical damage, squishy physical
 ###### Playstyle Tags: initiator
 ---
 ### Udyr
@@ -1548,7 +1548,7 @@
 ###### KDA: 2.8
 ###### Pick Rate: 7.05
 ###### Riot Tags: Support, Fighter
-###### Build Tags: self healing, aoe cc, magic damage, squishy
+###### Build Tags: self healing, aoe cc, magic damage, squishy mage
 ###### Playstyle Tags: 
 ---
 ### Kha'Zix
@@ -1560,7 +1560,7 @@
 ###### KDA: 2.3
 ###### Pick Rate: 4.09
 ###### Riot Tags: Assassin, Fighter
-###### Build Tags: high burst, self healing, stealth, physical damage, squishy
+###### Build Tags: high burst, self healing, stealth, physical damage, squishy physical
 ###### Playstyle Tags: mobile
 ---
 ### Evelynn
@@ -1572,7 +1572,7 @@
 ###### KDA: 2.16
 ###### Pick Rate: 9.09
 ###### Riot Tags: Assassin, Mage
-###### Build Tags: stealth, hybrid
+###### Build Tags: stealth, hybrid, tanky
 ###### Playstyle Tags: initiator, mobile
 ---
 <h1> BAD </h1>
