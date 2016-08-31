@@ -47,7 +47,6 @@ class Champion < ActiveRecord::Base
       champion.healing_done = stats['totalHeal']
 
       # Now to assign items to the champion.
-
       item_ids = []
       inventory_slot = 6
       while inventory_slot >= 0

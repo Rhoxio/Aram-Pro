@@ -21,6 +21,7 @@ class CreateChampionbases < ActiveRecord::Migration
       t.string :riot_tags, array: true
       t.string :build_tags, array: true, default: []
       t.string :playstyle_tags, array: true, default: []
+      t.string :primary_tag
 
       t.text :stats
 

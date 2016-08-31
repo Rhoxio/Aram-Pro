@@ -1,14 +1,24 @@
 task :analytics_test => :environment do
-  match = Match.find(4)
+  match = Match.find(2)
   items = Item.all
   championbases = Championbase.all
   champions = match.champions
-  current_champion = champions[9]
+  current_champion = champions[5]
 
+  # This is pseudocode for when I set up tags. 
 
+  # These will be extrapolated out in to helpers.
   def get_top_frequencies(frequencies, threshold = 5)
     frequencies.sort_by(&:last).last(threshold).reverse.to_h.deep_symbolize_keys
-  end  
+  end
+
+  def top_stat_by_value(frequencies, threshold = 5)
+    frequencies.sort_by {|k,v| v[:total_value]}.last(threshold).reverse.to_h
+  end 
+
+  def top_stat_by_count(frequencies, threshold = 5)
+    frequencies.sort_by {|k,v| v[:count]}.last(threshold).reverse.to_h
+  end   
 
   teams = {
     :top => [],
@@ -31,7 +41,7 @@ task :analytics_test => :environment do
     "FlatMPRegenMod" => :mana_regen  
   }
 
-  item_sym_to_tag_translation = {
+  symbol_to_tag_translation = {
     :movespeed => "FlatMovementSpeedMod",
     :hitpoints => "FlatHPPoolMod",
     :critical_chance => "FlatCritChanceMod",
@@ -236,31 +246,65 @@ task :analytics_test => :environment do
   # the top tag frequencies. It looks as if I will need to make a table that holds counters to other
   # item archetypes. That comes first:
 
+  # I need to re-think these tags as I am getting non-optimal results. I think
+  # That I need to consider either tiering this structure or simply including more
+  # precise variance in it. For example: generally investing in magic_damage and magic_penetration will reduce
+  # the amount of hitpoints and general defense you have in your build, making you more
+  # vulnerable to burst and high dps.
+
+  # I think tiering it will fix the problem and produce better results, but will increase the runtime. 
+  # While this doesn't matter, since these calculations will be run once and only once, I may find that it takes
+  # much more memory depending on how I implement it and will end up bogging down the Heroku server.
+
+  # Considering adding a zone tag:
+  # To me, it would make sense to quantify a team with good poke and good cc abilities as a
+  # 'zoning' team that is very good at keeping the other team from ititiating. This might be well-
+  # quantified by tagging a champion with a 'kite' tag, becaue while someone with great initiation
+  # will help against them, a team without great initiation will struggle and may need to build
+  # to compensate for their lack of hard engage.
+
   item_stat_counters = {
     :movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
-    :hitpoints => [:high_dps, :good_scaling, :early_power],
-    :critical_chance => [:armor, :hitpoints, :tanky],
-    :magic_damage => [:magic_resist, :hitpoints, :tanky],
-    :mana => [:poke, :self_healing, :good_scaling, :poke],
+    :hitpoints => [:high_dps, :good_scaling, :armor_penetration, :magic_penetration],
+    :critical_chance => [:armor, :hitpoints],
+    :magic_damage => [:magic_resist, :hitpoints],
+    :mana => [:poke, :self_healing, :good_scaling],
     :armor => [:armor_penetration, :true_damage],
     :magic_resist => [:magic_penetration, :true_damage],
-    :physical_damage => [:armor, :hitpoints, :tanky],
-    :attack_speed => [:armor, :hitpoints, :tanky],
-    :lifesteal => [],
-    :hp_regen => [:mana, :mana_regen, :high_dps],
+    :physical_damage => [:armor, :hitpoints],
+    :attack_speed => [:armor, :hitpoints],
+    :lifesteal => [:poke], # Reflected damage? 
+    :hp_regen => [:mana, :mana_regen, :high_dps, :poke],
     :percent_movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
     :mana_regen => [:poke, :early_power, :good_scaling],
-    :armor_penetration => [],
-    :magic_penetration => []
+    :armor_penetration => [:health, :armor],
+    :magic_penetration => [:health, :magic_resist]
   }
 
+  # Going to eventually turn this in to a model once I get the structure and weights figured out.
   archetype_stat_weights = {
-    :tanky => {
+    :tank => {
       :high => [:hitpoints, :armor, :magic_resist], 
       :medium => [:hp_regen, :movespeed, :percent_movespeed, :physical_damage, :magic_damage], 
       :low => [:physical_damage, :magic_damage, :mana], 
       :irrelevant => [:critical_chance, :attack_speed, :lifesteal]
     },
+
+    # Bruisers
+    :physical_bruiser => {
+      :high => [:hitpoints, :physical_damage, :armor, :magic_resist],
+      :mediusm => [:hp_regen, :movespeed, :percent_movespeed, :armor_penetration],
+      :low => [:attack_speed, :lifesteal, :mana, :critical_chance],
+      :irrelevant => [:magic_damage, :mana_regen, :magic_penetration]
+    },
+    :magic_bruiser => {
+      :high => [:hitpoints, :magic_damage, :armor, :magic_resist],
+      :medium => [:movespeed, :percent_movespeed, :magic_penetration],
+      :low => [:mana, :mana_regen],
+      :irrelevant => [:critical_chance, :physical_damage, :attack_speed, :lifesteal, :hp_regen, :armor_penetration]
+    },
+
+    # Squishies
     :squishy_mage => {
       :high => [:magic_damage, :magic_penetration], 
       :medium => [:mana, :mana_regen, :hitpoints], 
@@ -278,7 +322,24 @@ task :analytics_test => :environment do
       :medium => [:armor, :magic_resist], 
       :low => [:hp_regen, :movespeed, :percent_movespeed],
       :irrelevant => [:critical_chance, :physical_damage, :attack_speed, :lifesteal]
-    },    
+    },
+
+    # Beefy Variants (HP is Strong)
+    :beefy_mage => {
+      :high => [:hitpoints, :magic_penetration, :magic_damage],
+      :medium => [:mana, :mana_regen, :armor, :magic_resist, :movespeed],
+      :low => [:mana_regen, :percent_movespeed],
+      :irrelevant => [:armor_penetration, :physical_damage, :attack_speed, :lifesteal, :hp_regen, :critical_chance]
+    },
+
+    # Hybrid
+    :squishy_hybrid => {
+      :high => [],
+      :medium => [],
+      :low => [],
+      :irrelevant => []
+    },
+
     :hybrid => {
       :high => [:physical_damage, :magic_damage, :magic_penetration, :armor_penetration, :attack_speed],
       :medium => [:hitpoints, :armor, :magic_resist, :movespeed, :percent_movespeed],
@@ -286,10 +347,11 @@ task :analytics_test => :environment do
       :irrelevant => []
     }
   }
+
   # Now, to get the frequencies of tags for a specific champion's items to see how the 'natural'
   # spread looks against counters.
   stat_spread = Hash.new
-  ap current_champion.name
+  
   current_champion.championbase.popular_items.each do |pitem|
     pitem.stats.each do |stat, value|
       if !stat_spread.key? item_stat_translation[stat]
@@ -303,88 +365,22 @@ task :analytics_test => :environment do
     end
   end
 
-  def top_stat_by_value(frequencies, threshold = 5)
-    frequencies.sort_by {|k,v| v[:total_value]}.last(threshold).reverse.to_h
-  end 
-
-  def top_stat_by_count(frequencies, threshold = 5)
-    frequencies.sort_by {|k,v| v[:count]}.last(threshold).reverse.to_h
-  end   
-
-  ap top_stat_by_value(stat_spread)
-  ap top_stat_by_count(stat_spread)
-
   top_tags = get_top_frequencies(top_tag_frequencies)
   bottom_tags = get_top_frequencies(bottom_tag_frequencies)
-  ap top_tags
-  ap bottom_tags
 
-  tag_sets = [bottom_tags, top_tags]
-
-  # ap top_tag_frequencies
-  # ap bottom_tag_frequencies  
+  tag_sets = [bottom_tags, top_tags] 
 
   # I now have stat spread and frequencies. Now, I need to check if the frequency itself is
   # enough to merit sticking to the popular build based on the tags present in top_tag_frequencies
   # or bottom_tag_frequencies based upon which team current_champion is on.
 
-  # Unless something is really fucked up with the champion tag spreads, you should have a majority consisting of
-  # either :tanky or :squishy_(type) champions with some :hybrid mixed in. The stat weights hash should hold a roadmap to help guide wether or not
-  # an item with specific stats would be an acceptable choice for a substitution in the build.
+  # Need to find the most prominent tag on the enemy team now... 
 
-  # Grabbing the primary tag that is most prevalent in the top 5 tags for the opposing team.
-  # Will always give back one.
-  def extract_primary_tag(current_champion, tag_sets)
-    # 0 bottom, 1 top
-    if current_champion.team == "100"
-      tag_sets[0].each do |tag, value|
-        if [:squishy_support, :squishy_physical, :squishy_mage, :hybrid, :tanky].include? tag
-          ap tag
-          return tag
-        end
-      end
-    elsif current_champion.team == "200"
-      tag_sets[1].each do |tag, value|
-        if [:squishy_support, :squishy_physical, :squishy_mage, :hybrid, :tanky].include? tag
-          ap tag
-          return tag
-        end
-      end
-    end
-    p "No primary tags found."
-    return nil
-  end
+  primary_tag_archetype = archetype_stat_weights[current_champion.primary_tag.to_sym]
 
-  # Need to find the most prominent tag on the enemy team now...
-
-  # item_stat_counters = {
-  #   :movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
-  #   :hitpoints => [:high_dps, :good_scaling, :early_power],
-  #   :critical_chance => [:armor, :hitpoints, :tanky],
-  #   :magic_damage => [:magic_resist, :hitpoints, :tanky],
-  #   :mana => [:poke, :self_healing, :good_scaling, :poke],
-  #   :armor => [:armor_penetration, :true_damage],
-  #   :magic_resist => [:magic_penetration, :true_damage],
-  #   :physical_damage => [:armor, :hitpoints, :tanky],
-  #   :attack_speed => [:armor, :hitpoints, :tanky],
-  #   :lifesteal => [],
-  #   :hp_regen => [:mana, :mana_regen, :high_dps],
-  #   :percent_movespeed => [:aoe_cc, :heavy_cc, :roots, :slows],
-  #   :mana_regen => [:poke, :early_power, :good_scaling]
-  # }  
-
-  # :squishy_physical => {
-  #   :high =>[:physical_damage, :armor_penetration, :critical_chance, :lifesteal, :attack_speed], 
-  #   :medium => [:movespeed, :percent_movespeed], 
-  #   :low => [:armor, :magic_resist, :hitpoints],
-  #   :irrelevant => [:magic_damage, :hp_regen, :mana_regen, :mana]
-  # },  
-
-  primary_tag_archetype = archetype_stat_weights[extract_primary_tag(current_champion, tag_sets)]
-
-  # Gived back the 
   def map_champion_counters(primary_tag_archetype, item_stat_counters, threshold = 3)
     threat_frequencies = {:high => {}, :medium => {}, :low => {}, :irrelevant => {} }
+
     primary_tag_archetype[:high].each do |t|
       item_stat_counters[t].each do |ic|
         if !threat_frequencies[:high].key? ic
@@ -439,30 +435,8 @@ task :analytics_test => :environment do
   ap current_champion.name
   ap map_champion_counters(primary_tag_archetype, item_stat_counters, 5)
 
-
-
-  # primary_tags.each do |prime_tag|
-  #   case prime_tag
-  #   when :squishy_physical
-  #     weights = archetype_stat_weights[:squishy_physical]
-  #     high_value = weights[:high].map {|tag| item_sym_to_tag_translation[tag]}
-
-   
-
-  # end  
-
   # ap weights = archetype_stat_weights[:squishy_physical]
   # ap high_value = weights[:high].map {|tag| item_sym_to_tag_translation[tag]}
-
-
-  # Complete!
-  # p top_average_winrates
-  # p bottom_average_winrates
-
-  # p top_average_scores
-  # p bottom_average_scores
-
-
 
 
 end

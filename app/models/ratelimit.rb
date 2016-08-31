@@ -24,7 +24,6 @@ class Ratelimit
     }
 
     if headers['x-rate-limit-count'] != nil
-
       headers['x-rate-limit-count'].split(',').each_with_index do |limit, index|
         # I will add more when I get a prod key.
         if index == 0

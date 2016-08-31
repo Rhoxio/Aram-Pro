@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160811014016) do
     t.string   "riot_tags",                                     array: true
     t.string   "build_tags",          default: [],              array: true
     t.string   "playstyle_tags",      default: [],              array: true
+    t.string   "primary_tag"
     t.text     "stats"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false

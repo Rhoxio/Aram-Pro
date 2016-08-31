@@ -1,7 +1,6 @@
 class Analytics
 
   def self.new_entry(name, data)
-    # I need to implement logic to check if key exists before saving.
     name = name.downcase
     data = data.to_json
     if $analytics.get(name).length <= 0
