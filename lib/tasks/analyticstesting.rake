@@ -282,6 +282,8 @@ task :analytics_test => :environment do
   }
 
   # Going to eventually turn this in to a model once I get the structure and weights figured out.
+
+  # These correspond to stat strengths, not a weakness to a particular stat.
   archetype_stat_weights = {
     :tank => {
       :high => [:hitpoints, :armor, :magic_resist], 
